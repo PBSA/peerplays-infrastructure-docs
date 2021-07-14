@@ -39,6 +39,6 @@
 
 ---
 
-* [Community Docs](https://www.peerplays.tech)
+* [Community Docs](https://community.peerplays.tech)
 * [Developer Docs](https://devs.peerplays.tech)
 
