@@ -127,5 +127,5 @@ These requirements are as of the time of writing, so consider deploying a server
 
 **Mainnet:** The live Peerplays environment, named **`Alice`**, is the publicly running blockchain on which all transactions take place.
 
-**Testnet:** One of any development environments for the Peerplays blockchain. The official public testnet, named **`Beatrice`**, is operated by the Peerplays witnesses. More testnets exist for development purposes like Gladiator for the testing of SONs.
+**Testnet:** One of any development environments for the Peerplays blockchain. The official public testnet is operated by the Peerplays witnesses. More testnets exist for development purposes like `Gladiator` for the testing of SONs.
 
