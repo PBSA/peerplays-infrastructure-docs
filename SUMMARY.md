@@ -9,7 +9,7 @@
 * [Using the CLI Wallet](the-basics/using-the-cli-wallet.md)
 * [Auto-Starting a Node](the-basics/auto-starting-a-node.md)
 * [Backup Servers](the-basics/backup-servers.md)
-* [Joining the Public Testnet \(Beatrice\)](the-basics/joining-the-public-testnet.md)
+* [Joining the Public Testnet](the-basics/joining-the-public-testnet.md)
 * [Obtaining Your First Tokens](the-basics/obtaining-your-first-tokens.md)
 
 ## Advanced Topics

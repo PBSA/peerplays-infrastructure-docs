@@ -1,2 +1,2 @@
-# Joining the Public Testnet \(Beatrice\)
+# Joining the Public Testnet
 
