@@ -39,6 +39,7 @@
 
 ---
 
+* [Docs Home](https://peerplays.tech)
 * [Community Docs](https://community.peerplays.tech)
 * [Developer Docs](https://devs.peerplays.tech)
 
