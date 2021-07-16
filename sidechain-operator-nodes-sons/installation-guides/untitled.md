@@ -214,7 +214,7 @@ Copy the correct example configuration:
 ```text
 cd ~/peerplays-docker
 cd data/witness_node_data_dir
-cp config.ini.son-exists.example config.ini
+sudo cp config.ini.son-exists.example config.ini
 ```
 
 We'll need to make an edit to the `config.ini` file as well.
