@@ -119,8 +119,10 @@ The Peerplays Docker package includes a Bitcoin node Docker container. The Bitco
 Since we'll be setting some custom config in our `bitcoin.conf`, we'll need to create and edit it now.
 
 ```text
-touch /home/ubuntu/.bitcoin/bitcoin.conf
-vim /home/ubuntu/.bitcoin/bitcoin.conf
+cd ~
+mkdir .bitcoin
+cd .bitcoin
+vim bitcoin.conf
 ```
 
 The `bitcoin.conf` should look exactly like this **\(You can copy/paste the text in this code block into your editor\)**:
