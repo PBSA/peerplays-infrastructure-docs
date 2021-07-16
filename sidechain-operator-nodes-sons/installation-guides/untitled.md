@@ -56,6 +56,7 @@ It is required to have Docker installed on the system that will be performing th
 Docker can be installed using the `run.sh` script inside the Peerplays Docker repository:
 
 ```text
+cd peerplays-docker
 sudo ./run.sh install_docker
 ```
 
