@@ -227,7 +227,7 @@ The important parts of the `config.ini` file \(for now!\) should look like the f
 
 ```text
 # Endpoint for P2P node to listen on
-# p2p-endpoint =
+p2p-endpoint = 0.0.0.0:9777
 
 # P2P nodes to connect to on startup (may specify multiple times)
 # seed-node =
@@ -244,7 +244,7 @@ The important parts of the `config.ini` file \(for now!\) should look like the f
 # checkpoint = 
 
 # Endpoint for websocket RPC to listen on
-rpc-endpoint = 0.0.0.0:8090
+rpc-endpoint = 127.0.0.1:8090
 
 # Endpoint for TLS websocket RPC to listen on
 # rpc-tls-endpoint = 
@@ -281,7 +281,7 @@ plugins = witness account_history market_history accounts_list affiliate_stats b
 # peerplays-private-key = ["", ""]
 
 # IP address of Bitcoin node
-bitcoin-node-ip = 172.0.0.1
+bitcoin-node-ip = 127.0.0.1
 
 # ZMQ port of Bitcoin node
 bitcoin-node-zmq-port = 11111
