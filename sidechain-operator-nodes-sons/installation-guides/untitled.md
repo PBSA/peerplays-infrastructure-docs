@@ -281,7 +281,7 @@ plugins = witness account_history market_history accounts_list affiliate_stats b
 # peerplays-private-key = ["", ""]
 
 # IP address of Bitcoin node
-bitcoin-node-ip = 127.0.0.1
+bitcoin-node-ip = 172.18.0.2
 
 # ZMQ port of Bitcoin node
 bitcoin-node-zmq-port = 11111
