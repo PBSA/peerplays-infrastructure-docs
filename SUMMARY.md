@@ -34,7 +34,12 @@
 ## Bookie Oracle Suite \(BOS\)
 
 * [Installation Guides](bookie-oracle-suite-bos/installation-guides/README.md)
-  * [Untitled](bookie-oracle-suite-bos/installation-guides/untitled.md)
+  * [BOS-Auto Overview](bookie-oracle-suite-bos/installation-guides/bos-auto-overview.md)
+  * [BOS-Auto Install](bookie-oracle-suite-bos/installation-guides/bos-auto-install.md)
+  * [BOS-Auto Configuration](bookie-oracle-suite-bos/installation-guides/bos-auto-configuration.md)
+  * [MongoDB Install](bookie-oracle-suite-bos/installation-guides/mongodb-install.md)
+  * [Redis Install](bookie-oracle-suite-bos/installation-guides/redis-install.md)
+  * [Running BOS-Auto](bookie-oracle-suite-bos/installation-guides/running-bos-auto.md)
 
 ## Other Documentation
 
