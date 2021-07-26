@@ -289,9 +289,9 @@ pair<public_key_type, string>
 
 ```cpp
 get_private_key_from_password myaccountname1 owner "EDIFICE PALLID ANOESIA STRIDE PARREL SPORTY AXIFORM INOPINE SWOONED TONETIC CORKER OATEN PUSHER MIN CERN TACT"
-[ 
-  "PPY5xmkfRJhsG54kxNpoBtWqnEpScGBxczooapTbCpmetFAmzUvJ1",
-  "5KPHKeuqRyNfuc32LGDzc6tqcCPzyLgfguQzN4Xkrys3VfMxtjB"
+[
+  "PPY8fAzCBgJhfL6YWsJUycw6SvU7VZnNgq4t5vuzEVP168PHVKJXn",
+  "5Kbhg1xaW7hceZhqJSqg3yZ4gsAUdFaA5uD4yBiHME2SYLsa7bU"
 ]
 ```
 {% endtab %}
