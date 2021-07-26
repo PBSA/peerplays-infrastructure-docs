@@ -177,7 +177,17 @@ unlocked >>> help
 Suggests a safe brain key to use for creating your account keys. A **brain key** is a long passphrase that provides enough entropy to generate cryptographic keys. This function will suggest a suitably random string that should be easy to write down \(and, with effort, memorize\).
 
 {% hint style="info" %}
-The GUI Wallet generates a brain key for your password when creating a new account.
+The GUI Wallet generates a brain key for your password when creating a new account. But in the case of the GUI Wallet, rather than a long passphrase \(i.e. set of words\), it generates a string of 52 random letters \(a-z & A-Z\) and numbers \(0-9\).
+
+For example, the `suggest_brain_key` method could give you:
+
+`EDIFICE PALLID ANOESIA STRIDE PARREL SPORTY AXIFORM INOPINE SWOONED TONETIC CORKER OATEN PUSHER MIN CERN TACT`
+
+And the GUI Wallet could produce the password of:
+
+`EyqFQDRpydZJDgTV8EJIcpmPLhfmdq6Yjbo45pNsBe7wSJSpvq0v`
+
+Although they look different, both are brain keys and will work for generating public and private keys.
 {% endhint %}
 
 {% code title="return type, namespace, & method" %}
@@ -255,12 +265,12 @@ pair<public_key_type, string> graphene::wallet::wallet_api::get_private_key_from
 | :--- | :--- | :--- | :--- |
 | account | string | The account name we're creating keys for. | no quotes required. |
 | role | string | The role we're creating keys for. One of: `owner`, `active`, or `memo` | no quotes required. |
-| password | string | A brain key. It might be the password provided by the GUI wallet, or obtained from the `suggest_brain_key`command \(`wif_priv_key`\). | no quotes required. |
+| password | string | A brain key. It might be the password provided by the GUI wallet, or obtained from the `suggest_brain_key`command \(`brain_priv_key`\). | **quotes required if there are spaces!** |
 
 **Example Call**
 
 ```cpp
-get_private_key_from_password myaccountname1 owner 5JyK47o1xFmA6fE4Z4Pgzcdd7dGhQnorW2sTPzPxeXH7QaT4eN6
+get_private_key_from_password myaccountname1 owner "EDIFICE PALLID ANOESIA STRIDE PARREL SPORTY AXIFORM INOPINE SWOONED TONETIC CORKER OATEN PUSHER MIN CERN TACT"
 ```
 {% endtab %}
 
@@ -278,7 +288,7 @@ pair<public_key_type, string>
 **Example Successful Return**
 
 ```cpp
-get_private_key_from_password myaccountname1 owner 5JyK47o1xFmA6fE4Z4Pgzcdd7dGhQnorW2sTPzPxeXH7QaT4eN6
+get_private_key_from_password myaccountname1 owner "EDIFICE PALLID ANOESIA STRIDE PARREL SPORTY AXIFORM INOPINE SWOONED TONETIC CORKER OATEN PUSHER MIN CERN TACT"
 [ 
   "PPY5xmkfRJhsG54kxNpoBtWqnEpScGBxczooapTbCpmetFAmzUvJ1",
   "5KPHKeuqRyNfuc32LGDzc6tqcCPzyLgfguQzN4Xkrys3VfMxtjB"
