@@ -181,7 +181,7 @@ The GUI Wallet generates a brain key for your password when creating a new accou
 
 For example, the `suggest_brain_key` method could give you:
 
-`EDIFICE PALLID ANOESIA STRIDE PARREL SPORTY AXIFORM INOPINE SWOONED TONETIC CORKER OATEN PUSHER MIN CERN TACT`
+`"EDIFICE PALLID ANOESIA STRIDE PARREL SPORTY AXIFORM INOPINE SWOONED TONETIC CORKER OATEN PUSHER MIN CERN TACT"`
 
 And the GUI Wallet could produce the password of:
 
