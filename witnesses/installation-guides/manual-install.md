@@ -84,22 +84,7 @@ make -j$(nproc)
 **Note**: "master" can be replaced with the most recent release tag. For example: `git checkout 1.5.11` where 1.5.11 is the latest production release tag as of June 2021. The list of releases is [located here](https://github.com/peerplays-network/peerplays/releases).
 {% endhint %}
 
-### 2.1. Build Graphene \(for Ubuntu 14 systems\)
-
-{% hint style="danger" %}
-This step can be skipped if you're not running Ubuntu 14 - which really you shouldn't be!
-{% endhint %}
-
-```text
-cd ..
-git clone https://github.com/cryptonomex/graphene.git
-cd graphene
-git submodule update --init --recursive
-cmake -DBOOST_ROOT="$BOOST_ROOT" -DCMAKE_BUILD_TYPE=Debug .
-make
-```
-
-### 2.2. Starting the Peerplays Witness Node
+### 2.1. Starting the Peerplays Witness Node
 
 If we have installed the blockchain following the above steps, the node can be started as follows:
 
