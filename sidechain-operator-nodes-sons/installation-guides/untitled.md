@@ -220,7 +220,7 @@ sudo cp config.ini.son-exists.example config.ini
 We'll need to make an edit to the `config.ini` file as well.
 
 ```text
-vim config.ini
+sudo vim config.ini
 ```
 
 The important parts of the `config.ini` file \(for now!\) should look like the following. But don't forget to add your own Bitcoin public and private keys!
