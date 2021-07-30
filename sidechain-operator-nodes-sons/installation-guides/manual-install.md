@@ -135,12 +135,12 @@ First we'll download and install one of the official Bitcoin Core binaries:
 
 ```text
 cd ~/src
-wget https://bitcoincore.org/bin/bitcoin-core-0.21.0/bitcoin-0.21.0-x86_64-linux-gnu.tar.gz
+wget https://bitcoincore.org/bin/bitcoin-core-0.21.1/bitcoin-0.21.1-x86_64-linux-gnu.tar.gz
 # Or if you're using ARM architecture...
-# wget https://bitcoincore.org/bin/bitcoin-core-0.21.0/bitcoin-0.21.0-aarch64-linux-gnu.tar.gz
+# wget https://bitcoincore.org/bin/bitcoin-core-0.21.1/bitcoin-0.21.1-aarch64-linux-gnu.tar.gz
 
-tar xzf bitcoin-0.21.0-x86_64-linux-gnu.tar.gz
-sudo install -m 0755 -o root -g root -t /usr/local/bin bitcoin-0.21.0/bin/*
+tar xzf bitcoin-0.21.1-x86_64-linux-gnu.tar.gz
+sudo install -m 0755 -o root -g root -t /usr/local/bin bitcoin-0.21.1/bin/*
 ```
 
 Then we make a config file to manage the settings of our new Bitcoin node.
