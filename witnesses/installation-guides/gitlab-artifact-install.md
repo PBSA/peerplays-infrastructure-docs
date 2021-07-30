@@ -44,13 +44,13 @@ sudo apt-get -y  install libzmq3-dev wget zip unzip
 
 ## 2. Download and extract the artifacts
 
-Artifacts are pre-built binaries that are available to download from GitLab. You can see the available pipelines, sorted by release tags, on the GitLab [Peerplays project](https://gitlab.com/PBSA/peerplays/-/pipelines?scope=tags&page=1) page. The link in the code below refers to release tag `1.5.11` which is the latest production release as of the writing of this document. Please make sure to replace the tag with the one you need. The test releases are available as well, `test-1.5.5` for example.
+Artifacts are pre-built binaries that are available to download from GitLab. You can see the available pipelines, sorted by release tags, on the GitLab [Peerplays project](https://gitlab.com/PBSA/peerplays/-/pipelines?scope=tags&page=1) page. The link in the code below refers to release tag `1.5.13` which is the latest production release as of the writing of this document. Please make sure to replace the tag with the one you need. The test releases are available as well, `test-1.5.5` for example.
 
 ```text
 cd /home/ubuntu
 mkdir artifacts
 cd artifacts
-sudo wget https://gitlab.com/PBSA/peerplays/-/jobs/artifacts/1.5.11/download?job=build -O artifacts.zip
+sudo wget https://gitlab.com/PBSA/peerplays/-/jobs/artifacts/1.5.13/download?job=build -O artifacts.zip
 unzip artifacts.zip
 ```
 
