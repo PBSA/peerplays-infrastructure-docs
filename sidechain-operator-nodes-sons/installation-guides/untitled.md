@@ -242,7 +242,11 @@ bitcoind -daemon
 ```
 
 {% hint style="info" %}
-If successful, you'll see `Bitcoin Core starting`. As an extra check to see if everything is working, try the `bitcoin-cli -version` or `bitcoin-cli getblockchaininfo` commands.
+If successful, you'll see `Bitcoin Core starting`. As an extra check to see if everything is working, try the `bitcoin-cli -version` or `bitcoin-cli getblockchaininfo` commands. 
+
+You can also use this website to check the status of your node: [https://bitnodes.io/](https://bitnodes.io/)
+
+If you use the Bitnodes website, your node will appear as "down" until it's almost done downloading and verifying the Bitcoin chain. This can take a while.
 {% endhint %}
 
 Your Bitcoin node should now be downloading the Bitcoin blockchain data from other nodes. This might take a few hours to complete even though we cut down the requirements with block pruning. It's a lot of data after all.
