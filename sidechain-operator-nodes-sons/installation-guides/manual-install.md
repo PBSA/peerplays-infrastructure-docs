@@ -138,7 +138,7 @@ For the purposes of this guide, I'll discuss how to run a node yourself as that 
 First we'll download and install one of the official Bitcoin Core binaries:
 
 ```text
-cd ~/src
+cd ~
 wget https://bitcoincore.org/bin/bitcoin-core-0.21.1/bitcoin-0.21.1-x86_64-linux-gnu.tar.gz
 # Or if you're using ARM architecture...
 # wget https://bitcoincore.org/bin/bitcoin-core-0.21.1/bitcoin-0.21.1-aarch64-linux-gnu.tar.gz
