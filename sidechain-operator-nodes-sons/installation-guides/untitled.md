@@ -226,15 +226,14 @@ Lastly we'll set a Cron job to ensure the Bitcoin node starts up every time the 
 
 ```text
 cd ~
-sudo crontab -e
+crontab -e
 ```
 
 At the bottom of the crontab file, add the following:
 
 ```text
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 @reboot bitcoind -daemon
-# note: there must be a new line at the end of the crontab file! Otherwise, it won't work.
-
 ```
 
 Save and quit the crontab file. Now we're ready to fire up the Bitcoin node!
