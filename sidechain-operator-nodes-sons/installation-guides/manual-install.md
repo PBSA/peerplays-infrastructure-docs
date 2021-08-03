@@ -147,6 +147,12 @@ tar xzf bitcoin-0.21.1-x86_64-linux-gnu.tar.gz
 sudo install -m 0755 -o root -g root -t /usr/local/bin bitcoin-0.21.1/bin/*
 ```
 
+{% hint style="warning" %}
+The official Bitcoin Core binaries can be found here: [https://bitcoincore.org/en/download/](https://bitcoincore.org/en/download/)
+
+The latest version is 0.21.1 as of July 2021. You may want to find and download the latest version of the binaries just like you would for the 0.21.1 version above.
+{% endhint %}
+
 Then we make a config file to manage the settings of our new Bitcoin node.
 
 ```text
