@@ -155,7 +155,7 @@ Cron jobs are simple to set up. If all you need is to ensure that your node star
 #### 3.2.1. Step 1: Start up Crontab
 
 ```text
-crontab -e
+sudo crontab -e
 ```
 
 {% hint style="info" %}
@@ -166,6 +166,8 @@ Crontab will open a file with some comments which explain how to configure a cro
 
 ```text
 @reboot /home/ubuntu/node_scripts/start.sh
+# note: there must be a new line at the end of the crontab file! Otherwise, it won't work.
+
 ```
 
 Save and quit the file. Now your script will execute whenever your system boots.
