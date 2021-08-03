@@ -233,6 +233,8 @@ At the bottom of the crontab file, add the following:
 
 ```text
 @reboot bitcoind -daemon
+# note: there must be a new line at the end of the crontab file! Otherwise, it won't work.
+
 ```
 
 Save and quit the crontab file. Now we're ready to fire up the Bitcoin node!
