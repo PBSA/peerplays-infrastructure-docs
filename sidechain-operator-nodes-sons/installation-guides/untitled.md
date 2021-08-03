@@ -61,7 +61,7 @@ Docker can be installed using the `run.sh` script inside the Peerplays Docker re
 
 ```text
 cd peerplays-docker
-sudo ./run.sh install_docker
+./run.sh install_docker
 ```
 
 Since the script has added the currently logged in user to the Docker group, you'll need to re-login \(or close and reconnect SSH\) for Docker to function correctly. You can check to see if the current user belongs to the Docker group with the `groups` command. If the Docker group is still not listed after a re-login, you can force a refresh with the `sudo su - $USER` command.
