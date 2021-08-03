@@ -468,7 +468,7 @@ cd ~/peerplays-docker
 
 # It's recommended to set vm.swappiness to 1, which tells the system to avoid using swap 
 # unless absolutely necessary. To persist on reboot, place in /etc/sysctl.conf
-sysctl -w vm.swappiness=1
+sudo sysctl -w vm.swappiness=1
 
 # Start the SON environment
 ./run.sh start_son_regtest
