@@ -60,7 +60,7 @@ cd peerplays-docker
 sudo ./run.sh install_docker
 ```
 
-Since the script has added the currently logged in user to the Docker group, you'll need to re-login \(or close and reconnect SSH\) for Docker to function correctly.
+Since the script has added the currently logged in user to the Docker group, you'll need to re-login \(or close and reconnect SSH\) for Docker to function correctly. You can check to see if the current user belongs to the Docker group with the `groups` command. If the Docker group is still not listed after a re-login, you can force a refresh with the `sudo su - $USER command`.
 
 {% hint style="info" %}
 You can look at [https://docs.docker.com/engine/install/](https://docs.docker.com/engine/install/) to learn more on how to install Docker. Or if you are having permission issues trying to run Docker, use `sudo` or look at [https://docs.docker.com/engine/install/linux-postinstall/](https://docs.docker.com/engine/install/linux-postinstall/).
@@ -107,7 +107,11 @@ BTC_REGTEST_CONF="/home/ubuntu/.bitcoin/bitcoin.conf"
 ```
 
 {% hint style="warning" %}
-You will need a Bitcoin Private Key of a wallet that you own on the Bitcoin mainnet. In the `.env` file above, you must replace **`BTC_REGTEST_KEY="XXXXXXXXXXXXX"`** with your own private key. So it may look something like **`BTC_REGTEST_KEY="cSKyTeXidmj93dgbMFqgzD7yvxzA7QAYr5j9qDnY9seyhyv7gH2m"`** for example.
+You will need a Bitcoin Private Key of a wallet that you own on the Bitcoin mainnet. In the `.env` file above, you must replace **`BTC_REGTEST_KEY="XXXXXXXXXXXXX"`** with your own private key. So, for example, it may look something like the following.
+
+```text
+BTC_REGTEST_KEY="KzD2WHeG49aYhYVcxBwfknm58YqDc7WEg7aWWU8P8BJ8gp1g3AuD"
+```
 {% endhint %}
 
 ## 3. The Bitcoin node
@@ -235,7 +239,7 @@ p2p-endpoint = 0.0.0.0:9777
 # JSON array of P2P nodes to connect to on startup
 
 ## Empty seed nodes means new network
-# seed-nodes = []
+seed-nodes = ["96.46.49.1:9777","witness.serverpit.com:9777","173.249.23.108:9777","seed01.eifos.org:7777","seed.mainnet.peerblock.trade:9777"]
 
 ## Connect to other SON nodes
 # seed-nodes =
@@ -256,7 +260,7 @@ rpc-endpoint = 127.0.0.1:8090
 # server-pem-password = 
 
 # File to read Genesis State from
-genesis-json = /peerplays/son-genesis.json
+# genesis-json = /peerplays/son-genesis.json
 
 # Block signing key to use for init witnesses, overrides genesis file
 # dbg-init-key = 
