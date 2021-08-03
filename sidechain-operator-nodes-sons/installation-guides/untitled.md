@@ -289,7 +289,7 @@ bitcoin-cli -rpcwallet="son-wallet" getnewaddress
 Then we'll use this address to get its keys.
 
 ```text
-bitcoin-cli -rpcwallet="son-wallet" getaddressinfo bc1qsx7as3r9d92tjvxrgwue7z66f2r3pw04j67lht
+bitcoin-cli -rpcwallet="son-wallet" getaddressinfo "bc1qsx7as3r9d92tjvxrgwue7z66f2r3pw04j67lht"
 
 # This returns a lot of info but what we're looking for is the "pubkey".
 # In this case, it's "pubkey": "023b907586045625367ecd62c5d889591586c87e57fa49be21614209489f00f1b9"
@@ -298,7 +298,7 @@ bitcoin-cli -rpcwallet="son-wallet" getaddressinfo bc1qsx7as3r9d92tjvxrgwue7z66f
 Now we get the private key.
 
 ```text
-bitcoin-cli -rpcwallet="son-wallet" dumpprivkey bc1qsx7as3r9d92tjvxrgwue7z66f2r3pw04j67lht
+bitcoin-cli -rpcwallet="son-wallet" dumpprivkey "bc1qsx7as3r9d92tjvxrgwue7z66f2r3pw04j67lht"
 
 # This returns the private key like this:
 # KzD2WHeG49aYhYVcxBwfknm58YqDc7WEg7aWWU8P8BJ8gp1g3AuD
