@@ -24,6 +24,10 @@ The following steps outline the Docker installation of a \(Bitcoin enabled\) SON
 
 ## 1. Preparing the Environment
 
+{% hint style="info" %}
+Before we begin, to set up a SON node requires about 110 PPY. This is to pay for an upgraded account \(5 PPY\) and to fund two vesting balances \(50 PPY each\). The remaining funds are to pay for various transaction fees while setting up the node. Please see [Obtaining Your First Tokens](../../the-basics/obtaining-your-first-tokens.md) for more info.
+{% endhint %}
+
 ### 1.1. Hardware requirements
 
 Please see the SON [hardware requirements](../../the-basics/hardware-requirements.md).
@@ -548,9 +552,9 @@ After that, it would be smart to create a backup server to enable you to make so
 
 {% page-ref page="../../the-basics/backup-servers.md" %}
 
-### 8.3. Join the Testnet \(Beatrice\)
+### 8.3. Join the Testnet
 
-As we all know, testing should never be done in production. This is why all node operators must also participate in the public testnet, Beatrice.
+As we all know, testing should never be done in production. This is why all node operators must also participate in the public testnet.
 
 {% page-ref page="../../the-basics/joining-the-public-testnet.md" %}
 
@@ -565,7 +569,7 @@ Why stop at Bitcoin?
 Now you have a SON, but have you thought about becoming a Witness? It will be a piece of cake for you since you've already set up a SON.
 
 {% hint style="warning" %}
-When you make any node, don't forget [Beatrice](../../the-basics/joining-the-public-testnet.md)!
+When you make any node, don't forget [Testnet](../../the-basics/joining-the-public-testnet.md)!
 {% endhint %}
 
 ### 8.6. Enable SSL to encrypt your node traffic
