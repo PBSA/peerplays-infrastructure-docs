@@ -93,10 +93,6 @@ Here are the important parts of the `.env` file. These will be the parts that ne
 # setting in the Peerplays config.ini file to the same value!
 SON_WALLET="son-wallet"
 
-# Default bitcoin key used inside bitcoind-node with ./run.sh start_son_regtest
-# Update this with your own Bitcoin Private Key!
-BTC_REGTEST_KEY="XXXXXXXXXXXXX"
-
 # Comma separated port numbers to expose to the internet (binds to 0.0.0.0)
 # Expose 9777 to the internet, but only expose RPC ports 8090 and 8091 onto 127.0.0.1 (localhost)
 # allowing the host machine access to the container's RPC ports via 127.0.0.1:8090 and 127.0.0.1:8091
@@ -106,25 +102,49 @@ PORTS=9777,127.0.0.1:8090:8090,127.0.0.1:8091:8091
 # Websocket RPC node to use by default for ./run.sh remote_wallet
 REMOTE_WS=""
 
-# This is the path to our Bitcoin node configuration file.
-BTC_REGTEST_CONF="/home/ubuntu/.bitcoin/bitcoin.conf"
+```
+
+## 3. Connect to Bitcoin Network and Generate an Address
+
+There are two options available to connect to the Bitcoin network.
+
+1. Run a Bitcoin node yourself
+2. Find an open Bitcoin node to connect to
+
+For the purposes of this guide, I'll discuss how to run a node yourself as that will be a more reliable connection for now. Either way you go, you'll need to collect the following information to use in the `config.ini` file:
+
+* The IP address of a Bitcoin node you can connect to \(127.0.0.1 if self-hosting\)
+* ZMQ port of the Bitcoin node \(default is 1111\)
+* RPC port of the Bitcoin node \(default is 8332\)
+* Bitcoin RPC connection username \(default is 1\)
+* Bitcoin RPC connection password \(default is 1\)
+* Bitcoin wallet label \(default is son-wallet\)
+* Bitcoin wallet password
+* A new Bitcoin address
+* The Public key of the Bitcoin address
+* The Private key of the Bitcoin address
+
+### 3.1. Install Bitcoin-core
+
+First we'll download and install one of the official Bitcoin Core binaries:
+
+```text
+cd ~
+wget https://bitcoincore.org/bin/bitcoin-core-0.21.1/bitcoin-0.21.1-x86_64-linux-gnu.tar.gz
+# Or if you're using ARM architecture...
+# wget https://bitcoincore.org/bin/bitcoin-core-0.21.1/bitcoin-0.21.1-aarch64-linux-gnu.tar.gz
+
+tar xzf bitcoin-0.21.1-x86_64-linux-gnu.tar.gz
+sudo install -m 0755 -o root -g root -t /usr/local/bin bitcoin-0.21.1/bin/*
 ```
 
 {% hint style="warning" %}
-You will need a Bitcoin Private Key of a wallet that you own on the Bitcoin mainnet. In the `.env` file above, you must replace **`BTC_REGTEST_KEY="XXXXXXXXXXXXX"`** with your own private key. So, for example, it may look something like the following.
+The official Bitcoin Core binaries can be found here: [https://bitcoincore.org/en/download/](https://bitcoincore.org/en/download/)
 
-```text
-BTC_REGTEST_KEY="KzD2WHeG49aYhYVcxBwfknm58YqDc7WEg7aWWU8P8BJ8gp1g3AuD"
-```
+The latest version is 0.21.1 as of July 2021. You may want to find and download the latest version of the binaries just like you would for the 0.21.1 version above.
 {% endhint %}
 
-## 3. The Bitcoin node
-
-The Peerplays Docker package includes a Bitcoin node Docker container. The Bitcoin node will start up when we start the Peerplays Docker. We need to configure the Bitcoin node to run with reduced storage and network resources. As a Peerplays SON, we won't need to run a full Bitcoin node as we're only interested in the latest blocks.
-
-### 3.1. Setting up the bitcoin.conf file
-
-Since we'll be setting some custom config in our `bitcoin.conf`, we'll need to create and edit it now.
+Then we make a config file to manage the settings of our new Bitcoin node.
 
 ```text
 cd ~
@@ -133,7 +153,7 @@ cd .bitcoin
 vim bitcoin.conf
 ```
 
-The `bitcoin.conf` should look exactly like this **\(You can copy/paste the text in this code block into your editor\)**:
+in the Vim text editor we'll set the following \(**You can copy and paste the content of this complete config file**\):
 
 ```text
 # This config should be placed in following path:
@@ -199,8 +219,121 @@ zmqpubrawtx=tcp://0.0.0.0:11111
 Save and quit the Vim editor.
 
 {% hint style="info" %}
-The settings in the config file above are set to _reduce the requirements_ of the server. Block pruning and setting the node to Blocks Only save network and storage resources. For more information, see [https://bitcoin.org/en/full-node\#reduce-storage](https://bitcoin.org/en/full-node#reduce-storage).
+The settings in the config file above are set to reduce the requirements of the server. Block pruning and setting the node to Blocks Only save network and storage resources. For more information, see [https://bitcoin.org/en/full-node\#reduce-storage](https://bitcoin.org/en/full-node#reduce-storage).
 {% endhint %}
+
+Lastly we'll set a Cron job to ensure the Bitcoin node starts up every time the server starts.
+
+```text
+cd ~
+crontab -e
+```
+
+At the bottom of the crontab file, add the following:
+
+```text
+@reboot bitcoind -daemon
+```
+
+Save and quit the crontab file. Now we're ready to fire up the Bitcoin node!
+
+```text
+bitcoind -daemon
+```
+
+{% hint style="info" %}
+If successful, you'll see `Bitcoin Core starting`. As an extra check to see if everything is working, try the `bitcoin-cli -version` or `bitcoin-cli getblockchaininfo` commands.
+{% endhint %}
+
+Your Bitcoin node should now be downloading the Bitcoin blockchain data from other nodes. This might take a few hours to complete even though we cut down the requirements with block pruning. It's a lot of data after all.
+
+### 3.2. Use the bitcoin-cli program to make a new wallet
+
+We'll need a wallet to store your Bitcoin address.
+
+```text
+bitcoin-cli createwallet "son-wallet"
+
+# To create a wallet with a password, you'd do it like this:
+# bitcoin-cli createwallet "son-wallet" false false "mycoolpassword"
+# Note the two false parameters in the line above.
+# For more information on this command, see https://developer.bitcoin.org/reference/rpc/cre
+```
+
+{% hint style="danger" %}
+At this point we hit a fork in the road! You'll need to do _one_ of the following:
+
+Option 1: Generate a **new** Bitcoin address to use for your SON node. \(see **3.2.a.** below\)
+
+Option 2: Import an **existing** Bitcoin address to use for your SON node. \(see **3.2.b.** below\)
+
+Either way, you'll need the Bitcoin address, its public key, and its private key.
+{% endhint %}
+
+### 3.3.a. Make a new Bitcoin address
+
+Now we will create a Bitcoin address.
+
+```text
+bitcoin-cli -rpcwallet="son-wallet" getnewaddress
+
+# This will return something like:
+# bc1qsx7as3r9d92tjvxrgwue7z66f2r3pw04j67lht
+```
+
+Then we'll use this address to get its keys.
+
+```text
+bitcoin-cli -rpcwallet="son-wallet" getaddressinfo bc1qsx7as3r9d92tjvxrgwue7z66f2r3pw04j67lht
+
+# This returns a lot of info but what we're looking for is the "pubkey".
+# In this case, it's "pubkey": "023b907586045625367ecd62c5d889591586c87e57fa49be21614209489f00f1b9"
+```
+
+Now we get the private key.
+
+```text
+bitcoin-cli -rpcwallet="son-wallet" dumpprivkey bc1qsx7as3r9d92tjvxrgwue7z66f2r3pw04j67lht
+
+# This returns the private key like this:
+# KzD2WHeG49aYhYVcxBwfknm58YqDc7WEg7aWWU8P8BJ8gp1g3AuD
+```
+
+### 3.3.b. Import an existing Bitcoin address
+
+{% hint style="info" %}
+You don't need to do this if you made a new address in step **3.3.a.** above!
+{% endhint %}
+
+Now we will import an existing Bitcoin address. You'll need the private key of the existing address which should be obtainable from your current wallet. You may not be able to get the private key from online or cloud wallet providers \(contact their support teams for assistance with this.\) The `importprivkey` command might take a few minutes to finish because this will cause the node to rescan the Bitcoin network.
+
+```text
+bitcoin-cli -rpcwallet="son-wallet" importprivkey "yourprivatekeygoeshere"
+```
+
+Then you can get the public key with the `getaddressinfo` command.
+
+```text
+bitcoin-cli -rpcwallet="son-wallet" getaddressinfo "existingaddressyouhaveimported"
+
+# This returns a lot of info but what we're looking for is the "pubkey".
+# It looks like this, "pubkey": "023b907586045625367ecd62c5d889591586c87e57fa49be21614209489f00f1b9"
+```
+
+### 3.4. A quick recap
+
+That was a lot to go over. Let's collect our data. Here's an example:
+
+```text
+Bitcoin Address for the SON Account = bc1qsx7as3r9d92tjvxrgwue7z66f2r3pw04j67lht
+The public key = 023b907586045625367ecd62c5d889591586c87e57fa49be21614209489f00f1b9
+the private key = KzD2WHeG49aYhYVcxBwfknm58YqDc7WEg7aWWU8P8BJ8gp1g3AuD
+
+And we'll convert this info into a tuple ["Bitcoin public key", "Bitcoin private key"]
+["023b907586045625367ecd62c5d889591586c87e57fa49be21614209489f00f1b9","KzD2WHeG49aYhYVcxBwfknm58YqDc7WEg7aWWU8P8BJ8gp1g3AuD"]
+```
+
+Keep your tuple handy. We'll need it in the Peerplays config file.
 
 ## 4. Installing the peerplays:son image
 
