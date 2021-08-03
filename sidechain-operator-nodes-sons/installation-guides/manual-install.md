@@ -96,7 +96,7 @@ make -j$(nproc)
 ```
 
 {% hint style="warning" %}
-**Note**: "master" can be replaced with the most recent release tag. For example: `git checkout 1.5.11` where 1.5.11 is the latest production release tag as of June 2021. The list of releases is [located here](https://github.com/peerplays-network/peerplays/releases).
+**Note**: "master" can be replaced with the most recent release tag. For example: `git checkout 1.5.13` where 1.5.13 is the latest production release tag as of July 2021. The list of releases is [located here](https://github.com/peerplays-network/peerplays/releases).
 {% endhint %}
 
 ### 2.1. Start the node to generate the config.ini file
