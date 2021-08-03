@@ -26,6 +26,10 @@ The following steps outline the manual installation of a \(Bitcoin enabled\) SON
 
 ## 1. Preparing the Environment
 
+{% hint style="info" %}
+Before we begin, to set up a SON node requires about 110 PPY. This is to pay for an upgraded account \(5 PPY\) and to fund two vesting balances \(50 PPY each\). The remaining funds are to pay for various transaction fees while setting up the node. Please see [Obtaining Your First Tokens](../../the-basics/obtaining-your-first-tokens.md) for more info.
+{% endhint %}
+
 ### 1.1. Hardware Requirements
 
 Please see the general SON [hardware requirements](../../the-basics/hardware-requirements.md).
