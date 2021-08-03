@@ -226,7 +226,7 @@ Lastly we'll set a Cron job to ensure the Bitcoin node starts up every time the 
 
 ```text
 cd ~
-crontab -e
+sudo crontab -e
 ```
 
 At the bottom of the crontab file, add the following:
