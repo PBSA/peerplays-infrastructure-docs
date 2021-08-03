@@ -64,7 +64,7 @@ cd peerplays-docker
 ./run.sh install_docker
 ```
 
-Since the script has added the currently logged in user to the Docker group, you'll need to re-login \(or close and reconnect SSH\) for Docker to function correctly. You can check to see if the current user belongs to the Docker group with the `groups` command. If the Docker group is still not listed after a re-login, you'll have to reboot the machine with `sudo reboot` .
+Since the script has added the currently logged in user to the Docker group, you'll need to re-login \(or close and reconnect SSH\) for Docker to function correctly. You can check to see if the current user belongs to the Docker group with the `groups` command. If the Docker group is still not listed after a re-login, you'll have to reboot the machine with `sudo reboot`  \(This will be the case if your using Ubuntu 20.04\).
 
 {% hint style="info" %}
 You can look at [https://docs.docker.com/engine/install/](https://docs.docker.com/engine/install/) to learn more on how to install Docker. Or if you are having permission issues trying to run Docker, use `sudo` or look at [https://docs.docker.com/engine/install/linux-postinstall/](https://docs.docker.com/engine/install/linux-postinstall/).
