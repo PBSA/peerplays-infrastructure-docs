@@ -346,7 +346,7 @@ Use `run.sh` to pull the SON image:
 
 ```text
 cd ~/peerplays-docker
-sudo ./run.sh install son
+./run.sh install son
 ```
 
 ### 4.1. Setting up config.ini file
@@ -366,7 +366,7 @@ sudo cp config.ini.son-exists.example config.ini
 We'll need to make an edit to the `config.ini` file as well.
 
 ```text
-sudo vim config.ini
+vim config.ini
 ```
 
 The important parts of the `config.ini` file \(for now!\) should look like the following. But don't forget to add your own Bitcoin public and private keys!
