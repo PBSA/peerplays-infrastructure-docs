@@ -310,10 +310,10 @@ bitcoin-cli -rpcwallet="son-wallet" dumpprivkey bc1qsx7as3r9d92tjvxrgwue7z66f2r3
 You don't need to do this if you made a new address in step **3.3.a.** above!
 {% endhint %}
 
-Now we will import an existing Bitcoin address. You'll need the private key of the existing address which should be obtainable from your current wallet. You may not be able to get the private key from online or cloud wallet providers \(contact their support teams for assistance with this.\) The `importprivkey` command might take a few minutes to finish because this will cause the node to rescan the Bitcoin network.
+Now we will import an existing Bitcoin address. You'll need the private key of the existing address which should be obtainable from your current wallet. You may not be able to get the private key from online or cloud wallet providers \(contact their support teams for assistance with this.\)
 
 ```text
-bitcoin-cli -rpcwallet="son-wallet" importprivkey "yourprivatekeygoeshere"
+bitcoin-cli -rpcwallet="son-wallet" importprivkey "yourprivatekeygoeshere" "" false
 ```
 
 Then you can get the public key with the `getaddressinfo` command.
