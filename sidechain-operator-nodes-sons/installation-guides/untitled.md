@@ -381,7 +381,7 @@ p2p-endpoint = 0.0.0.0:9777
 # JSON array of P2P nodes to connect to on startup
 
 ## Empty seed nodes means new network
-seed-nodes = ["96.46.49.1:9777","witness.serverpit.com:9777","173.249.23.108:9777","seed01.eifos.org:7777","seed.mainnet.peerblock.trade:9777"]
+seed-nodes = ["witness.serverpit.com:9777","173.249.23.108:9777","seed01.eifos.org:7777","seed.mainnet.peerblock.trade:9777"]
 
 ## Connect to other SON nodes
 # seed-nodes =
