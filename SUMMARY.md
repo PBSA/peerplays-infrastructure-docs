@@ -28,7 +28,7 @@
 
 * [Installation Guides](sidechain-operator-nodes-sons/installation-guides/README.md)
   * [Manual Install](sidechain-operator-nodes-sons/installation-guides/manual-install.md)
-  * [Docker Install](sidechain-operator-nodes-sons/installation-guides/untitled.md)
+  * [Docker Install](sidechain-operator-nodes-sons/installation-guides/docker-install.md)
 * [Enabling Components](sidechain-operator-nodes-sons/enabling-components.md)
 
 ## Bookie Oracle Suite \(BOS\)
