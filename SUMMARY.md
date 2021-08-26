@@ -14,6 +14,7 @@
 
 ## Advanced Topics
 
+* [Private Testnets](advanced-topics/private-testnets.md)
 * [Reverse Proxy for Enabling SSL](advanced-topics/reverse-proxy-for-enabling-ssl.md)
 * [Enabling Elasticsearch on a Node](advanced-topics/enabling-elasticsearch-on-a-node.md)
 
