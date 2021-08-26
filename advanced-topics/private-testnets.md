@@ -450,3 +450,5 @@ Another option is to use different witnesses on each node so that block producti
 
 {% page-ref page="../witnesses/installation-guides/manual-install.md" %}
 
+{% page-ref page="../the-basics/auto-starting-a-node.md" %}
+
