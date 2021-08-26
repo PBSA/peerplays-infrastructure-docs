@@ -17,13 +17,15 @@ Installing a private testnet requires building the Peerplays program from source
 
 Building the Peerplays chain from source code is memory intensive. This means the initial hardware requirements are quite high. But after all the building is done, the requirements to run the private chain are much lower.
 
-Here's a guideline for the hardware requirements for the building / installation tasks:
-
-
-
 Here's a guideline for the hardware requirements for the running of the private testnet:
 
+| Node Type? | CPU | Memory | Storage | Bandwidth | OS |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| Witness | 4 Cores | 16GB ⚠  | 100GB SSD | 1Gbps | Ubuntu 18.04 |
 
+{% hint style="danger" %}
+The memory requirements shown in the table above are adequate to operate the node. Building and installing the node from source code \(as with this guide\) will require more memory. You may run into errors during the build and install process if the system memory is too low. See [Installing vs Operating](../the-basics/hardware-requirements.md#4-2-installing-vs-operating) for more details.
+{% endhint %}
 
 Of course, the requirements will be highly dependent on what you're using the testnet for. Intensive development of an enterprise-level application will need much more resources than simply exploring your own private testnet.
 
