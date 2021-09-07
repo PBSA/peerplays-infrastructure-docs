@@ -1,9 +1,9 @@
 ---
 title: Private Testnets
-description: How to set up a Peerplays private testnet.
+description: How to manually set up a Peerplays private testnet.
 ---
 
-# Private Testnets
+# Private Testnets - Manual Install
 
 ## 1. Overview
 
@@ -24,7 +24,7 @@ Here's a guideline for the hardware requirements for the running of the private 
 | Witness | 4 Cores | 16GB ⚠  | 100GB SSD | 1Gbps | Ubuntu 18.04 |
 
 {% hint style="danger" %}
-The memory requirements shown in the table above are adequate to operate the node. Building and installing the node from source code \(as with this guide\) will require more memory. You may run into errors during the build and install process if the system memory is too low. See [Installing vs Operating](../the-basics/hardware-requirements.md#4-2-installing-vs-operating) for more details.
+The memory requirements shown in the table above are adequate to operate the node. Building and installing the node from source code \(as with this guide\) will require more memory. You may run into errors during the build and install process if the system memory is too low. See [Installing vs Operating](../../the-basics/hardware-requirements.md#4-2-installing-vs-operating) for more details.
 {% endhint %}
 
 Of course, the requirements will be highly dependent on what you're using the testnet for. Intensive development of an enterprise-level application will need much more resources than simply exploring your own private testnet.
@@ -444,11 +444,11 @@ Another option is to use different witnesses on each node so that block producti
 
 ## 10. Related Documents
 
-{% page-ref page="../the-basics/hardware-requirements.md" %}
+{% page-ref page="../../the-basics/hardware-requirements.md" %}
 
-{% page-ref page="../the-basics/using-the-cli-wallet.md" %}
+{% page-ref page="../../the-basics/using-the-cli-wallet.md" %}
 
-{% page-ref page="../witnesses/installation-guides/manual-install.md" %}
+{% page-ref page="../../witnesses/installation-guides/manual-install.md" %}
 
-{% page-ref page="../the-basics/auto-starting-a-node.md" %}
+{% page-ref page="../../the-basics/auto-starting-a-node.md" %}
 
