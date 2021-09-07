@@ -324,6 +324,10 @@ vote_for_son 1.2.12345 some-son true true
 
 ### 1.13. get\_son\_wallet\_by\_time\_point
 
+## 2. Wallet Command Reference for Sidechains
+
+
+
 
 
 
