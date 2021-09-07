@@ -5,7 +5,7 @@ description: CLI commands that witnesses use.
 
 # CLI Commands for Witnesses
 
-## 1. Wallet Command Reference for Witnesses
+## 1. Witnesses CLI Command Reference
 
 ### 1.1. create\_witness
 
