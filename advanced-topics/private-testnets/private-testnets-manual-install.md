@@ -446,7 +446,7 @@ Another option is to use different witnesses on each node so that block producti
 
 {% page-ref page="../../the-basics/hardware-requirements.md" %}
 
-{% page-ref page="../../the-basics/using-the-cli-wallet.md" %}
+{% page-ref page="../../the-basics/using-the-cli-wallet/" %}
 
 {% page-ref page="../../witnesses/installation-guides/manual-install.md" %}
 

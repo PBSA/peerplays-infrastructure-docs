@@ -6,7 +6,8 @@
 
 * [Peerplays Node Types](the-basics/peerplays-node-types.md)
 * [Hardware Requirements](the-basics/hardware-requirements.md)
-* [Using the CLI Wallet](the-basics/using-the-cli-wallet.md)
+* [Using the CLI Wallet](the-basics/using-the-cli-wallet/README.md)
+  * [CLI Wallet Fundamentals](the-basics/using-the-cli-wallet/cli-wallet-fundamentals.md)
 * [Auto-Starting a Node](the-basics/auto-starting-a-node.md)
 * [Backup Servers](the-basics/backup-servers.md)
 * [Joining the Public Testnet](the-basics/joining-the-public-testnet.md)
