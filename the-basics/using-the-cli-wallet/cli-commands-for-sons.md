@@ -182,7 +182,11 @@ update_son myaccountname-son "www.my-awesome-son.com" PPY8kvUXLpoXE9rJHwppR48Lkq
 {% endtab %}
 {% endtabs %}
 
-### 1.3. get\_son
+### 1.3. update\_son\_vesting\_balances
+
+
+
+### 1.4. get\_son
 
 Returns information about the given SON.
 
@@ -256,7 +260,7 @@ get_son 1.33.99
 {% endtab %}
 {% endtabs %}
 
-### 1.4. vote\_for\_son
+### 1.5. vote\_for\_son
 
 Vote for a given SON. An account can publish a list of all SONs they approve of. This command allows you to add or remove SONs from this list. Each account's vote is weighted according to the number of PPY owned by that account at the time the votes are tallied. Note that you can't vote against a SON, you can only vote for the SON or not vote for the SON.
 
@@ -303,4 +307,24 @@ vote_for_son 1.2.12345 some-son true true
 ```
 {% endtab %}
 {% endtabs %}
+
+### 1.6. update\_son\_votes
+
+### 1.7. list\_sons
+
+### 1.8. list\_active\_sons
+
+### 1.9. request\_son\_maintenance
+
+### 1.10. cancel\_request\_son\_maintenance
+
+### 1.11. get\_son\_wallets
+
+### 1.12. get\_active\_son\_wallet
+
+### 1.13. get\_son\_wallet\_by\_time\_point
+
+
+
+
 
