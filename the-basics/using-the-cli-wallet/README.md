@@ -43,7 +43,7 @@ This reference doc contains the following commands:
 
 {% page-ref page="cli-commands-for-sons.md" %}
 
-This reference doc contains the following commands:
+This reference doc contains the following commands in section 1:
 
 * create\_son
 * update\_son
@@ -51,4 +51,20 @@ This reference doc contains the following commands:
 * get\_son
 * vote\_for\_son
 * update\_son_\__votes
+* list\_sons
+* list\_active\_sons
+* request\_son\_maintenance
+* cancel\_request\_son\_maintenance
+* get\_son\_wallets
+* get\_active\_son\_wallet
+* get\_son\_wallet\_by\_time\_point
+
+This reference doc contains the following commands in section 2:
+
+* add\_sidechain\_address
+* delete\_sidechain\_address
+* get\_sidechain\_address\_by\_account\_and\_sidechain
+* get\_sidechain\_addresses\_by\_account
+* get\_sidechain\_addresses\_by\_sidechain
+* get\_sidechain\_addresses\_count
 
