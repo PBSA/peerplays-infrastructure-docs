@@ -5,7 +5,7 @@ description: CLI commands that sons use.
 
 # CLI Commands for SONs
 
-## 1. Wallet Command Reference for SONs
+## 1. SONs CLI Command Reference
 
 ### 1.1. create\_son
 
@@ -324,7 +324,7 @@ vote_for_son 1.2.12345 some-son true true
 
 ### 1.13. get\_son\_wallet\_by\_time\_point
 
-## 2. Wallet Command Reference for Sidechains
+## 2. Sidechains CLI Command Reference
 
 
 
