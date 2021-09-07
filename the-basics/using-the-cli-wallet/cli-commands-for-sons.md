@@ -310,23 +310,59 @@ vote_for_son 1.2.12345 some-son true true
 
 ### 1.6. update\_son\_votes
 
+
+
 ### 1.7. list\_sons
+
+
 
 ### 1.8. list\_active\_sons
 
+
+
 ### 1.9. request\_son\_maintenance
+
+
 
 ### 1.10. cancel\_request\_son\_maintenance
 
+
+
 ### 1.11. get\_son\_wallets
+
+
 
 ### 1.12. get\_active\_son\_wallet
 
+
+
 ### 1.13. get\_son\_wallet\_by\_time\_point
+
+
 
 ## 2. Sidechains CLI Command Reference
 
+### 2.1. add\_sidechain\_address
 
+
+
+### 2.2. delete\_sidechain\_address
+
+
+
+### 2.3. get\_sidechain\_address\_by\_account\_and\_sidechain
+
+
+
+### 2.4. get\_sidechain\_addresses\_by\_account
+
+
+
+### 2.5. get\_sidechain\_addresses\_by\_sidechain
+
+
+
+### 2.6. get\_sidechain\_addresses\_count
 
 
 
