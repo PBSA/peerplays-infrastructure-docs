@@ -5,7 +5,7 @@ description: CLI commands that all node operators use.
 
 # CLI Commands for All Nodes
 
-## 1. Wallet Command Reference for all Node Operators
+## 1. Node Operators CLI Command Reference
 
 ### 1.1. suggest\_brain\_key
 
