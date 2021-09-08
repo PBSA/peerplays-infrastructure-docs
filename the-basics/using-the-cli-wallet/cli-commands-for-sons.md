@@ -119,7 +119,7 @@ signed_transaction graphene::wallet::wallet_api::create_son(
 | :--- | :--- | :--- | :--- |
 | owner\_account | string | The name of the SON's owner account. Also accepts the ID of the owner account or the ID of the SON. | no quotes required. |
 | url | string | Same as for create\_son. The empty string makes it remain the same. | n/a |
-| block\_signing\_key | string | vesting balance id for SON deposit. | This is the `son` vesting balance. |
+| block\_signing\_key | string | A new signing key to replace the currently set signing key. | n/a |
 | sidechain\_public\_keys | flat\_map | The new set of sidechain public keys. An empty string makes it remain the same. | n/a |
 | broadcast | bool | `true` to broadcast the transaction on the network. | n/a |
 
@@ -184,7 +184,43 @@ update_son myaccountname-son "www.my-awesome-son.com" PPY8kvUXLpoXE9rJHwppR48Lkq
 
 ### 1.3. update\_son\_vesting\_balances
 
+Updates the vesting balances associated with a given SON.
 
+{% code title="return type, namespace, & method" %}
+```cpp
+signed_transaction graphene::wallet::wallet_api::update_son_vesting_balances(
+    string owner_account,
+    optional<vesting_balance_id_type> new_deposit,
+    optional<vesting_balance_id_type> new_pay_vb,
+    bool broadcast);
+```
+{% endcode %}
+
+{% tabs %}
+{% tab title="Function Call" %}
+**Parameters**
+
+| name | data type | description | details |
+| :--- | :--- | :--- | :--- |
+| owner\_account | string | The name or id of the SON account owner, or the id of the SON. | No quotes required. |
+| new\_deposit | vesting\_balance\_id\_type | A vesting balance id that will replace the currently set `son` vesting balance. | Optional |
+| new\_pay\_vb | vesting\_balance\_id\_type | A vesting balance id that will replace the currently set `normal` vesting balance. | Optional |
+| broadcast | bool | `true` to broadcast the transaction on the network. | n/a |
+
+**Example Call**
+
+```cpp
+update_son_vesting_balances 1.33.99 1.13.81 1.13.82 true
+
+# The above command is structured like this:
+# update_son_vesting_balances <owner_account> <new_deposit> <new_pay_vb> true
+```
+{% endtab %}
+
+{% tab title="Return" %}
+
+{% endtab %}
+{% endtabs %}
 
 ### 1.4. get\_son
 
