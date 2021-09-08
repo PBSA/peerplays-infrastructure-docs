@@ -398,7 +398,23 @@ signed_transaction graphene::wallet::wallet_api::update_son_votes(
 ```
 {% endcode %}
 
+{% tabs %}
+{% tab title="Function Call" %}
+**Parameters**
 
+\*\*\*\*
+{% endtab %}
+
+{% tab title="Return" %}
+**Return Format**
+
+\*\*\*\*
+
+**Example Successful Return**
+
+\*\*\*\*
+{% endtab %}
+{% endtabs %}
 
 ### 1.7. list\_sons
 
@@ -412,6 +428,16 @@ map<string, son_id_type> graphene::wallet::wallet_api::list_sons(
 ```
 {% endcode %}
 
+{% tabs %}
+{% tab title="Function Call" %}
+
+{% endtab %}
+
+{% tab title="Return" %}
+
+{% endtab %}
+{% endtabs %}
+
 ### 1.8. list\_active\_sons
 
 List all active SONs.
@@ -421,6 +447,16 @@ List all active SONs.
 map<string, son_id_type> graphene::wallet::wallet_api::list_active_sons();
 ```
 {% endcode %}
+
+{% tabs %}
+{% tab title="Function Call" %}
+
+{% endtab %}
+
+{% tab title="Return" %}
+
+{% endtab %}
+{% endtabs %}
 
 ### 1.9. request\_son\_maintenance
 
@@ -434,6 +470,16 @@ signed_transaction graphene::wallet::wallet_api::request_son_maintenance(
 ```
 {% endcode %}
 
+{% tabs %}
+{% tab title="Function Call" %}
+
+{% endtab %}
+
+{% tab title="Return" %}
+
+{% endtab %}
+{% endtabs %}
+
 ### 1.10. cancel\_request\_son\_maintenance
 
 This will return a SON from maintenance mode when they are ready to resume SON activities.
@@ -446,6 +492,16 @@ signed_transaction graphene::wallet::wallet_api::cancel_request_son_maintenance(
 ```
 {% endcode %}
 
+{% tabs %}
+{% tab title="Function Call" %}
+
+{% endtab %}
+
+{% tab title="Return" %}
+
+{% endtab %}
+{% endtabs %}
+
 ### 1.11. get\_son\_wallets
 
 This will display the wallet information for all registered SONs. You can specify the maximum number of wallets to return.
@@ -457,6 +513,16 @@ vector<optional<son_wallet_object>> graphene::wallet::wallet_api::get_son_wallet
 ```
 {% endcode %}
 
+{% tabs %}
+{% tab title="Function Call" %}
+
+{% endtab %}
+
+{% tab title="Return" %}
+
+{% endtab %}
+{% endtabs %}
+
 ### 1.12. get\_active\_son\_wallet
 
 This will display the wallet information for the current active SON.
@@ -466,6 +532,16 @@ This will display the wallet information for the current active SON.
 optional<son_wallet_object> graphene::wallet::wallet_api::get_active_son_wallet();
 ```
 {% endcode %}
+
+{% tabs %}
+{% tab title="Function Call" %}
+
+{% endtab %}
+
+{% tab title="Return" %}
+
+{% endtab %}
+{% endtabs %}
 
 ### 1.13. get\_son\_wallet\_by\_time\_point
 
@@ -477,6 +553,16 @@ optional<son_wallet_object> graphene::wallet::wallet_api::get_son_wallet_by_time
     time_point_sec time_point);
 ```
 {% endcode %}
+
+{% tabs %}
+{% tab title="Function Call" %}
+
+{% endtab %}
+
+{% tab title="Return" %}
+
+{% endtab %}
+{% endtabs %}
 
 ## 2. Sidechains CLI Command Reference
 
@@ -496,6 +582,16 @@ signed_transaction graphene::wallet::wallet_api::add_sidechain_address(
 ```
 {% endcode %}
 
+{% tabs %}
+{% tab title="Function Call" %}
+
+{% endtab %}
+
+{% tab title="Return" %}
+
+{% endtab %}
+{% endtabs %}
+
 ### 2.2. delete\_sidechain\_address
 
 This will delete a sidechain address that was previously registered with the `add_sidechain_address` command. Only one sidechain address can exist per user and sidechain. \(A sidechain address in the case of Bitcoin consists of both a deposit and a withdraw address.\)
@@ -509,6 +605,16 @@ signed_transaction graphene::wallet::wallet_api::delete_sidechain_address(
 ```
 {% endcode %}
 
+{% tabs %}
+{% tab title="Function Call" %}
+
+{% endtab %}
+
+{% tab title="Return" %}
+
+{% endtab %}
+{% endtabs %}
+
 ### 2.3. get\_sidechain\_address\_by\_account\_and\_sidechain
 
 This returns a registered sidechain address for a given account and sidechain.
@@ -521,6 +627,16 @@ fc::optional<sidechain_address_object> graphene::wallet::wallet_api::get_sidecha
 ```
 {% endcode %}
 
+{% tabs %}
+{% tab title="Function Call" %}
+
+{% endtab %}
+
+{% tab title="Return" %}
+
+{% endtab %}
+{% endtabs %}
+
 ### 2.4. get\_sidechain\_addresses\_by\_account
 
 This returns all the registered sidechain addresses for a given account.
@@ -531,6 +647,16 @@ vector<optional<sidechain_address_object>> graphene::wallet::wallet_api::get_sid
     string account);
 ```
 {% endcode %}
+
+{% tabs %}
+{% tab title="Function Call" %}
+
+{% endtab %}
+
+{% tab title="Return" %}
+
+{% endtab %}
+{% endtabs %}
 
 ### 2.5. get\_sidechain\_addresses\_by\_sidechain
 
@@ -543,6 +669,16 @@ vector<optional<sidechain_address_object>> graphene::wallet::wallet_api::get_sid
 ```
 {% endcode %}
 
+{% tabs %}
+{% tab title="Function Call" %}
+
+{% endtab %}
+
+{% tab title="Return" %}
+
+{% endtab %}
+{% endtabs %}
+
 ### 2.6. get\_sidechain\_addresses\_count
 
 This returns the number of registered sidechain addresses.
@@ -552,6 +688,16 @@ This returns the number of registered sidechain addresses.
 uint64_t graphene::wallet::wallet_api::get_sidechain_addresses_count();
 ```
 {% endcode %}
+
+{% tabs %}
+{% tab title="Function Call" %}
+
+{% endtab %}
+
+{% tab title="Return" %}
+
+{% endtab %}
+{% endtabs %}
 
 
 
