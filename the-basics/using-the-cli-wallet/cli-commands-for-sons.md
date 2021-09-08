@@ -247,13 +247,8 @@ update_son_vesting_balances 1.33.99 1.13.81 1.13.82 true
         },
         "son_id": "1.33.99",
         "owner_account": "1.2.12345",
-        "new_url": "www.my-awesome-son.com",
-        "new_signing_key": "PPY8kvUXLpoXE9rJHwppR48LkqSouAzFZomAPb3hW9gnkSHZCsozi",
-        "new_sidechain_public_keys": [[
-            "bitcoin",
-            "bc1..."
-          ]
-        ]
+        "new_deposit": "1.13.81",
+        "new_pay_vb": "1.13.82"
       }
     ]
   ],
