@@ -218,7 +218,51 @@ update_son_vesting_balances 1.33.99 1.13.81 1.13.82 true
 {% endtab %}
 
 {% tab title="Return" %}
+**Return Format**
 
+```cpp
+{
+  "ref_block_num": number,
+  "ref_block_prefix": number,
+  "expiration": "datetime",
+  "operations": [],
+  "extensions": [],
+  "signatures": []
+}
+```
+
+**Example Successful Return**
+
+```cpp
+update_son_vesting_balances 1.33.99 1.13.81 1.13.82 true
+{
+  "ref_block_num": 10412,
+  "ref_block_prefix": 1003801100,
+  "expiration": "2015-02-05T00:11:00",
+  "operations": [[
+      102,{
+        "fee": {
+          "amount": 0,
+          "asset_id": "1.3.0"
+        },
+        "son_id": "1.33.99",
+        "owner_account": "1.2.12345",
+        "new_url": "www.my-awesome-son.com",
+        "new_signing_key": "PPY8kvUXLpoXE9rJHwppR48LkqSouAzFZomAPb3hW9gnkSHZCsozi",
+        "new_sidechain_public_keys": [[
+            "bitcoin",
+            "bc1..."
+          ]
+        ]
+      }
+    ]
+  ],
+  "extensions": [],
+  "signatures": [
+    "268bd8....."
+  ]
+}
+```
 {% endtab %}
 {% endtabs %}
 
