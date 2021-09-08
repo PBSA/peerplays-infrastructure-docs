@@ -385,61 +385,173 @@ vote_for_son 1.2.12345 some-son true true
 
 ### 1.6. update\_son\_votes
 
+Change all your votes for SONs in one transaction. This can add and remove votes, and set the number of SONs you think should be active too.
+
+{% code title="return type, namespace, & method" %}
+```cpp
+signed_transaction graphene::wallet::wallet_api::update_son_votes(
+    string voting_account,
+    std::vector<std::string> sons_to_approve,
+    std::vector<std::string> sons_to_reject,
+    uint16_t desired_number_of_sons,
+    bool broadcast);
+```
+{% endcode %}
+
 
 
 ### 1.7. list\_sons
 
+List all registered SONs, active or not.
 
+{% code title="return type, namespace, & method" %}
+```cpp
+map<string, son_id_type> graphene::wallet::wallet_api::list_sons(
+    const string& lowerbound,
+    uint32_t limit);
+```
+{% endcode %}
 
 ### 1.8. list\_active\_sons
 
+List all active SONs.
 
+{% code title="return type, namespace, & method" %}
+```cpp
+map<string, son_id_type> graphene::wallet::wallet_api::list_active_sons();
+```
+{% endcode %}
 
 ### 1.9. request\_son\_maintenance
 
+This will gracefully put a SON in a temporarily inactive state to allow for server maintenance, or a temporary break from their duties \(like a vacation or personal time\).
 
+{% code title="return type, namespace, & method" %}
+```cpp
+signed_transaction graphene::wallet::wallet_api::request_son_maintenance(
+    string owner_account,
+    bool broadcast);
+```
+{% endcode %}
 
 ### 1.10. cancel\_request\_son\_maintenance
 
+This will return a SON from maintenance mode when they are ready to resume SON activities.
 
+{% code title="return type, namespace, & method" %}
+```cpp
+signed_transaction graphene::wallet::wallet_api::cancel_request_son_maintenance(
+    string owner_account,
+    bool broadcast);
+```
+{% endcode %}
 
 ### 1.11. get\_son\_wallets
 
+This will display the wallet information for all registered SONs. You can specify the maximum number of wallets to return.
 
+{% code title="return type, namespace, & method" %}
+```cpp
+vector<optional<son_wallet_object>> graphene::wallet::wallet_api::get_son_wallets(
+    uint32_t limit);
+```
+{% endcode %}
 
 ### 1.12. get\_active\_son\_wallet
 
+This will display the wallet information for the current active SON.
 
+{% code title="return type, namespace, & method" %}
+```cpp
+optional<son_wallet_object> graphene::wallet::wallet_api::get_active_son_wallet();
+```
+{% endcode %}
 
 ### 1.13. get\_son\_wallet\_by\_time\_point
 
+This will display the wallet information for the SON that was active at a specific date and time.
 
+{% code title="return type, namespace, & method" %}
+```cpp
+optional<son_wallet_object> graphene::wallet::wallet_api::get_son_wallet_by_time_point(
+    time_point_sec time_point);
+```
+{% endcode %}
 
 ## 2. Sidechains CLI Command Reference
 
 ### 2.1. add\_sidechain\_address
 
+This command allows a user to register two Bitcoin addresses: one used to create their deposit address, and one that will be used for their withdraw address.
 
+{% code title="return type, namespace, & method" %}
+```cpp
+signed_transaction graphene::wallet::wallet_api::add_sidechain_address(
+    string account,
+    sidechain_type sidechain,
+    string deposit_public_key,
+    string withdraw_public_key,
+    string withdraw_address,
+    bool broadcast);
+```
+{% endcode %}
 
 ### 2.2. delete\_sidechain\_address
 
+This will delete a sidechain address that was previously registered with the `add_sidechain_address` command. Only one sidechain address can exist per user and sidechain. \(A sidechain address in the case of Bitcoin consists of both a deposit and a withdraw address.\)
 
+{% code title="return type, namespace, & method" %}
+```cpp
+signed_transaction graphene::wallet::wallet_api::delete_sidechain_address(
+    string account,
+    sidechain_type sidechain,
+    bool broadcast);
+```
+{% endcode %}
 
 ### 2.3. get\_sidechain\_address\_by\_account\_and\_sidechain
 
+This returns a registered sidechain address for a given account and sidechain.
 
+{% code title="return type, namespace, & method" %}
+```cpp
+fc::optional<sidechain_address_object> graphene::wallet::wallet_api::get_sidechain_address_by_account_and_sidechain(
+    string account,
+    sidechain_type sidechain);
+```
+{% endcode %}
 
 ### 2.4. get\_sidechain\_addresses\_by\_account
 
+This returns all the registered sidechain addresses for a given account.
 
+{% code title="return type, namespace, & method" %}
+```cpp
+vector<optional<sidechain_address_object>> graphene::wallet::wallet_api::get_sidechain_addresses_by_account(
+    string account);
+```
+{% endcode %}
 
 ### 2.5. get\_sidechain\_addresses\_by\_sidechain
 
+This returns all the registered sidechain addresses for a given sidechain.
 
+{% code title="return type, namespace, & method" %}
+```cpp
+vector<optional<sidechain_address_object>> graphene::wallet::wallet_api::get_sidechain_addresses_by_sidechain(
+    sidechain_type sidechain);
+```
+{% endcode %}
 
 ### 2.6. get\_sidechain\_addresses\_count
 
+This returns the number of registered sidechain addresses.
 
+{% code title="return type, namespace, & method" %}
+```cpp
+uint64_t graphene::wallet::wallet_api::get_sidechain_addresses_count();
+```
+{% endcode %}
 
 
 
