@@ -356,7 +356,7 @@ signed_transaction graphene::wallet::wallet_api::vote_for_son(
 | name | data type | description | details |
 | :--- | :--- | :--- | :--- |
 | voting\_account | string | The name or id of the account who is voting with their PPY. | No quotes required. |
-| witness | string | The name or id of the SON's owner account. | No quotes required. |
+| son | string | The name or id of the SON's owner account. | No quotes required. |
 | approve | bool | `true` if you wish to vote in favor of that SON, `false` to remove your vote in favor of that SON. | n/a |
 | broadcast | bool | `true` to broadcast the transaction on the network. | n/a |
 
@@ -387,6 +387,10 @@ vote_for_son 1.2.12345 some-son true true
 
 Change all your votes for SONs in one transaction. This can add and remove votes, and set the number of SONs you think should be active too.
 
+{% hint style="info" %}
+You cannot vote against a SON, you can only **vote for** the SON or **not vote for** the SON.
+{% endhint %}
+
 {% code title="return type, namespace, & method" %}
 ```cpp
 signed_transaction graphene::wallet::wallet_api::update_son_votes(
@@ -402,7 +406,19 @@ signed_transaction graphene::wallet::wallet_api::update_son_votes(
 {% tab title="Function Call" %}
 **Parameters**
 
-\*\*\*\*
+| name | data type | description | details |
+| :--- | :--- | :--- | :--- |
+| voting\_account | string | The name or id of the account who is voting with their PPY. | No quotes required. |
+| sons\_to\_approve | std::vector&lt;std::string&gt; | An array of SON names or ids that you had not previously voted for which you wish to add your vote. | This can be empty. |
+| sons\_to\_reject | std::vector&lt;std::string&gt; | An array of SON names or ids that you had previously voted for which you wish to remove your vote. | This can be empty. |
+| desired\_number\_of\_sons | uint16\_t | The number of SONs that you think the network should have. You must vote for at least this many SONs. You can set this to 0 \(zero\) to abstain from voting on the number of SONs. | n/a |
+| broadcast | bool | `true` to broadcast the transaction on the network. | n/a |
+
+**Example Call**
+
+```cpp
+update_son_votes 1.2.12345 [different-son, another-son] [] 3 true
+```
 {% endtab %}
 
 {% tab title="Return" %}
@@ -418,7 +434,7 @@ signed_transaction graphene::wallet::wallet_api::update_son_votes(
 
 ### 1.7. list\_sons
 
-List all registered SONs, active or not.
+Lists all registered SONs, active or not.
 
 {% code title="return type, namespace, & method" %}
 ```cpp
@@ -430,7 +446,18 @@ map<string, son_id_type> graphene::wallet::wallet_api::list_sons(
 
 {% tabs %}
 {% tab title="Function Call" %}
+**Parameters**
 
+| name | data type | description | details |
+| :--- | :--- | :--- | :--- |
+| lowerbound | string& | The name of the first SON to return. If the named SON does not exist, the list will start at the SON that comes next. | Use `""` to start at the beginning. |
+| limit | uint32\_t | The maximum number of SON to return. | Max of 1000. |
+
+**Example Call**
+
+```cpp
+list_sons "" 100
+```
 {% endtab %}
 
 {% tab title="Return" %}
@@ -450,7 +477,17 @@ map<string, son_id_type> graphene::wallet::wallet_api::list_active_sons();
 
 {% tabs %}
 {% tab title="Function Call" %}
+**Parameters**
 
+| name | data type | description | details |
+| :--- | :--- | :--- | :--- |
+| No Parmeters! | n/a | n/a | n/a |
+
+**Example Call**
+
+```cpp
+list_active_sons
+```
 {% endtab %}
 
 {% tab title="Return" %}
@@ -460,7 +497,7 @@ map<string, son_id_type> graphene::wallet::wallet_api::list_active_sons();
 
 ### 1.9. request\_son\_maintenance
 
-This will gracefully put a SON in a temporarily inactive state to allow for server maintenance, or a temporary break from their duties \(like a vacation or personal time\).
+Modify status of the SON owned by the given account to maintenance.
 
 {% code title="return type, namespace, & method" %}
 ```cpp
@@ -472,7 +509,18 @@ signed_transaction graphene::wallet::wallet_api::request_son_maintenance(
 
 {% tabs %}
 {% tab title="Function Call" %}
+**Parameters**
 
+| name | data type | description | details |
+| :--- | :--- | :--- | :--- |
+| owner\_account | string | The name or id of the account who owns the SON. | No quotes required. |
+| broadcast | bool | `true` to broadcast the transaction on the network. | n/a |
+
+**Example Call**
+
+```cpp
+request_son_maintenance mycool-son true
+```
 {% endtab %}
 
 {% tab title="Return" %}
@@ -482,7 +530,7 @@ signed_transaction graphene::wallet::wallet_api::request_son_maintenance(
 
 ### 1.10. cancel\_request\_son\_maintenance
 
-This will return a SON from maintenance mode when they are ready to resume SON activities.
+Modify status of the SON owned by the given account back to active.
 
 {% code title="return type, namespace, & method" %}
 ```cpp
@@ -494,7 +542,18 @@ signed_transaction graphene::wallet::wallet_api::cancel_request_son_maintenance(
 
 {% tabs %}
 {% tab title="Function Call" %}
+**Parameters**
 
+| name | data type | description | details |
+| :--- | :--- | :--- | :--- |
+| owning\_account | string | The name or id of the account who owns the SON. | No quotes required. |
+| broadcast | bool | `true` to broadcast the transaction on the network. | n/a |
+
+**Example Call**
+
+```cpp
+cancel_request_son_maintenance mycool-son true
+```
 {% endtab %}
 
 {% tab title="Return" %}
@@ -515,7 +574,17 @@ vector<optional<son_wallet_object>> graphene::wallet::wallet_api::get_son_wallet
 
 {% tabs %}
 {% tab title="Function Call" %}
+**Parameters**
 
+| name | data type | description | details |
+| :--- | :--- | :--- | :--- |
+| limit | uint32\_t | The maximum number of results to return. | n/a |
+
+**Example Call**
+
+```cpp
+get_son_wallets 20
+```
 {% endtab %}
 
 {% tab title="Return" %}
@@ -535,7 +604,17 @@ optional<son_wallet_object> graphene::wallet::wallet_api::get_active_son_wallet(
 
 {% tabs %}
 {% tab title="Function Call" %}
+**Parameters**
 
+| name | data type | description | details |
+| :--- | :--- | :--- | :--- |
+| No Parameters! | n/a | n/a | n/a |
+
+**Example Call**
+
+```cpp
+get_active_son_wallet
+```
 {% endtab %}
 
 {% tab title="Return" %}
@@ -556,7 +635,36 @@ optional<son_wallet_object> graphene::wallet::wallet_api::get_son_wallet_by_time
 
 {% tabs %}
 {% tab title="Function Call" %}
+**Parameters**
 
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">name</th>
+      <th style="text-align:left">data type</th>
+      <th style="text-align:left">description</th>
+      <th style="text-align:left">details</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">time_point</td>
+      <td style="text-align:left">time_point<em>_</em>sec</td>
+      <td style="text-align:left">
+        <p>The date and time. Formatted like this:</p>
+        <p><code>&quot;2020-10-31T13:43:39&quot;</code>
+        </p>
+      </td>
+      <td style="text-align:left">Quotes are required!</td>
+    </tr>
+  </tbody>
+</table>
+
+**Example Call**
+
+```cpp
+get_son_wallet_by_time_point "2020-10-31T13:43:39"
+```
 {% endtab %}
 
 {% tab title="Return" %}
@@ -568,7 +676,7 @@ optional<son_wallet_object> graphene::wallet::wallet_api::get_son_wallet_by_time
 
 ### 2.1. add\_sidechain\_address
 
-This command allows a user to register two Bitcoin addresses: one used to create their deposit address, and one that will be used for their withdraw address.
+This command allows a user to register two Bitcoin addresses: one used to create their deposit address, and one that will be used for their withdraw address. Collectively these are a "sidechain address".
 
 {% code title="return type, namespace, & method" %}
 ```cpp
@@ -584,7 +692,22 @@ signed_transaction graphene::wallet::wallet_api::add_sidechain_address(
 
 {% tabs %}
 {% tab title="Function Call" %}
+**Parameters**
 
+| name | data type | description | details |
+| :--- | :--- | :--- | :--- |
+| account | string | The name or id of the account who owns the address. | No quotes required. |
+| sidechain | sidechain\_type | One of: `bitcoin`, \(more will be added later\). | n/a |
+| deposit\_public\_key | string | The public key of a Bitcoin address. This will be used to generate the deposit address in the return of this function. | n/a |
+| withdraw\_public\_key | string | The public key of a different Bitcoin address. This will be used for the withdraw address. | n/a |
+| withdraw\_address | string | The Bitcoin address that is connected to the withdraw\_public\_key. | n/a |
+| broadcast | bool | `true` to broadcast the transaction on the network. | n/a |
+
+**Example Call**
+
+```cpp
+add_sidechain_address mypeerplays-account bitcoin 
+```
 {% endtab %}
 
 {% tab title="Return" %}
@@ -607,7 +730,20 @@ signed_transaction graphene::wallet::wallet_api::delete_sidechain_address(
 
 {% tabs %}
 {% tab title="Function Call" %}
+**Parameters**
 
+| name | data type | description | details |
+| :--- | :--- | :--- | :--- |
+| voting\_account | string | The name or id of the account who is voting with their PPY. | No quotes required. |
+| witness | string | The name or id of the SON's owner account. | No quotes required. |
+| approve | bool | `true` if you wish to vote in favor of that SON, `false` to remove your vote in favor of that SON. | n/a |
+| broadcast | bool | `true` to broadcast the transaction on the network. | n/a |
+
+**Example Call**
+
+```cpp
+vote_for_son 1.2.12345 some-son true true
+```
 {% endtab %}
 
 {% tab title="Return" %}
@@ -629,7 +765,20 @@ fc::optional<sidechain_address_object> graphene::wallet::wallet_api::get_sidecha
 
 {% tabs %}
 {% tab title="Function Call" %}
+**Parameters**
 
+| name | data type | description | details |
+| :--- | :--- | :--- | :--- |
+| voting\_account | string | The name or id of the account who is voting with their PPY. | No quotes required. |
+| witness | string | The name or id of the SON's owner account. | No quotes required. |
+| approve | bool | `true` if you wish to vote in favor of that SON, `false` to remove your vote in favor of that SON. | n/a |
+| broadcast | bool | `true` to broadcast the transaction on the network. | n/a |
+
+**Example Call**
+
+```cpp
+vote_for_son 1.2.12345 some-son true true
+```
 {% endtab %}
 
 {% tab title="Return" %}
@@ -650,7 +799,20 @@ vector<optional<sidechain_address_object>> graphene::wallet::wallet_api::get_sid
 
 {% tabs %}
 {% tab title="Function Call" %}
+**Parameters**
 
+| name | data type | description | details |
+| :--- | :--- | :--- | :--- |
+| voting\_account | string | The name or id of the account who is voting with their PPY. | No quotes required. |
+| witness | string | The name or id of the SON's owner account. | No quotes required. |
+| approve | bool | `true` if you wish to vote in favor of that SON, `false` to remove your vote in favor of that SON. | n/a |
+| broadcast | bool | `true` to broadcast the transaction on the network. | n/a |
+
+**Example Call**
+
+```cpp
+vote_for_son 1.2.12345 some-son true true
+```
 {% endtab %}
 
 {% tab title="Return" %}
@@ -671,7 +833,20 @@ vector<optional<sidechain_address_object>> graphene::wallet::wallet_api::get_sid
 
 {% tabs %}
 {% tab title="Function Call" %}
+**Parameters**
 
+| name | data type | description | details |
+| :--- | :--- | :--- | :--- |
+| voting\_account | string | The name or id of the account who is voting with their PPY. | No quotes required. |
+| witness | string | The name or id of the SON's owner account. | No quotes required. |
+| approve | bool | `true` if you wish to vote in favor of that SON, `false` to remove your vote in favor of that SON. | n/a |
+| broadcast | bool | `true` to broadcast the transaction on the network. | n/a |
+
+**Example Call**
+
+```cpp
+vote_for_son 1.2.12345 some-son true true
+```
 {% endtab %}
 
 {% tab title="Return" %}
@@ -691,7 +866,20 @@ uint64_t graphene::wallet::wallet_api::get_sidechain_addresses_count();
 
 {% tabs %}
 {% tab title="Function Call" %}
+**Parameters**
 
+| name | data type | description | details |
+| :--- | :--- | :--- | :--- |
+| voting\_account | string | The name or id of the account who is voting with their PPY. | No quotes required. |
+| witness | string | The name or id of the SON's owner account. | No quotes required. |
+| approve | bool | `true` if you wish to vote in favor of that SON, `false` to remove your vote in favor of that SON. | n/a |
+| broadcast | bool | `true` to broadcast the transaction on the network. | n/a |
+
+**Example Call**
+
+```cpp
+vote_for_son 1.2.12345 some-son true true
+```
 {% endtab %}
 
 {% tab title="Return" %}
