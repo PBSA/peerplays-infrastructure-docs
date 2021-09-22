@@ -1,4 +1,4 @@
-# index
+# Peerplays QA Environment
 
 This set of docker images contains self contained, ready to go, Peerplays QA environment. It features 22 witnesses, 16 Bitcoin SONs, 16 Hive SONs and faucet.
 
