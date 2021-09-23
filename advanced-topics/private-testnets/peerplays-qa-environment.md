@@ -4,7 +4,7 @@ This set of docker images contains self contained, ready to go, Peerplays QA env
 
 ## Hardware Requirements
 
-Here's a guideline for the hardware requirements for the running of the local QA environment:
+Here's a guideline for the hardware requirements for building the QA environment:
 
 | Memory | Storage | OS |
 | :--- | :--- | :--- |
