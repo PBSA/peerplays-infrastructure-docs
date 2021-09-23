@@ -1,6 +1,16 @@
-# Peerplays QA Environment
+# Peerplays QA environment
 
 This set of docker images contains self contained, ready to go, Peerplays QA environment. It features 22 witnesses, 16 Bitcoin SONs, 16 Hive SONs and faucet.
+
+## Hardware Requirements
+
+Here's a guideline for the hardware requirements for the running of the local QA environment:
+
+| Memory | Storage | OS |
+| :--- | :--- | :--- |
+| 32GB | ~300GB | Ubuntu 18.04 |
+
+Of course, the requirements will be highly dependent on what you're using the environment for. Intensive development of an enterprise-level application will need much more resources than simply exploring your own private environment.
 
 ## Building docker images
 
@@ -51,7 +61,7 @@ docker-compose up peerplays01 peerplays02 peerplays03 peerplays04 peerplays05 pe
 ### Redis
 
 ```text
-docker-compose up docker-compose up redis-for-peerplays
+docker-compose up redis-for-peerplays
 ```
 
 ### Faucet
@@ -154,7 +164,7 @@ docker exec -it peerplays-qa-environment_peerplays01_1 /bin/bash
 ### Redis
 
 ```text
-docker-compose up docker-compose up redis-for-peerplays
+docker-compose up redis-for-peerplays
 # Wait for message "Ready to accept connections"
 ```
 

@@ -19,7 +19,7 @@
 ## Advanced Topics
 
 * [Private Testnets](advanced-topics/private-testnets/README.md)
-  * [Peerplays QA Environment](advanced-topics/private-testnets/peerplays-qa-environment.md)
+  * [Peerplays QA environment](advanced-topics/private-testnets/peerplays-qa-environment.md)
   * [Private Testnets - Manual Install](advanced-topics/private-testnets/private-testnets-manual-install.md)
 * [Reverse Proxy for Enabling SSL](advanced-topics/reverse-proxy-for-enabling-ssl.md)
 * [Enabling Elasticsearch on a Node](advanced-topics/enabling-elasticsearch-on-a-node.md)
