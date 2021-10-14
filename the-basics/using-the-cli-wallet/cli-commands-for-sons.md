@@ -1,5 +1,4 @@
 ---
-title: CLI Commands for SONs
 description: CLI commands that sons use.
 ---
 
@@ -7,7 +6,7 @@ description: CLI commands that sons use.
 
 ## 1. SONs CLI Command Reference
 
-### 1.1. create\_son
+### 1.1. create_son
 
 Creates a SON object owned by the given account. An account can have at most one SON object.
 
@@ -27,14 +26,14 @@ signed_transaction graphene::wallet::wallet_api::create_son(
 {% tab title="Function Call" %}
 **Parameters**
 
-| name | data type | description | details |
-| :--- | :--- | :--- | :--- |
-| owner\_account | string | The name or id of the account which is creating the SON. | no quotes required. |
-| url | string | a URL to include in the SON record in the blockchain. Clients may display this when showing a list of SONs. | May be blank. |
-| deposit\_id | vesting\_balance\_id\_type | vesting balance id for SON deposit. | This is the `son` vesting balance. |
-| pay\_vb\_id | vesting\_balance\_id\_type | vesting balance id for SON pay\_vb | This is the `normal` vesting balance. |
-| sidechain\_public\_keys | flat\_map | The new set of sidechain public keys. | n/a |
-| broadcast | bool | `true` to broadcast the transaction on the network. | n/a |
+| name                  | data type               | description                                                                                                 | details                               |
+| --------------------- | ----------------------- | ----------------------------------------------------------------------------------------------------------- | ------------------------------------- |
+| owner_account         | string                  | The name or id of the account which is creating the SON.                                                    | no quotes required.                   |
+| url                   | string                  | a URL to include in the SON record in the blockchain. Clients may display this when showing a list of SONs. | May be blank.                         |
+| deposit_id            | vesting_balance_id_type | vesting balance id for SON deposit.                                                                         | This is the `son` vesting balance.    |
+| pay_vb_id             | vesting_balance_id_type | vesting balance id for SON pay_vb                                                                           | This is the `normal` vesting balance. |
+| sidechain_public_keys | flat_map                | The new set of sidechain public keys.                                                                       | n/a                                   |
+| broadcast             | bool                    | `true` to broadcast the transaction on the network.                                                         | n/a                                   |
 
 **Example Call**
 
@@ -96,7 +95,7 @@ create_son myaccountname-son "www.my-awesome-son.com" 1.13.79 1.13.80 [[bitcoin,
 {% endtab %}
 {% endtabs %}
 
-### 1.2. update\_son
+### 1.2. update_son
 
 Update a SON object owned by the given account.
 
@@ -115,13 +114,13 @@ signed_transaction graphene::wallet::wallet_api::create_son(
 {% tab title="Function Call" %}
 **Parameters**
 
-| name | data type | description | details |
-| :--- | :--- | :--- | :--- |
-| owner\_account | string | The name of the SON's owner account. Also accepts the ID of the owner account or the ID of the SON. | no quotes required. |
-| url | string | Same as for create\_son. The empty string makes it remain the same. | n/a |
-| block\_signing\_key | string | A new signing key to replace the currently set signing key. | n/a |
-| sidechain\_public\_keys | flat\_map | The new set of sidechain public keys. An empty string makes it remain the same. | n/a |
-| broadcast | bool | `true` to broadcast the transaction on the network. | n/a |
+| name                  | data type | description                                                                                         | details             |
+| --------------------- | --------- | --------------------------------------------------------------------------------------------------- | ------------------- |
+| owner_account         | string    | The name of the SON's owner account. Also accepts the ID of the owner account or the ID of the SON. | no quotes required. |
+| url                   | string    | Same as for create_son. The empty string makes it remain the same.                                  | n/a                 |
+| block_signing_key     | string    | A new signing key to replace the currently set signing key.                                         | n/a                 |
+| sidechain_public_keys | flat_map  | The new set of sidechain public keys. An empty string makes it remain the same.                     | n/a                 |
+| broadcast             | bool      | `true` to broadcast the transaction on the network.                                                 | n/a                 |
 
 **Example Call**
 
@@ -182,7 +181,7 @@ update_son myaccountname-son "www.my-awesome-son.com" PPY8kvUXLpoXE9rJHwppR48Lkq
 {% endtab %}
 {% endtabs %}
 
-### 1.3. update\_son\_vesting\_balances
+### 1.3. update_son_vesting_balances
 
 Updates the vesting balances associated with a given SON.
 
@@ -200,12 +199,12 @@ signed_transaction graphene::wallet::wallet_api::update_son_vesting_balances(
 {% tab title="Function Call" %}
 **Parameters**
 
-| name | data type | description | details |
-| :--- | :--- | :--- | :--- |
-| owner\_account | string | The name or id of the SON account owner, or the id of the SON. | No quotes required. |
-| new\_deposit | vesting\_balance\_id\_type | A vesting balance id that will replace the currently set `son` vesting balance. | Optional |
-| new\_pay\_vb | vesting\_balance\_id\_type | A vesting balance id that will replace the currently set `normal` vesting balance. | Optional |
-| broadcast | bool | `true` to broadcast the transaction on the network. | n/a |
+| name          | data type               | description                                                                        | details             |
+| ------------- | ----------------------- | ---------------------------------------------------------------------------------- | ------------------- |
+| owner_account | string                  | The name or id of the SON account owner, or the id of the SON.                     | No quotes required. |
+| new_deposit   | vesting_balance_id_type | A vesting balance id that will replace the currently set `son` vesting balance.    | Optional            |
+| new_pay_vb    | vesting_balance_id_type | A vesting balance id that will replace the currently set `normal` vesting balance. | Optional            |
+| broadcast     | bool                    | `true` to broadcast the transaction on the network.                                | n/a                 |
 
 **Example Call**
 
@@ -261,7 +260,7 @@ update_son_vesting_balances 1.33.99 1.13.81 1.13.82 true
 {% endtab %}
 {% endtabs %}
 
-### 1.4. get\_son
+### 1.4. get_son
 
 Returns information about the given SON.
 
@@ -276,9 +275,9 @@ son_object graphene::wallet::wallet_api::get_son(
 {% tab title="Function Call" %}
 **Parameters**
 
-| name | data type | description | details |
-| :--- | :--- | :--- | :--- |
-| owner\_account | string | The name or id of the SON account owner, or the id of the SON. | No quotes required. |
+| name          | data type | description                                                    | details             |
+| ------------- | --------- | -------------------------------------------------------------- | ------------------- |
+| owner_account | string    | The name or id of the SON account owner, or the id of the SON. | No quotes required. |
 
 **Example Call**
 
@@ -335,7 +334,7 @@ get_son 1.33.99
 {% endtab %}
 {% endtabs %}
 
-### 1.5. vote\_for\_son
+### 1.5. vote_for_son
 
 Vote for a given SON. An account can publish a list of all SONs they approve of. This command allows you to add or remove SONs from this list. Each account's vote is weighted according to the number of PPY owned by that account at the time the votes are tallied. Note that you can't vote against a SON, you can only vote for the SON or not vote for the SON.
 
@@ -353,12 +352,12 @@ signed_transaction graphene::wallet::wallet_api::vote_for_son(
 {% tab title="Function Call" %}
 **Parameters**
 
-| name | data type | description | details |
-| :--- | :--- | :--- | :--- |
-| voting\_account | string | The name or id of the account who is voting with their PPY. | No quotes required. |
-| son | string | The name or id of the SON's owner account. | No quotes required. |
-| approve | bool | `true` if you wish to vote in favor of that SON, `false` to remove your vote in favor of that SON. | n/a |
-| broadcast | bool | `true` to broadcast the transaction on the network. | n/a |
+| name           | data type | description                                                                                        | details             |
+| -------------- | --------- | -------------------------------------------------------------------------------------------------- | ------------------- |
+| voting_account | string    | The name or id of the account who is voting with their PPY.                                        | No quotes required. |
+| son            | string    | The name or id of the SON's owner account.                                                         | No quotes required. |
+| approve        | bool      | `true` if you wish to vote in favor of that SON, `false` to remove your vote in favor of that SON. | n/a                 |
+| broadcast      | bool      | `true` to broadcast the transaction on the network.                                                | n/a                 |
 
 **Example Call**
 
@@ -383,7 +382,7 @@ vote_for_son 1.2.12345 some-son true true
 {% endtab %}
 {% endtabs %}
 
-### 1.6. update\_son\_votes
+### 1.6. update_son_votes
 
 Change all your votes for SONs in one transaction. This can add and remove votes, and set the number of SONs you think should be active too.
 
@@ -406,13 +405,13 @@ signed_transaction graphene::wallet::wallet_api::update_son_votes(
 {% tab title="Function Call" %}
 **Parameters**
 
-| name | data type | description | details |
-| :--- | :--- | :--- | :--- |
-| voting\_account | string | The name or id of the account who is voting with their PPY. | No quotes required. |
-| sons\_to\_approve | std::vector&lt;std::string&gt; | An array of SON names or ids that you had not previously voted for which you wish to add your vote. | This can be empty. |
-| sons\_to\_reject | std::vector&lt;std::string&gt; | An array of SON names or ids that you had previously voted for which you wish to remove your vote. | This can be empty. |
-| desired\_number\_of\_sons | uint16\_t | The number of SONs that you think the network should have. You must vote for at least this many SONs. You can set this to 0 \(zero\) to abstain from voting on the number of SONs. | n/a |
-| broadcast | bool | `true` to broadcast the transaction on the network. | n/a |
+| name                   | data type                 | description                                                                                                                                                                      | details             |
+| ---------------------- | ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------- |
+| voting_account         | string                    | The name or id of the account who is voting with their PPY.                                                                                                                      | No quotes required. |
+| sons_to_approve        | std::vector\<std::string> | An array of SON names or ids that you had not previously voted for which you wish to add your vote.                                                                              | This can be empty.  |
+| sons_to_reject         | std::vector\<std::string> | An array of SON names or ids that you had previously voted for which you wish to remove your vote.                                                                               | This can be empty.  |
+| desired_number_of_sons | uint16\_t                 | The number of SONs that you think the network should have. You must vote for at least this many SONs. You can set this to 0 (zero) to abstain from voting on the number of SONs. | n/a                 |
+| broadcast              | bool                      | `true` to broadcast the transaction on the network.                                                                                                                              | n/a                 |
 
 **Example Call**
 
@@ -424,15 +423,15 @@ update_son_votes 1.2.12345 [different-son, another-son] [] 3 true
 {% tab title="Return" %}
 **Return Format**
 
-\*\*\*\*
+****
 
 **Example Successful Return**
 
-\*\*\*\*
+****
 {% endtab %}
 {% endtabs %}
 
-### 1.7. list\_sons
+### 1.7. list_sons
 
 Lists all registered SONs, active or not.
 
@@ -448,10 +447,10 @@ map<string, son_id_type> graphene::wallet::wallet_api::list_sons(
 {% tab title="Function Call" %}
 **Parameters**
 
-| name | data type | description | details |
-| :--- | :--- | :--- | :--- |
-| lowerbound | string& | The name of the first SON to return. If the named SON does not exist, the list will start at the SON that comes next. | Use `""` to start at the beginning. |
-| limit | uint32\_t | The maximum number of SON to return. | Max of 1000. |
+| name       | data type | description                                                                                                           | details                             |
+| ---------- | --------- | --------------------------------------------------------------------------------------------------------------------- | ----------------------------------- |
+| lowerbound | string&   | The name of the first SON to return. If the named SON does not exist, the list will start at the SON that comes next. | Use `""` to start at the beginning. |
+| limit      | uint32\_t | The maximum number of SON to return.                                                                                  | Max of 1000.                        |
 
 **Example Call**
 
@@ -465,7 +464,7 @@ list_sons "" 100
 {% endtab %}
 {% endtabs %}
 
-### 1.8. list\_active\_sons
+### 1.8. list_active_sons
 
 List all active SONs.
 
@@ -479,9 +478,9 @@ map<string, son_id_type> graphene::wallet::wallet_api::list_active_sons();
 {% tab title="Function Call" %}
 **Parameters**
 
-| name | data type | description | details |
-| :--- | :--- | :--- | :--- |
-| No Parmeters! | n/a | n/a | n/a |
+| name          | data type | description | details |
+| ------------- | --------- | ----------- | ------- |
+| No Parmeters! | n/a       | n/a         | n/a     |
 
 **Example Call**
 
@@ -495,7 +494,7 @@ list_active_sons
 {% endtab %}
 {% endtabs %}
 
-### 1.9. request\_son\_maintenance
+### 1.9. request_son_maintenance
 
 Modify status of the SON owned by the given account to maintenance.
 
@@ -511,10 +510,10 @@ signed_transaction graphene::wallet::wallet_api::request_son_maintenance(
 {% tab title="Function Call" %}
 **Parameters**
 
-| name | data type | description | details |
-| :--- | :--- | :--- | :--- |
-| owner\_account | string | The name or id of the account who owns the SON. | No quotes required. |
-| broadcast | bool | `true` to broadcast the transaction on the network. | n/a |
+| name          | data type | description                                         | details             |
+| ------------- | --------- | --------------------------------------------------- | ------------------- |
+| owner_account | string    | The name or id of the account who owns the SON.     | No quotes required. |
+| broadcast     | bool      | `true` to broadcast the transaction on the network. | n/a                 |
 
 **Example Call**
 
@@ -528,7 +527,7 @@ request_son_maintenance mycool-son true
 {% endtab %}
 {% endtabs %}
 
-### 1.10. cancel\_request\_son\_maintenance
+### 1.10. cancel_request_son_maintenance
 
 Modify status of the SON owned by the given account back to active.
 
@@ -544,10 +543,10 @@ signed_transaction graphene::wallet::wallet_api::cancel_request_son_maintenance(
 {% tab title="Function Call" %}
 **Parameters**
 
-| name | data type | description | details |
-| :--- | :--- | :--- | :--- |
-| owning\_account | string | The name or id of the account who owns the SON. | No quotes required. |
-| broadcast | bool | `true` to broadcast the transaction on the network. | n/a |
+| name           | data type | description                                         | details             |
+| -------------- | --------- | --------------------------------------------------- | ------------------- |
+| owning_account | string    | The name or id of the account who owns the SON.     | No quotes required. |
+| broadcast      | bool      | `true` to broadcast the transaction on the network. | n/a                 |
 
 **Example Call**
 
@@ -561,7 +560,7 @@ cancel_request_son_maintenance mycool-son true
 {% endtab %}
 {% endtabs %}
 
-### 1.11. get\_son\_wallets
+### 1.11. get_son_wallets
 
 This will display the wallet information for all registered SONs. You can specify the maximum number of wallets to return.
 
@@ -576,9 +575,9 @@ vector<optional<son_wallet_object>> graphene::wallet::wallet_api::get_son_wallet
 {% tab title="Function Call" %}
 **Parameters**
 
-| name | data type | description | details |
-| :--- | :--- | :--- | :--- |
-| limit | uint32\_t | The maximum number of results to return. | n/a |
+| name  | data type | description                              | details |
+| ----- | --------- | ---------------------------------------- | ------- |
+| limit | uint32\_t | The maximum number of results to return. | n/a     |
 
 **Example Call**
 
@@ -592,7 +591,7 @@ get_son_wallets 20
 {% endtab %}
 {% endtabs %}
 
-### 1.12. get\_active\_son\_wallet
+### 1.12. get_active_son_wallet
 
 This will display the wallet information for the current active SON.
 
@@ -606,9 +605,9 @@ optional<son_wallet_object> graphene::wallet::wallet_api::get_active_son_wallet(
 {% tab title="Function Call" %}
 **Parameters**
 
-| name | data type | description | details |
-| :--- | :--- | :--- | :--- |
-| No Parameters! | n/a | n/a | n/a |
+| name           | data type | description | details |
+| -------------- | --------- | ----------- | ------- |
+| No Parameters! | n/a       | n/a         | n/a     |
 
 **Example Call**
 
@@ -622,7 +621,7 @@ get_active_son_wallet
 {% endtab %}
 {% endtabs %}
 
-### 1.13. get\_son\_wallet\_by\_time\_point
+### 1.13. get_son_wallet_by_time_point
 
 This will display the wallet information for the SON that was active at a specific date and time.
 
@@ -637,28 +636,9 @@ optional<son_wallet_object> graphene::wallet::wallet_api::get_son_wallet_by_time
 {% tab title="Function Call" %}
 **Parameters**
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">name</th>
-      <th style="text-align:left">data type</th>
-      <th style="text-align:left">description</th>
-      <th style="text-align:left">details</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">time_point</td>
-      <td style="text-align:left">time_point<em>_</em>sec</td>
-      <td style="text-align:left">
-        <p>The date and time. Formatted like this:</p>
-        <p><code>&quot;2020-10-31T13:43:39&quot;</code>
-        </p>
-      </td>
-      <td style="text-align:left">Quotes are required!</td>
-    </tr>
-  </tbody>
-</table>
+| name       | data type         | description                                                                             | details              |
+| ---------- | ----------------- | --------------------------------------------------------------------------------------- | -------------------- |
+| time_point | time_point_\__sec | <p>The date and time. Formatted like this:</p><p><code>"2020-10-31T13:43:39"</code></p> | Quotes are required! |
 
 **Example Call**
 
@@ -674,7 +654,7 @@ get_son_wallet_by_time_point "2020-10-31T13:43:39"
 
 ## 2. Sidechains CLI Command Reference
 
-### 2.1. add\_sidechain\_address
+### 2.1. add_sidechain_address
 
 This command allows a user to register two Bitcoin addresses: one used to create their deposit address, and one that will be used for their withdraw address. Collectively these are a "sidechain address".
 
@@ -694,20 +674,18 @@ signed_transaction graphene::wallet::wallet_api::add_sidechain_address(
 {% tab title="Function Call" %}
 **Parameters**
 
-| name | data type | description | details |
-| :--- | :--- | :--- | :--- |
-| account | string | The name or id of the account who owns the address. | No quotes required. |
-| sidechain | sidechain\_type | One of: `bitcoin`, \(more will be added later\). | n/a |
-| deposit\_public\_key | string | The public key of a Bitcoin address. This will be used to generate the deposit address in the return of this function. | n/a |
-| withdraw\_public\_key | string | The public key of a different Bitcoin address. This will be used for the withdraw address. | n/a |
-| withdraw\_address | string | The Bitcoin address that is connected to the withdraw\_public\_key. | n/a |
-| broadcast | bool | `true` to broadcast the transaction on the network. | n/a |
+| name                | data type      | description                                                                                                            | details             |
+| ------------------- | -------------- | ---------------------------------------------------------------------------------------------------------------------- | ------------------- |
+| account             | string         | The name or id of the account who owns the address.                                                                    | No quotes required. |
+| sidechain           | sidechain_type | One of: `bitcoin`, (more will be added later).                                                                         | n/a                 |
+| deposit_public_key  | string         | The public key of a Bitcoin address. This will be used to generate the deposit address in the return of this function. | n/a                 |
+| withdraw_public_key | string         | The public key of a different Bitcoin address. This will be used for the withdraw address.                             | n/a                 |
+| withdraw_address    | string         | The Bitcoin address that is connected to the withdraw_public_key.                                                      | n/a                 |
+| broadcast           | bool           | `true` to broadcast the transaction on the network.                                                                    | n/a                 |
 
 **Example Call**
 
-```cpp
-add_sidechain_address mypeerplays-account bitcoin 
-```
+`add_sidechain_address mypeerplays-account bitcoin 02cf1b2c34eed7537a63eb5e86c914b6c5f641d87f07798dd777773d96c4df82e9 022bccebf0f97231c1a499ed2145f744444b2df51d24e8ba71016ebd186bec2ab9 1KTE52KRoYf8G3SPJtKUufU9tRansAGyud true`
 {% endtab %}
 
 {% tab title="Return" %}
@@ -715,9 +693,9 @@ add_sidechain_address mypeerplays-account bitcoin
 {% endtab %}
 {% endtabs %}
 
-### 2.2. delete\_sidechain\_address
+### 2.2. delete_sidechain_address
 
-This will delete a sidechain address that was previously registered with the `add_sidechain_address` command. Only one sidechain address can exist per user and sidechain. \(A sidechain address in the case of Bitcoin consists of both a deposit and a withdraw address.\)
+This will delete a sidechain address that was previously registered with the `add_sidechain_address` command. Only one sidechain address can exist per user and sidechain. (A sidechain address in the case of Bitcoin consists of both a deposit and a withdraw address.)
 
 {% code title="return type, namespace, & method" %}
 ```cpp
@@ -732,12 +710,12 @@ signed_transaction graphene::wallet::wallet_api::delete_sidechain_address(
 {% tab title="Function Call" %}
 **Parameters**
 
-| name | data type | description | details |
-| :--- | :--- | :--- | :--- |
-| voting\_account | string | The name or id of the account who is voting with their PPY. | No quotes required. |
-| witness | string | The name or id of the SON's owner account. | No quotes required. |
-| approve | bool | `true` if you wish to vote in favor of that SON, `false` to remove your vote in favor of that SON. | n/a |
-| broadcast | bool | `true` to broadcast the transaction on the network. | n/a |
+| name           | data type | description                                                                                        | details             |
+| -------------- | --------- | -------------------------------------------------------------------------------------------------- | ------------------- |
+| voting_account | string    | The name or id of the account who is voting with their PPY.                                        | No quotes required. |
+| witness        | string    | The name or id of the SON's owner account.                                                         | No quotes required. |
+| approve        | bool      | `true` if you wish to vote in favor of that SON, `false` to remove your vote in favor of that SON. | n/a                 |
+| broadcast      | bool      | `true` to broadcast the transaction on the network.                                                | n/a                 |
 
 **Example Call**
 
@@ -751,7 +729,7 @@ vote_for_son 1.2.12345 some-son true true
 {% endtab %}
 {% endtabs %}
 
-### 2.3. get\_sidechain\_address\_by\_account\_and\_sidechain
+### 2.3. get_sidechain_address_by_account_and_sidechain
 
 This returns a registered sidechain address for a given account and sidechain.
 
@@ -767,12 +745,12 @@ fc::optional<sidechain_address_object> graphene::wallet::wallet_api::get_sidecha
 {% tab title="Function Call" %}
 **Parameters**
 
-| name | data type | description | details |
-| :--- | :--- | :--- | :--- |
-| voting\_account | string | The name or id of the account who is voting with their PPY. | No quotes required. |
-| witness | string | The name or id of the SON's owner account. | No quotes required. |
-| approve | bool | `true` if you wish to vote in favor of that SON, `false` to remove your vote in favor of that SON. | n/a |
-| broadcast | bool | `true` to broadcast the transaction on the network. | n/a |
+| name           | data type | description                                                                                        | details             |
+| -------------- | --------- | -------------------------------------------------------------------------------------------------- | ------------------- |
+| voting_account | string    | The name or id of the account who is voting with their PPY.                                        | No quotes required. |
+| witness        | string    | The name or id of the SON's owner account.                                                         | No quotes required. |
+| approve        | bool      | `true` if you wish to vote in favor of that SON, `false` to remove your vote in favor of that SON. | n/a                 |
+| broadcast      | bool      | `true` to broadcast the transaction on the network.                                                | n/a                 |
 
 **Example Call**
 
@@ -786,7 +764,7 @@ vote_for_son 1.2.12345 some-son true true
 {% endtab %}
 {% endtabs %}
 
-### 2.4. get\_sidechain\_addresses\_by\_account
+### 2.4. get_sidechain_addresses_by_account
 
 This returns all the registered sidechain addresses for a given account.
 
@@ -801,12 +779,12 @@ vector<optional<sidechain_address_object>> graphene::wallet::wallet_api::get_sid
 {% tab title="Function Call" %}
 **Parameters**
 
-| name | data type | description | details |
-| :--- | :--- | :--- | :--- |
-| voting\_account | string | The name or id of the account who is voting with their PPY. | No quotes required. |
-| witness | string | The name or id of the SON's owner account. | No quotes required. |
-| approve | bool | `true` if you wish to vote in favor of that SON, `false` to remove your vote in favor of that SON. | n/a |
-| broadcast | bool | `true` to broadcast the transaction on the network. | n/a |
+| name           | data type | description                                                                                        | details             |
+| -------------- | --------- | -------------------------------------------------------------------------------------------------- | ------------------- |
+| voting_account | string    | The name or id of the account who is voting with their PPY.                                        | No quotes required. |
+| witness        | string    | The name or id of the SON's owner account.                                                         | No quotes required. |
+| approve        | bool      | `true` if you wish to vote in favor of that SON, `false` to remove your vote in favor of that SON. | n/a                 |
+| broadcast      | bool      | `true` to broadcast the transaction on the network.                                                | n/a                 |
 
 **Example Call**
 
@@ -820,7 +798,7 @@ vote_for_son 1.2.12345 some-son true true
 {% endtab %}
 {% endtabs %}
 
-### 2.5. get\_sidechain\_addresses\_by\_sidechain
+### 2.5. get_sidechain_addresses_by_sidechain
 
 This returns all the registered sidechain addresses for a given sidechain.
 
@@ -835,12 +813,12 @@ vector<optional<sidechain_address_object>> graphene::wallet::wallet_api::get_sid
 {% tab title="Function Call" %}
 **Parameters**
 
-| name | data type | description | details |
-| :--- | :--- | :--- | :--- |
-| voting\_account | string | The name or id of the account who is voting with their PPY. | No quotes required. |
-| witness | string | The name or id of the SON's owner account. | No quotes required. |
-| approve | bool | `true` if you wish to vote in favor of that SON, `false` to remove your vote in favor of that SON. | n/a |
-| broadcast | bool | `true` to broadcast the transaction on the network. | n/a |
+| name           | data type | description                                                                                        | details             |
+| -------------- | --------- | -------------------------------------------------------------------------------------------------- | ------------------- |
+| voting_account | string    | The name or id of the account who is voting with their PPY.                                        | No quotes required. |
+| witness        | string    | The name or id of the SON's owner account.                                                         | No quotes required. |
+| approve        | bool      | `true` if you wish to vote in favor of that SON, `false` to remove your vote in favor of that SON. | n/a                 |
+| broadcast      | bool      | `true` to broadcast the transaction on the network.                                                | n/a                 |
 
 **Example Call**
 
@@ -854,7 +832,7 @@ vote_for_son 1.2.12345 some-son true true
 {% endtab %}
 {% endtabs %}
 
-### 2.6. get\_sidechain\_addresses\_count
+### 2.6. get_sidechain_addresses_count
 
 This returns the number of registered sidechain addresses.
 
@@ -868,12 +846,12 @@ uint64_t graphene::wallet::wallet_api::get_sidechain_addresses_count();
 {% tab title="Function Call" %}
 **Parameters**
 
-| name | data type | description | details |
-| :--- | :--- | :--- | :--- |
-| voting\_account | string | The name or id of the account who is voting with their PPY. | No quotes required. |
-| witness | string | The name or id of the SON's owner account. | No quotes required. |
-| approve | bool | `true` if you wish to vote in favor of that SON, `false` to remove your vote in favor of that SON. | n/a |
-| broadcast | bool | `true` to broadcast the transaction on the network. | n/a |
+| name           | data type | description                                                                                        | details             |
+| -------------- | --------- | -------------------------------------------------------------------------------------------------- | ------------------- |
+| voting_account | string    | The name or id of the account who is voting with their PPY.                                        | No quotes required. |
+| witness        | string    | The name or id of the SON's owner account.                                                         | No quotes required. |
+| approve        | bool      | `true` if you wish to vote in favor of that SON, `false` to remove your vote in favor of that SON. | n/a                 |
+| broadcast      | bool      | `true` to broadcast the transaction on the network.                                                | n/a                 |
 
 **Example Call**
 
@@ -886,6 +864,4 @@ vote_for_son 1.2.12345 some-son true true
 
 {% endtab %}
 {% endtabs %}
-
-
 
