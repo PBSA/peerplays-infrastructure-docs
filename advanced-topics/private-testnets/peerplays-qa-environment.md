@@ -1,183 +1,171 @@
 # Peerplays QA environment
 
-This set of docker images contains self contained, ready to go, Peerplays QA environment. It features 22 witnesses, 16 Bitcoin SONs, 16 Hive SONs and faucet.
+This set of docker images contains a self-contained, Peerplays QA environment. It features 16 Peerplays nodes(running 27 witnesses), 16 Bitcoin SONs, 16 Hive SONs, 1 Redis and 1 faucet node.
 
 ## Hardware Requirements
 
 Here's a guideline for the hardware requirements for building the QA environment:
 
-| Memory | Storage | OS |
-| :--- | :--- | :--- |
-| 32GB | ~300GB | Ubuntu 18.04 |
+| Memory | Storage | OS           |
+| ------ | ------- | ------------ |
+| 32GB   | \~300GB | Ubuntu 18.04 |
 
 Of course, the requirements will be highly dependent on what you're using the environment for. Intensive development of an enterprise-level application will need much more resources than simply exploring your own private environment.
 
-## Building docker images
+## Software Requirements
 
-Building docker images will take some time, as the software will be built from scratch.
+Following are the software requirements:
 
-```text
-docker-compose build
+| OS           | Docker            | git              |
+| ------------ | ----------------- | ---------------- |
+| Ubuntu 18.04 | 20.10.8 or higher | 2.33.0 or higher |
+
+\* If any of the software mentioned above is not installed, please use the following pages to install them:
+
+1. ubuntu: https://ubuntu.com/server/docs/installation
+2. docker: https://docs.docker.com/engine/install/ubuntu/
+3. git: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
+
+## Getting the Code
+
+Clone the peerplays-utils project in gitlab to get the latest setup scripts for Peerplays QA environment:
+
+```
+git clone https://gitlab.com/PBSA/tools-libs/peerplays-utils.git
+cd peerplays-utils/peerplays-qa-environment/ 
 ```
 
-## Start containers
+## Setting up the QA Environment
 
-Creates new containers for all images and starts them.
+The environment setup needs to be run in the following order:
 
-```text
-docker-compose up
-```
+1. BITCOIN
+2. HIVE
+3. PEERPLAYS
+4. REDIS
+5. FAUCET
 
-You can also start containers one by one, or in groups.
-
-### Bitcoin
-
-```text
-docker-compose up bitcoin-for-peerplays
-```
-
-### Hive
-
-```text
-docker-compose up hive-for-peerplays
-```
-
-### Peerplays
-
-Start any set of containers you need. peerplays01 must be started, as this is the node that starts block production. For full set of witnesses/SONs, you need to start nodes peerplays01-peerplays11.
-
-```text
-docker-compose up peerplays01
-docker-compose up peerplays01 peerplays02
-docker-compose up peerplays05 peerplays10 peerplays15
-
-# Minimal full featured network, 22 witnesses (11 active), 11 SONs (7 active)
-docker-compose up peerplays01 peerplays02 peerplays03 peerplays04 peerplays05 peerplays06 peerplays07 peerplays08 peerplays09 peerplays10 peerplays11
-
-# Full network, 22 witnesses (11 active), 16 SONs (7 active)
-docker-compose up peerplays01 peerplays02 peerplays03 peerplays04 peerplays05 peerplays06 peerplays07 peerplays08 peerplays09 peerplays10 peerplays11 peerplays12 peerplays13 peerplays14 peerplays15 peerplays16
-```
-
-### Redis
-
-```text
-docker-compose up redis-for-peerplays
-```
-
-### Faucet
-
-```text
-docker-compose up faucet-for-peerplays
-```
-
-## Stop containers
-
-Stops running all active containers and deletes them
-
-```text
-docker-compose down
-```
-
-## Connecting to the containers
-
-First part of the container name might be different \(peerplays-qa-environment\)
-
-### Bitcoin
-
-```text
-docker exec -it peerplays-qa-environment_bitcoin-for-peerplays_1 /bin/bash
-```
-
-### Hive
-
-```text
-docker exec -it peerplays-qa-environment_hive-for-peerplays_1 /bin/bash
-```
-
-### Peerplays
-
-```text
-docker exec -it peerplays-qa-environment_peerplays01_1 /bin/bash
-docker exec -it peerplays-qa-environment_peerplays02_1 /bin/bash
-docker exec -it peerplays-qa-environment_peerplays03_1 /bin/bash
-etc...
-```
-
-### Redis
-
-```text
-docker exec -it peerplays-qa-environment_redis-for-peerplays_1 /bin/bash
-```
-
-### Faucet
-
-```text
-docker exec -it peerplays-qa-environment_ubuntu-for-peerplays_1 /bin/bash
-```
-
-## Initializing network
-
-Wait for one initialization to finish, before starting the next one. Initialization should be done in the following order:
-
-* Bitcoin
-* Hive
-* Peerplays
-* Redis
-* Faucet
-
-Once the Peerplays network initialization is finished, wait for maintenance block.
+Note: After running the Peerplays initialization script, wait for the next maintenance block before start using the environment for testing.
 
 ### Before starting initialization, make sure that all nodes are down.
 
-```text
-docker-compose down
+```
+sudo docker-compose down
 ```
 
-### Bitcoin
+### BITCOIN
 
-```text
-docker-compose up bitcoin-for-peerplays
-docker exec -it peerplays-qa-environment_bitcoin-for-peerplays_1 /bin/bash
+The first step is to build the bitcoin container. Open a new terminal and run the following command:
+
+```
+sudo docker-compose up bitcoin-for-peerplays
+```
+
+This will take some time to complete. Once you see the logs on the terminal have stopped, open a new terminal and login to the newly built Bitcoin container with the following command:
+
+```
+sudo docker exec -it peerplaysqaenvironment_bitcoin-for-peerplays_1 /bin/bash
+```
+
+Once inside the container run init-network.sh script to setup the Bitcoin environment:
+
+```
 ./init-network.sh
 ```
 
-### Hive
+### HIVE
 
-```text
-docker-compose up hive-for-peerplays
-# Wait for "Generated block..." messages
-docker exec -it peerplays-qa-environment_hive-for-peerplays_1 /bin/bash
+Now we need to build the HIVE container. Open a new terminal and run the following command:
+
+```
+sudo docker-compose up hive-for-peerplays
+```
+
+This will take some time to complete. Wait till the HIVE blockchain starts generating blocks(Generated block #1 with timestamp ....) and then open a new terminal and login to the newly built HIVE container with the following command:
+
+```
+sudo docker exec -it peerplaysqaenvironment_hive-for-peerplays_1 /bin/bash
+```
+
+Once inside the container run init-network.sh script to setup the HIVE environment:
+
+```
 ./init-network.sh
 ```
 
-### Peerplays
+### PEERPLAYS
 
-```text
-docker-compose up peerplays01 peerplays02 peerplays03 peerplays04 peerplays05 peerplays06 peerplays07 peerplays08 peerplays09 peerplays10 peerplays11 peerplays12 peerplays13 peerplays14 peerplays15 peerplays16
-# Wait for "Generated block..." messages
-# Wait for nodes to sync (no "Not producing block..." messages)
-docker exec -it peerplays-qa-environment_peerplays01_1 /bin/bash
-./init-network.sh
-# Wait for maintenance block
+Next, we need to build the Peerplays container. Open a new terminal and run the following command:
+
 ```
+sudo docker-compose up peerplays01 peerplays02 peerplays03 peerplays04 peerplays05 peerplays06 peerplays07 peerplays08 peerplays09 peerplays10 peerplays11 peerplays12 peerplays13 peerplays14 peerplays15 peerplays16
+```
+
+This will take some time to complete. Wait till the HIVE blockchain starts generating blocks(Generated block...) and then open a new terminal and login to the newly built HIVE container with the following command:
+
+```
+sudo docker exec -it peerplaysqaenvironment_peerplays01_1 /bin/bash
+```
+
+Once inside the container run init-network.sh script to setup the HIVE environment:
+
+```
+./init-network.sh
+```
+
+Note: Wait for the next maintenance block before start using the environment
 
 ### Redis
 
-```text
-docker-compose up redis-for-peerplays
-# Wait for message "Ready to accept connections"
+Next, we build the Redis container. Open a new terminal and run the following command:
+
 ```
+sudo docker-compose up redis-for-peerplays
+```
+
+Wait for the message "Ready to accept connections"
 
 ### Faucet
 
-```text
-docker-compose up faucet-for-peerplays
-# Wait for message "Running on http://10.11.12.50:5000/ (Press CTRL+C to quit)"
+The final container which we need to build is faucet. Open a new terminal and run the following command:
+
 ```
+sudo docker-compose up faucet-for-peerplays
+```
+
+Wait for the message "Running on http://10.11.12.50:5000/ (Press CTRL+C to quit)"
+
+## Viewing logs of bitcoin/hive/peerplays nodes
+
+In order to view the logs of the containers following commands can be used:
+
+1. Bitcoin
+
+```
+sudo docker logs -f `sudo docker ps -a|grep bitcoin|awk '{print $18}'`
+```
+
+2\. Hive
+
+```
+sudo docker logs -f `sudo docker ps -a|grep hive|awk '{print $15}'`
+```
+
+3\. Peerplays
+
+There are 16 peerplays nodes running and in this example, we are trying to see the logs of peerplays10 node.
+
+```
+sudo docker logs -f `sudo docker ps -a|grep peerplays10|awk '{print $17}'`
+```
+
+Note: In case you want to see the logs of peerplays01 node replace peerplays10 with peerplays01 in the command given above.
 
 ## Node properties
 
-```text
+The IP address and the  configuration of the nodes in the environment are given below:&#x20;
+
+```
 Bitcoin        10.11.12.201
 Hive           10.11.12.202
 
@@ -204,15 +192,15 @@ Peerplays16    10.11.12.116    Witness NONE          ,    SON 1.33.15,  Stale pr
 
 ## Monitoring resource usage
 
-To monitor computer resource usage by docker containers in real time, use the following command:
+To monitor computer resource usage by docker containers in real-time, use the following command:
 
-```text
-docker stats
+```
+sudo docker stats
 ```
 
 The output will be similar to this:
 
-```text
+```
 CONTAINER ID   NAME                                               CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O        PIDS
 0e6e806bd8d7   peerplays-qa-environment_faucet-for-peerplays_1    0.01%     53.77MiB / 30.77GiB   0.17%     7.34kB / 4.73kB   0B / 2.66MB      17
 1c793a7f4520   peerplays-qa-environment_redis-for-peerplays_1     0.18%     2.48MiB / 30.77GiB    0.01%     5.29kB / 670B     0B / 0B          5
@@ -237,4 +225,3 @@ cfa91a760895   peerplays-qa-environment_peerplays14_1             1.30%     65.2
 ea086b2c9798   peerplays-qa-environment_bitcoin-for-peerplays_1   0.16%     40.5MiB / 30.77GiB    0.13%     54.4kB / 46.7kB   4.1kB / 49.2kB   29
 5ebba3d28e21   peerplays-qa-environment_ubuntu-for-peerplays_1    0.00%     1.441MiB / 30.77GiB   0.00%     15kB / 0B         0B / 4.1kB       1
 ```
-
