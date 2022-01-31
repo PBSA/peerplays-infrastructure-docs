@@ -31,24 +31,24 @@
   * [Docker Install](witnesses/installation-guides/docker-install.md)
   * [GitLab Artifact Install](witnesses/installation-guides/gitlab-artifact-install.md)
 
-## Sidechain Operator Nodes \(SONs\)
+## Sidechain Operator Nodes (SONs)
 
 * [Installation Guides](sidechain-operator-nodes-sons/installation-guides/README.md)
   * [Manual Install](sidechain-operator-nodes-sons/installation-guides/manual-install.md)
   * [Docker Install](sidechain-operator-nodes-sons/installation-guides/docker-install.md)
   * [Bitcoin-SONs Sanity Checks](sidechain-operator-nodes-sons/installation-guides/bitcoin-sons-sanity-checks.md)
+  * [HIVE SONs Installation Guide - Manual Install](sidechain-operator-nodes-sons/installation-guides/hive-sons-installation-guide-manual-install.md)
 * [Enabling Components](sidechain-operator-nodes-sons/enabling-components.md)
 
-## Bookie Oracle Suite \(BOS\)
+## Bookie Oracle Suite (BOS)
 
 * [Installation Guides](bookie-oracle-suite-bos/installation-guides/README.md)
   * [Untitled](bookie-oracle-suite-bos/installation-guides/untitled.md)
 
 ## Other Documentation
 
----
+***
 
 * [Docs Home](https://peerplays.tech)
 * [Community Docs](https://community.peerplays.tech)
 * [Developer Docs](https://devs.peerplays.tech)
-
