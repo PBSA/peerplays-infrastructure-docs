@@ -215,6 +215,8 @@ This command will require some PPY as well.
 create_witness created-username "https://your-url-to-witness-proposal" true
 ```
 
+The above command will also return _YOURBLOCKSIGNINGKEY_
+
 ### 6.7. Gather your Witness account info
 
 First we'll get the private key for your block\_signing\_key.
