@@ -65,10 +65,9 @@ You can look at [https://docs.docker.com/engine/install/](https://docs.docker.co
 
 ### 2.1. Setting up the .env file
 
-Copy the `example.env` to `.env` located in the root of the repository:
+Copy the `example.env` to `.env` located in the root of the repository (ie peerplays-docker folder)&#x20;
 
 ```
-cd ~/peerplays-docker
 cp example.env .env
 ```
 
