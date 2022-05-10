@@ -118,7 +118,7 @@ witness_node
 
 ## 4. Create a Peerplays Account
 
-We'll need an account as the basis of creating a new Witness. The easiest way to do that is to use the GUI wallet.
+We'll need an account as the basis of creating a new Witness. The easiest way to do that is to use the [Peerplays DEX](https://market.peerplays.com) & this doesn't need download of an application.
 
 ### 4.1. Download the Peerplays Core GUI Wallet to Make an Account
 
