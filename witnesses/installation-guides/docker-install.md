@@ -139,7 +139,7 @@ sudo ./run.sh start
 
 ## 6. Create a Peerplays Account
 
-We'll need an account as the basis of creating a new Witness. The easiest way to do that is to use the GUI wallet.
+We'll need an account as the basis of creating a new Witness. The easiest way to do that is to use the [Peerplays DEX](https://market.peerplays.com).
 
 ### 6.1. Download the Peerplays Core GUI Wallet to Make an Account
 
