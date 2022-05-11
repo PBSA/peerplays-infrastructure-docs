@@ -30,6 +30,7 @@
   * [Manual Install](witnesses/installation-guides/manual-install.md)
   * [Docker Install](witnesses/installation-guides/docker-install.md)
   * [GitLab Artifact Install](witnesses/installation-guides/gitlab-artifact-install.md)
+  * [Peerplays API nodes](witnesses/installation-guides/peerplays-api-nodes.md)
 
 ## Sidechain Operator Nodes (SONs)
 
