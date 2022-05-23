@@ -17,11 +17,17 @@ The following steps outline the artifact installation of a Witness Node:
 7. Start the Witness and Vote for Yourself
 8. Auto-Starting the Witness Node
 
+{% hint style="info" %}
+Before we begin, to set up a Witness node requires about 15 PPY. This is to pay for an upgraded account (5 PPY) and to create a new witness (8 PPY). The remaining funds are to pay for various transaction fees while setting up the node (like voting for yourself!). Please see [Obtaining Your First Tokens](../../the-basics/obtaining-your-first-tokens.md) for more info.
+
+Note that these fees will likely change over time as recommended by the Committee of Advisors.
+{% endhint %}
+
 ## 1. Prepare the environment
 
 ### 1.1. Hardware requirements
 
-Please see the general Witness [hardware requirements](https://app.gitbook.com/@peerplays/s/documents/witnesses/witness-node-hardware-requirements).
+Please see the general Witness [hardware requirements](https://infra.peerplays.tech/the-basics/hardware-requirements).
 
 For the GitLab artifact install, the requirements that we'll need for this guide would be as follows:
 
@@ -119,7 +125,7 @@ unlock your-password-here
 The CLI wallet will show `unlocked >>>` when successfully unlocked.
 
 {% hint style="info" %}
-A list of CLI wallet commands is available here: [https://www.peerplays.tech/api/peerplays-wallet-api/wallet-calls](https://www.peerplays.tech/api/peerplays-wallet-api/wallet-calls)
+A list of CLI wallet commands is available here: [https://devs.peerplays.tech/api-reference/wallet-api/wallet-calls](https://devs.peerplays.tech/api-reference/wallet-api/wallet-calls)
 {% endhint %}
 
 ### 5.3. Generate OWNER private keys for the cli\_wallet and import them
@@ -245,9 +251,9 @@ After that, it would be smart to create a backup server to enable you to make so
 [backup-servers.md](../../the-basics/backup-servers.md)
 {% endcontent-ref %}
 
-### 8.3. Join the Testnet (Beatrice)
+### 8.3. Join the Testnet
 
-As we all know, testing should never be done in production. This is why all node operators must also participate in the public testnet, Beatrice.
+As we all know, testing should never be done in production. This is why all node operators must also participate in the public testnet.
 
 {% content-ref url="../../the-basics/joining-the-public-testnet.md" %}
 [joining-the-public-testnet.md](../../the-basics/joining-the-public-testnet.md)

@@ -15,6 +15,12 @@ The following steps outline the manual installation of a Witness Node:
 5. Update `config.ini` with Witness Account Info
 6. Start the Node and Vote for Yourself
 
+{% hint style="info" %}
+Before we begin, to set up a Witness node requires about 15 PPY. This is to pay for an upgraded account (5 PPY) and to create a new witness (8 PPY). The remaining funds are to pay for various transaction fees while setting up the node (like voting for yourself!). Please see [Obtaining Your First Tokens](../../the-basics/obtaining-your-first-tokens.md) for more info.
+
+Note that these fees will likely change over time as recommended by the Committee of Advisors.
+{% endhint %}
+
 ## 1. Preparing the Environment
 
 ### 1.1. Hardware requirements
@@ -269,9 +275,9 @@ After that, it would be smart to create a backup server to enable you to make so
 [backup-servers.md](../../the-basics/backup-servers.md)
 {% endcontent-ref %}
 
-### 7.3. Join the Testnet (Beatrice)
+### 7.3. Join the Testnet
 
-As we all know, testing should never be done in production. This is why all node operators must also participate in the public testnet, Beatrice.
+As we all know, testing should never be done in production. This is why all node operators must also participate in the public testnet.
 
 {% content-ref url="../../the-basics/joining-the-public-testnet.md" %}
 [joining-the-public-testnet.md](../../the-basics/joining-the-public-testnet.md)
