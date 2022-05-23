@@ -24,11 +24,13 @@ The following steps outline the manual installation of a (Bitcoin enabled) SON.
 6. Start the SON
 7. (Optional) Automatically Start the Node as a Service
 
-## 1. Preparing the Environment
-
 {% hint style="info" %}
 Before we begin, to set up a SON node requires about 110 PPY. This is to pay for an upgraded account (5 PPY) and to fund two vesting balances (50 PPY each). The remaining funds are to pay for various transaction fees while setting up the node. Please see [Obtaining Your First Tokens](../../the-basics/obtaining-your-first-tokens.md) for more info.
+
+Note that these fees will likely change over time as recommended by the Committee of Advisors.
 {% endhint %}
+
+## 1. Preparing the Environment
 
 ### 1.1. Hardware Requirements
 
@@ -598,9 +600,9 @@ After that, it would be smart to create a backup server to enable you to make so
 [backup-servers.md](../../the-basics/backup-servers.md)
 {% endcontent-ref %}
 
-### 7.3. Join the Testnet (Beatrice)
+### 7.3. Join the Testnet
 
-As we all know, testing should never be done in production. This is why all node operators must also participate in the public testnet, Beatrice.
+As we all know, testing should never be done in production. This is why all node operators must also participate in the public testnet.
 
 {% content-ref url="../../the-basics/joining-the-public-testnet.md" %}
 [joining-the-public-testnet.md](../../the-basics/joining-the-public-testnet.md)
@@ -623,7 +625,7 @@ Now you have a SON, but have you thought about becoming a Witness? It will be a 
 {% endcontent-ref %}
 
 {% hint style="warning" %}
-When you make any node, don't forget [Beatrice](../../the-basics/joining-the-public-testnet.md)!
+When you make any node, don't forget [Testnet](../../the-basics/joining-the-public-testnet.md)!
 {% endhint %}
 
 ### 7.6. Enable SSL to encrypt your node traffic

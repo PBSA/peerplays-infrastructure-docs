@@ -20,9 +20,13 @@ Here’s an outline of the steps for installing a HIVE-enabled SON:
 6. Start the SON
 7. (Optional) Automatically Start the Node as a Service
 
-### **1. Preparing the Environment** <a href="#_sxi2boxcxsag" id="_sxi2boxcxsag"></a>
+{% hint style="info" %}
+In order to set up a SON node, you must have 110 PPY. This amount covers the upgraded account (which costs 5 PPY) and funds two vesting balances (50 PPY each). The remaining funds are for paying the various transaction fees while setting up the node. Please see [Obtaining Your First Tokens](https://app.gitbook.com/o/-Lpj4bCPw8iNnqCwrLCQ/s/-McxuwdOwK1wrj2xdejn/the-basics/obtaining-your-first-tokens) for more information.
 
-In order to set up a SON node, you must have 110 PPY. This amount covers the upgraded account ( which costs 5 PPY) and funds two vesting balances (50 PPY each). The remaining funds are for paying the various transaction fees while setting up the node. Please see [Obtaining Your First Tokens](https://app.gitbook.com/o/-Lpj4bCPw8iNnqCwrLCQ/s/-McxuwdOwK1wrj2xdejn/the-basics/obtaining-your-first-tokens) for more information.
+Note that these fees will likely change over time as recommended by the Committee of Advisors.
+{% endhint %}
+
+### **1. Preparing the Environment** <a href="#_sxi2boxcxsag" id="_sxi2boxcxsag"></a>
 
 ### **1.1. Hardware Requirements** <a href="#_luoaui1jhpxa" id="_luoaui1jhpxa"></a>
 
@@ -446,9 +450,9 @@ It would be wise to create a backup server that will allow you to make software 
 [backup-servers.md](../../the-basics/backup-servers.md)
 {% endcontent-ref %}
 
-### **7.3. Join the Testnet (Beatrice)** <a href="#_wejo6e1mqge8" id="_wejo6e1mqge8"></a>
+### **7.3. Join the Testnet** <a href="#_wejo6e1mqge8" id="_wejo6e1mqge8"></a>
 
-Testing should never finish. We ask that if you’re a node operator to participate in the public testnet, Beatrice.
+Testing should never finish. We ask that if you’re a node operator to participate in the public testnet.
 
 {% content-ref url="../../the-basics/joining-the-public-testnet.md" %}
 [joining-the-public-testnet.md](../../the-basics/joining-the-public-testnet.md)
@@ -470,7 +474,9 @@ Since you’re not a SON, why not become a Witness as it’s relatively easy sin
 [Broken link](broken-reference)
 {% endcontent-ref %}
 
-When you make any node, don't forget[ Beatrice](https://app.gitbook.com/o/-Lpj4bCPw8iNnqCwrLCQ/s/-McxuwdOwK1wrj2xdejn/the-basics/joining-the-public-testnet)!
+{% hint style="warning" %}
+When you make any node, don't forget [Testnet](../../the-basics/joining-the-public-testnet.md)!
+{% endhint %}
 
 ### **7.6. Enable SSL to encrypt your node traffic** <a href="#_dfvg4479cktc" id="_dfvg4479cktc"></a>
 

@@ -9,10 +9,10 @@ This document assumes that you are running Ubuntu 18.04. Other Debian based rele
 {% hint style="info" %}
 This tutorial will take you through the steps required to have an operating SON. Since SONs serve the purpose of facilitating transfers of assets between the Peerplays blockchain and other blockchains, we'll need to connect to another chain to be of any use...
 
-Let's use **Bitcoin**! 😎 
+Let's use **Bitcoin**! :sunglasses:&#x20;
 {% endhint %}
 
-The following steps outline the Docker installation of a \(Bitcoin enabled\) SON:
+The following steps outline the Docker installation of a (Bitcoin enabled) SON:
 
 1. Preparing the Environment
 2. Installing Docker
@@ -22,32 +22,34 @@ The following steps outline the Docker installation of a \(Bitcoin enabled\) SON
 6. Using the CLI wallet
 7. Update `config.ini` with SON Account Info
 
-## 1. Preparing the Environment
-
 {% hint style="info" %}
-Before we begin, to set up a SON node requires about 110 PPY. This is to pay for an upgraded account \(5 PPY\) and to fund two vesting balances \(50 PPY each\). The remaining funds are to pay for various transaction fees while setting up the node. Please see [Obtaining Your First Tokens](../../the-basics/obtaining-your-first-tokens.md) for more info.
+Before we begin, to set up a SON node requires about 110 PPY. This is to pay for an upgraded account (5 PPY) and to fund two vesting balances (50 PPY each). The remaining funds are to pay for various transaction fees while setting up the node. Please see [Obtaining Your First Tokens](../../the-basics/obtaining-your-first-tokens.md) for more info.
+
+Note that these fees will likely change over time as recommended by the Committee of Advisors.
 {% endhint %}
+
+## 1. Preparing the Environment
 
 ### 1.1. Hardware requirements
 
 Please see the SON [hardware requirements](../../the-basics/hardware-requirements.md).
 
-For the docker install, we'll be using a self-hosted **Bitcoin** node. The requirements that we'll need for this guide are as follows \(as per the hardware requirements docs\):
+For the docker install, we'll be using a self-hosted **Bitcoin** node. The requirements that we'll need for this guide are as follows (as per the hardware requirements docs):
 
-| Bitcoin node type | CPU | Memory | Storage | Bandwidth | OS |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| Self-Hosted, Reduced Storage | 2 Cores | 16GB | 150GB SSD | 1Gbps | Ubuntu 18.04 |
+| Bitcoin node type            | CPU     | Memory | Storage   | Bandwidth | OS           |
+| ---------------------------- | ------- | ------ | --------- | --------- | ------------ |
+| Self-Hosted, Reduced Storage | 2 Cores | 16GB   | 150GB SSD | 1Gbps     | Ubuntu 18.04 |
 
 ### 1.2. Installing the required dependencies
 
-```text
+```
 sudo apt-get update
 sudo apt-get install vim git curl
 ```
 
 Then we'll clone the Peerplays Docker repository.
 
-```text
+```
 git clone https://gitlab.com/PBSA/tools-libs/peerplays-docker.git -b release
 ```
 
@@ -59,12 +61,12 @@ It is required to have Docker installed on the system that will be performing th
 
 Docker can be installed using the `run.sh` script inside the Peerplays Docker repository:
 
-```text
+```
 cd peerplays-docker
 ./run.sh install_docker
 ```
 
-Since the script has added the currently logged in user to the Docker group, you'll need to re-login \(or close and reconnect SSH\) for Docker to function correctly. You can check to see if the current user belongs to the Docker group with the `groups` command. If the Docker group is still not listed after a re-login, you'll have to reboot the machine with `sudo reboot`  \(This will be the case if your using Ubuntu 20.04\).
+Since the script has added the currently logged in user to the Docker group, you'll need to re-login (or close and reconnect SSH) for Docker to function correctly. You can check to see if the current user belongs to the Docker group with the `groups` command. If the Docker group is still not listed after a re-login, you'll have to reboot the machine with `sudo reboot`  (This will be the case if your using Ubuntu 20.04).
 
 {% hint style="info" %}
 You can look at [https://docs.docker.com/engine/install/](https://docs.docker.com/engine/install/) to learn more on how to install Docker. Or if you are having permission issues trying to run Docker, use `sudo` or look at [https://docs.docker.com/engine/install/linux-postinstall/](https://docs.docker.com/engine/install/linux-postinstall/).
@@ -74,20 +76,20 @@ You can look at [https://docs.docker.com/engine/install/](https://docs.docker.co
 
 Copy the `example.env` to `.env` located in the root of the repository:
 
-```text
+```
 cd ~/peerplays-docker
 cp example.env .env
 ```
 
 We're going to have to make some changes to the `.env` file so we'll open that now using the Vim editor.
 
-```text
+```
 vim .env
 ```
 
 Here are the important parts of the `.env` file. These will be the parts that need to be edited or optionally edited. The rest of the file should be unchanged.
 
-```text
+```
 # Default SON wallet used inside bitcoind-node with ./run.sh start_son_regtest
 # ***NOTE:*** You can change this if you like, but you'll also need to change the "bitcoin-wallet"
 # setting in the Peerplays config.ini file to the same value!
@@ -113,12 +115,12 @@ There are two options available to connect to the Bitcoin network.
 
 For the purposes of this guide, I'll discuss how to run a node yourself as that will be a more reliable connection for now. Either way you go, you'll need to collect the following information to use in the `config.ini` file:
 
-* The IP address of a Bitcoin node you can connect to \(127.0.0.1 if self-hosting\)
-* ZMQ port of the Bitcoin node \(default is 1111\)
-* RPC port of the Bitcoin node \(default is 8332\)
-* Bitcoin RPC connection username \(default is 1\)
-* Bitcoin RPC connection password \(default is 1\)
-* Bitcoin wallet label \(default is son-wallet\)
+* The IP address of a Bitcoin node you can connect to (127.0.0.1 if self-hosting)
+* ZMQ port of the Bitcoin node (default is 1111)
+* RPC port of the Bitcoin node (default is 8332)
+* Bitcoin RPC connection username (default is 1)
+* Bitcoin RPC connection password (default is 1)
+* Bitcoin wallet label (default is son-wallet)
 * Bitcoin wallet password
 * A new Bitcoin address
 * The Public key of the Bitcoin address
@@ -128,7 +130,7 @@ For the purposes of this guide, I'll discuss how to run a node yourself as that 
 
 First we'll download and install one of the official Bitcoin Core binaries:
 
-```text
+```
 cd ~
 wget https://bitcoincore.org/bin/bitcoin-core-0.21.1/bitcoin-0.21.1-x86_64-linux-gnu.tar.gz
 # Or if you're using ARM architecture...
@@ -146,16 +148,16 @@ The latest version is 0.21.1 as of July 2021. You may want to find and download 
 
 Then we make a config file to manage the settings of our new Bitcoin node.
 
-```text
+```
 cd ~
 mkdir .bitcoin
 cd .bitcoin
 vim bitcoin.conf
 ```
 
-in the Vim text editor we'll set the following \(**You can copy and paste the content of this complete config file**\):
+in the Vim text editor we'll set the following (**You can copy and paste the content of this complete config file**):
 
-```text
+```
 # This config should be placed in following path:
 # /home/ubuntu/.bitcoin/bitcoin.conf
 
@@ -219,31 +221,31 @@ zmqpubrawtx=tcp://0.0.0.0:11111
 Save and quit the Vim editor.
 
 {% hint style="info" %}
-The settings in the config file above are set to reduce the requirements of the server. Block pruning and setting the node to Blocks Only save network and storage resources. For more information, see [https://bitcoin.org/en/full-node\#reduce-storage](https://bitcoin.org/en/full-node#reduce-storage).
+The settings in the config file above are set to reduce the requirements of the server. Block pruning and setting the node to Blocks Only save network and storage resources. For more information, see [https://bitcoin.org/en/full-node#reduce-storage](https://bitcoin.org/en/full-node#reduce-storage).
 {% endhint %}
 
 Lastly we'll set a Cron job to ensure the Bitcoin node starts up every time the server starts.
 
-```text
+```
 cd ~
 crontab -e
 ```
 
 At the bottom of the crontab file, add the following:
 
-```text
+```
 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 @reboot bitcoind -daemon
 ```
 
 Save and quit the crontab file. Now we're ready to fire up the Bitcoin node!
 
-```text
+```
 bitcoind -daemon
 ```
 
 {% hint style="info" %}
-If successful, you'll see `Bitcoin Core starting`. As an extra check to see if everything is working, try the `bitcoin-cli -version` or `bitcoin-cli getblockchaininfo` commands. 
+If successful, you'll see `Bitcoin Core starting`. As an extra check to see if everything is working, try the `bitcoin-cli -version` or `bitcoin-cli getblockchaininfo` commands.&#x20;
 
 You can also use this website to check the status of your node: [https://bitnodes.io/](https://bitnodes.io/)
 
@@ -256,7 +258,7 @@ Your Bitcoin node should now be downloading the Bitcoin blockchain data from oth
 
 We'll need a wallet to store your Bitcoin address.
 
-```text
+```
 bitcoin-cli createwallet "son-wallet"
 
 # To create a wallet with a password, you'd do it like this:
@@ -268,9 +270,9 @@ bitcoin-cli createwallet "son-wallet"
 {% hint style="danger" %}
 At this point we hit a fork in the road! You'll need to do _one_ of the following:
 
-Option 1: Generate a **new** Bitcoin address to use for your SON node. \(see **3.2.a.** below\)
+Option 1: Generate a **new** Bitcoin address to use for your SON node. (see **3.2.a.** below)
 
-Option 2: Import an **existing** Bitcoin address to use for your SON node. \(see **3.2.b.** below\)
+Option 2: Import an **existing** Bitcoin address to use for your SON node. (see **3.2.b.** below)
 
 Either way, you'll need the Bitcoin address, its public key, and its private key.
 {% endhint %}
@@ -279,7 +281,7 @@ Either way, you'll need the Bitcoin address, its public key, and its private key
 
 Now we will create a Bitcoin address.
 
-```text
+```
 bitcoin-cli -rpcwallet="son-wallet" getnewaddress
 
 # This will return something like:
@@ -288,7 +290,7 @@ bitcoin-cli -rpcwallet="son-wallet" getnewaddress
 
 Then we'll use this address to get its keys.
 
-```text
+```
 bitcoin-cli -rpcwallet="son-wallet" getaddressinfo "bc1qsx7as3r9d92tjvxrgwue7z66f2r3pw04j67lht"
 
 # This returns a lot of info but what we're looking for is the "pubkey".
@@ -297,7 +299,7 @@ bitcoin-cli -rpcwallet="son-wallet" getaddressinfo "bc1qsx7as3r9d92tjvxrgwue7z66
 
 Now we get the private key.
 
-```text
+```
 bitcoin-cli -rpcwallet="son-wallet" dumpprivkey "bc1qsx7as3r9d92tjvxrgwue7z66f2r3pw04j67lht"
 
 # This returns the private key like this:
@@ -310,15 +312,15 @@ bitcoin-cli -rpcwallet="son-wallet" dumpprivkey "bc1qsx7as3r9d92tjvxrgwue7z66f2r
 You don't need to do this if you made a new address in step **3.3.a.** above!
 {% endhint %}
 
-Now we will import an existing Bitcoin address. You'll need the private key of the existing address which should be obtainable from your current wallet. You may not be able to get the private key from online or cloud wallet providers \(contact their support teams for assistance with this.\)
+Now we will import an existing Bitcoin address. You'll need the private key of the existing address which should be obtainable from your current wallet. You may not be able to get the private key from online or cloud wallet providers (contact their support teams for assistance with this.)
 
-```text
+```
 bitcoin-cli -rpcwallet="son-wallet" importprivkey "yourprivatekeygoeshere" "" false
 ```
 
 Then you can get the public key with the `getaddressinfo` command.
 
-```text
+```
 bitcoin-cli -rpcwallet="son-wallet" getaddressinfo "existingaddressyouhaveimported"
 
 # This returns a lot of info but what we're looking for is the "pubkey".
@@ -329,7 +331,7 @@ bitcoin-cli -rpcwallet="son-wallet" getaddressinfo "existingaddressyouhaveimport
 
 That was a lot to go over. Let's collect our data. Here's an example:
 
-```text
+```
 Bitcoin Address for the SON Account = bc1qsx7as3r9d92tjvxrgwue7z66f2r3pw04j67lht
 The public key = 023b907586045625367ecd62c5d889591586c87e57fa49be21614209489f00f1b9
 the private key = KzD2WHeG49aYhYVcxBwfknm58YqDc7WEg7aWWU8P8BJ8gp1g3AuD
@@ -344,7 +346,7 @@ Keep your tuple handy. We'll need it in the Peerplays config file.
 
 Use `run.sh` to pull the SON image:
 
-```text
+```
 cd ~/peerplays-docker
 ./run.sh install son
 ```
@@ -357,7 +359,7 @@ There are many example configuration files, make sure to copy the right one. In 
 
 Copy the correct example configuration:
 
-```text
+```
 cd ~/peerplays-docker
 cd data/witness_node_data_dir
 sudo cp config.ini.son-exists.example config.ini
@@ -365,13 +367,13 @@ sudo cp config.ini.son-exists.example config.ini
 
 We'll need to make an edit to the `config.ini` file as well.
 
-```text
+```
 vim config.ini
 ```
 
-The important parts of the `config.ini` file \(for now!\) should look like the following. But don't forget to add your own Bitcoin public and private keys!
+The important parts of the `config.ini` file (for now!) should look like the following. But don't forget to add your own Bitcoin public and private keys!
 
-```text
+```
 # Endpoint for P2P node to listen on
 p2p-endpoint = 0.0.0.0:9777
 
@@ -458,7 +460,7 @@ Save the file and quit.
 
 Once the configuration is set up, use `run.sh` to start the peerplaysd and bitcoind containers:
 
-```text
+```
 cd ~/peerplays-docker
 
 # You'll also want to set the shared memory size (use sudo if not logged in as root). 
@@ -474,28 +476,28 @@ sudo sysctl -w vm.swappiness=1
 ./run.sh start_son_regtest
 ```
 
-The SON network will be created and the seed \(peerplaysd\) and bitcoind-node \(bitcoind\) containers will be launched. To check the status, inspect the logs:
+The SON network will be created and the seed (peerplaysd) and bitcoind-node (bitcoind) containers will be launched. To check the status, inspect the logs:
 
-```text
+```
 ./run.sh logs
 ```
 
 If the logs are throwing errors, perform a replay.
 
-```text
+```
 # replay the blockchain
 ./run.sh replay_son
 ```
 
 ## 6. Using the CLI wallet
 
-After starting the environment, the CLI wallet for the seed \(peerplaysd\) will be available.
+After starting the environment, the CLI wallet for the seed (peerplaysd) will be available.
 
 ### 6.1. Connecting to the blockchain with the CLI Wallet
 
 Open another terminal and use `docker exec` to connect to the wallet.
 
-```text
+```
 # In the local terminal
 docker exec -it seed cli_wallet
 ```
@@ -503,7 +505,7 @@ docker exec -it seed cli_wallet
 {% hint style="info" %}
 If an exception is thrown and contains `Remote server gave us an unexpected chain_id`, then copy the `remote_chain_id` that is provided by it. Pass the chain ID to the CLI wallet:
 
-```text
+```
 # In the local terminal
 docker exec -it seed cli_wallet --chain-id=<CHAIN-ID>
 ```
@@ -511,7 +513,7 @@ docker exec -it seed cli_wallet --chain-id=<CHAIN-ID>
 
 Set a password for the wallet and then unlock it:
 
-```text
+```
 # In the CLI wallet
 set_password <YOUR-WALLET-PASSWORD>
 unlock <YOUR-WALLET-PASSWORD>
@@ -520,12 +522,12 @@ unlock <YOUR-WALLET-PASSWORD>
 The CLI wallet will show `unlocked >>>` when successfully unlocked
 
 {% hint style="info" %}
-A list of CLI wallet commands is available here: [https://www.peerplays.tech/api/peerplays-wallet-api/wallet-calls](https://www.peerplays.tech/api/peerplays-wallet-api/wallet-calls)
+A list of CLI wallet commands is available here: [https://devs.peerplays.tech/api-reference/wallet-api/wallet-calls](https://devs.peerplays.tech/api-reference/wallet-api/wallet-calls)
 {% endhint %}
 
 Assuming we're starting without any account, it's easiest to create an account with the Peerplays GUI Wallet. The latest release is located here: [https://github.com/peerplays-network/peerplays-core-gui/releases/latest](https://github.com/peerplays-network/peerplays-core-gui/releases/latest). When you create an account with the GUI wallet, you should have a username and password. We'll need those for the next steps. First we'll get the private key for the new account.
 
-```text
+```
 # In the cli_wallet...
 
 get_private_key_from_password <put your username here> active <put your password here>
@@ -543,7 +545,7 @@ get_private_key_from_password <put your username here> active <put your password
 
 The key beginning with "PPY" is the public key. The other key is the private key. We'll need to import this private key into the cli\_wallet.
 
-```text
+```
 # In the cli_wallet...
 
 import_key "mynew-son" ...random.numbers.and.letters...
@@ -558,7 +560,7 @@ Next we'll upgrade the account to a lifetime membership.
 At the time of writing this guide, it costs 5 PPY to perform this operation. You'll need that in your account first! To this end, check out [Obtaining Your First Tokens](../../the-basics/obtaining-your-first-tokens.md).
 {% endhint %}
 
-```text
+```
 # In the cli_wallet...
 
 upgrade_account mynew-son true
@@ -566,7 +568,7 @@ upgrade_account mynew-son true
 
 Next we'll create the vesting balances.
 
-```text
+```
 # In the cli_wallet...
 
 create_vesting_balance mynew-son 50 PPY son true
@@ -589,7 +591,7 @@ get_vesting_balances mynew-son
 
 Now we have all the info we need to create a SON account.
 
-```text
+```
 # In the cli_wallet...
 
 create_son mynew-son "https://www.mynew-son.com/my-son-proposal" 1.13.79 1.13.80 [[bitcoin, 023b907586045625367ecd62c5d889591586c87e57fa49be21614209489f00f1b9]] true
@@ -600,7 +602,7 @@ create_son mynew-son "https://www.mynew-son.com/my-son-proposal" 1.13.79 1.13.80
 
 To get the SON ID:
 
-```text
+```
 # In the cli_wallet...
 
 get_son mynew-son
@@ -614,7 +616,7 @@ get_son mynew-son
 
 We'll set the signing key using the active key from the owning account:
 
-```text
+```
 # In the cli_wallet...
 
 # First we'll get the active key of the owning account.
@@ -643,19 +645,19 @@ Now we have our SON account ID and the public and private keys for the SON accou
 
 Lets stop the node for now so we can finish up the `config.ini`.
 
-```text
+```
 cd ~/peerplays-docker
 ./run.sh stop
 ```
 
 Ensure the following config settings are in the `config.ini` file under the peerplays\_sidechain plugin options.
 
-```text
+```
 cd data/witness_node_data_dir
 vim config.ini
 ```
 
-```text
+```
 # In the config.ini file...
 
 # ID of SON controlled by this node (e.g. "1.27.5", quotes are required)
@@ -667,7 +669,7 @@ peerplays-private-key = ["PPY7SUmjftH3jL5L1YCTdMo1hk5qpZrhbo4MW6N2wWyQpjXkT7ByB"
 
 Then it's just a matter of starting the node back up!
 
-```text
+```
 # replay the blockchain
 ./run.sh replay_son
 ```
@@ -682,29 +684,41 @@ Your SON is now good to go!
 
 Up until this point we have been running the node in the foreground which is fragile and inconvenient. So let's start the node as a service when the system boots up instead.
 
-{% page-ref page="../../the-basics/auto-starting-a-node.md" %}
+{% content-ref url="../../the-basics/auto-starting-a-node.md" %}
+[auto-starting-a-node.md](../../the-basics/auto-starting-a-node.md)
+{% endcontent-ref %}
 
 ### 8.2. Creating a backup node
 
 After that, it would be smart to create a backup server to enable you to make software updates, troubleshoot issues with the node, and otherwise take your node offline without causing service outages.
 
-{% page-ref page="../../the-basics/backup-servers.md" %}
+{% content-ref url="../../the-basics/backup-servers.md" %}
+[backup-servers.md](../../the-basics/backup-servers.md)
+{% endcontent-ref %}
 
 ### 8.3. Join the Testnet
 
 As we all know, testing should never be done in production. This is why all node operators must also participate in the public testnet.
 
-{% page-ref page="../../the-basics/joining-the-public-testnet.md" %}
+{% content-ref url="../../the-basics/joining-the-public-testnet.md" %}
+[joining-the-public-testnet.md](../../the-basics/joining-the-public-testnet.md)
+{% endcontent-ref %}
 
 ### 8.4. Configure more sidechains
 
 Why stop at Bitcoin?
 
-{% page-ref page="../enabling-components.md" %}
+{% content-ref url="../enabling-components.md" %}
+[enabling-components.md](../enabling-components.md)
+{% endcontent-ref %}
 
-### 8.5. Fire up another node 🔥 
+### 8.5. Fire up another node :fire:&#x20;
 
 Now you have a SON, but have you thought about becoming a Witness? It will be a piece of cake for you since you've already set up a SON.
+
+{% content-ref url="broken-reference" %}
+[Broken link](broken-reference)
+{% endcontent-ref %}
 
 {% hint style="warning" %}
 When you make any node, don't forget [Testnet](../../the-basics/joining-the-public-testnet.md)!
@@ -712,13 +726,15 @@ When you make any node, don't forget [Testnet](../../the-basics/joining-the-publ
 
 ### 8.6. Enable SSL to encrypt your node traffic
 
-If you have a node that is accessible from the internet \(for example, an API or Seed node\) it would be wise to enable SSL connections to your node.
+If you have a node that is accessible from the internet (for example, an API or Seed node) it would be wise to enable SSL connections to your node.
 
-{% page-ref page="../../advanced-topics/reverse-proxy-for-enabling-ssl.md" %}
+{% content-ref url="../../advanced-topics/reverse-proxy-for-enabling-ssl.md" %}
+[reverse-proxy-for-enabling-ssl.md](../../advanced-topics/reverse-proxy-for-enabling-ssl.md)
+{% endcontent-ref %}
 
 ## 9. Glossary
 
-**SON**: Sidechain Operator Node - An independent server operator which facilitates the transfer of off-chain assets \(like Bitcoin or Ethereum tokens\) between the Peerplays chain and the asset's native chain.
+**SON**: Sidechain Operator Node - An independent server operator which facilitates the transfer of off-chain assets (like Bitcoin or Ethereum tokens) between the Peerplays chain and the asset's native chain.
 
 **Witness:** An independent server operator which validates network transactions.
 
@@ -730,4 +746,3 @@ If you have a node that is accessible from the internet \(for example, an API or
 * [https://docs.docker.com/engine/install/linux-postinstall/](https://docs.docker.com/engine/install/linux-postinstall/)
 
 **Vim** is a text editing program available for Ubuntu 18.04. See [vim.org](https://www.vim.org/)
-
