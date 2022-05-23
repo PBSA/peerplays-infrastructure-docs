@@ -21,7 +21,7 @@ The following steps outline the artifact installation of a Witness Node:
 
 ### 1.1. Hardware requirements
 
-Please see the general Witness [hardware requirements](https://infra.peerplays.tech/the-basics/hardware-requirements).
+Please see the general Witness [hardware requirements](https://app.gitbook.com/@peerplays/s/documents/witnesses/witness-node-hardware-requirements).
 
 For the GitLab artifact install, the requirements that we'll need for this guide would be as follows:
 
@@ -119,7 +119,7 @@ unlock your-password-here
 The CLI wallet will show `unlocked >>>` when successfully unlocked.
 
 {% hint style="info" %}
-A list of CLI wallet commands is available here: [https://devs.peerplays.tech/api-reference/wallet-api/wallet-calls](https://devs.peerplays.tech/api-reference/wallet-api/wallet-calls)
+A list of CLI wallet commands is available here: [https://www.peerplays.tech/api/peerplays-wallet-api/wallet-calls](https://www.peerplays.tech/api/peerplays-wallet-api/wallet-calls)
 {% endhint %}
 
 ### 5.3. Generate OWNER private keys for the cli\_wallet and import them
