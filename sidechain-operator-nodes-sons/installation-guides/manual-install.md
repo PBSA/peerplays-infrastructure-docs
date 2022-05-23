@@ -382,7 +382,7 @@ unlock password
 ```
 
 {% hint style="info" %}
-A list of CLI wallet commands is available here: [https://www.peerplays.tech/api/peerplays-wallet-api/wallet-calls](https://www.peerplays.tech/api/peerplays-wallet-api/wallet-calls)
+A list of CLI wallet commands is available here: [https://devs.peerplays.tech/api-reference/wallet-api/wallet-calls](https://devs.peerplays.tech/api-reference/wallet-api/wallet-calls)
 {% endhint %}
 
 Assuming we're starting without any account, it's easiest to create an account with the Peerplays GUI Wallet. The latest release is located here [https://github.com/peerplays-network/peerplays-core-gui/releases/latest](https://github.com/peerplays-network/peerplays-core-gui/releases/latest). When you create an account with the GUI wallet, you should have a username and password. We'll need those for the next steps. First we'll get the private key for the new account.
@@ -642,4 +642,4 @@ If you have a node that is accessible from the internet (for example, an API or 
 
 **Witness Node:** Nodes with a closed RPC port. They don't allow external connections. Instead these nodes focus on processing transactions into blocks.
 
-**Vim**: A text editing program available for Ubuntu 18.04. See [vim.org](https://www.vim.org)
+**Vim**: A text editing program available for Ubuntu 18.04. See [vim.org](https://www.vim.org/)
