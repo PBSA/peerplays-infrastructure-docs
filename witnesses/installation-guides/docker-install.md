@@ -55,7 +55,7 @@ cd peerplays-docker
 sudo ./run.sh install_docker
 ```
 
-The `run.sh` script contains many commands to make managing the node easy. A list of all its [commands](https://app.gitbook.com/s/-McxuwdOwK1wrj2xdejn/witnesses/installation-guides/witness-docker-install.md#commands-list) are listed in section 9 of this document.
+The `run.sh` script contains many commands to make managing the node easy. A list of all its [commands](https://infra.peerplays.tech/witnesses/installation-guides/docker-install#10.-docker-run.sh-commands-list) are listed in section 9 of this document.
 
 Since the script has added the currently logged in user to the Docker group, you'll need to re-login (or close and reconnect SSH) for Docker to function correctly.
 
