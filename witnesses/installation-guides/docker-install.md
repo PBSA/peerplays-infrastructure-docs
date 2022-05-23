@@ -139,7 +139,7 @@ sudo ./run.sh start
 
 ## 6. Create a Peerplays Account
 
-We'll need an account as the basis of creating a new Witness. The easiest way to do that is to use the [Peerplays DEX](https://market.peerplays.com).
+We'll need an account as the basis of creating a new Witness. The easiest way to do that is to use the [Peerplays DEX](https://market.peerplays.com/).
 
 ### 6.1. Download the Peerplays Core GUI Wallet to Make an Account
 
@@ -162,7 +162,7 @@ unlock your-password-here
 The CLI wallet will show `unlocked >>>` when successfully unlocked.
 
 {% hint style="info" %}
-A list of CLI wallet commands is available here: [https://www.peerplays.tech/api/peerplays-wallet-api/wallet-calls](https://www.peerplays.tech/api/peerplays-wallet-api/wallet-calls)
+A list of CLI wallet commands is available here: [https://devs.peerplays.tech/api-reference/wallet-api/wallet-calls](https://devs.peerplays.tech/api-reference/wallet-api/wallet-calls)
 {% endhint %}
 
 ### 6.3. Generate OWNER private keys for the cli\_wallet and import them
