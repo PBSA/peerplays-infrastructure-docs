@@ -30,10 +30,10 @@ _Bookie Oracle System nodes_ - BOS nodes are required to operate the Bookie Orac
 
 ### 1.5. SONs
 
-_Sidechain Operator Nodes_ - SONs facilitate the transfer of off-chain assets \(like Bitcoin, Hive, or Ethereum tokens\) between the Peerplays chain and the asset's native chain. These nodes often run the Peerplays node software and node software of other chains.
+_Sidechain Operator Nodes_ - SONs facilitate the transfer of off-chain assets (like Bitcoin, Hive, or Ethereum tokens) between the Peerplays chain and the asset's native chain. These nodes often run the Peerplays node software and node software of other chains.
 
 {% hint style="info" %}
-The software used to run Witness, API \(full\), Seed, and SON nodes is named `witness_node`. All these node types are run with the same software. What makes these nodes different is how that software is configured and how it's used.
+The software used to run Witness, API (full), Seed, and SON nodes is named `witness_node`. All these node types are run with the same software. What makes these nodes different is how that software is configured and how it's used.
 
 SONs will also require the use of software supplied by other chains, like Bitcoin Core for example.
 
@@ -42,21 +42,21 @@ BOS nodes use a collection of software known as the Bookie Oracle Suite.
 
 ## 2. Summary
 
-| Node Type | Description | Open Ports | Can run together with |
-| ---: | :--- | :---: | :---: |
-| Witness | Elected by the community to produce blocks of validated transactions. | None | None |
-| API \(Full\) | Provides an API gateway for apps to interact with the Peerplays chain. Full nodes offer the whole transaction history for all accounts. | RPC | Seed |
-| Seed | Opening a P2P port allows new nodes to more readily perform the initial download of the Peerplays chain. | P2P | API \(Full\) |
-| BOS | BOS nodes are whitelisted by Witnesses to feed data to the BookiePro app. | SSL | None |
-| SON | Elected by the community to facilitate asset transfers between the Peerplays chain and sidechains. | Likely \(see note\) | None |
+|  Node Type | Description                                                                                                                             |     Open Ports    | Can run together with |
+| ---------: | --------------------------------------------------------------------------------------------------------------------------------------- | :---------------: | :-------------------: |
+|    Witness | Elected by the community to produce blocks of validated transactions.                                                                   |        None       |          None         |
+| API (Full) | Provides an API gateway for apps to interact with the Peerplays chain. Full nodes offer the whole transaction history for all accounts. |        RPC        |          Seed         |
+|       Seed | Opening a P2P port allows new nodes to more readily perform the initial download of the Peerplays chain.                                |        P2P        |       API (Full)      |
+|        BOS | BOS nodes are whitelisted by Witnesses to feed data to the BookiePro app.                                                               |        SSL        |          None         |
+|        SON | Elected by the community to facilitate asset transfers between the Peerplays chain and sidechains.                                      | Likely (see note) |          None         |
 
 {% hint style="warning" %}
-SONs most likely will be running other nodes \(like a Bitcoin node\) which may require opening ports to operate on the sidechain. It is because of this that SON nodes should not be run in parallel \(i.e. the same server\) with Witness nodes.
+SONs most likely will be running other nodes (like a Bitcoin node) which may require opening ports to operate on the sidechain. It is because of this that SON nodes should not be run in parallel (i.e. the same server) with Witness nodes.
 {% endhint %}
 
 ## 3. Node Requirements
 
-Every Witness is required to run nodes on both Public Mainnet \(Alice\) and Public Testnet \(Beatrice\) environments.
+Every Witness is required to run nodes on both Public Mainnet (Alice) and Public Testnet (Beatrice) environments.
 
 The minimum node requirements include a Witness node and BOS node for both Testnet and Mainnet. If you also run a Seed Node, API Node, and SON Node then the number of required servers could be as many as ten.
 
@@ -65,5 +65,3 @@ The minimum node requirements include a Witness node and BOS node for both Testn
 * Node server [hardware requirements](hardware-requirements.md).
 * Details about [Witness Nodes](../witnesses/installation-guides/).
 * Details about [SON Nodes](../sidechain-operator-nodes-sons/installation-guides/).
-* Details about [Joining the Public Testnet \(Beatrice\)](joining-the-public-testnet.md).
-
