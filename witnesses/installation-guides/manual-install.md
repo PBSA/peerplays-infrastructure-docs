@@ -275,7 +275,15 @@ After that, it would be smart to create a backup server to enable you to make so
 [backup-servers.md](../../the-basics/backup-servers.md)
 {% endcontent-ref %}
 
-### 7.3. Fire up another node :fire:&#x20;
+### 7.3. Join the Testnet
+
+As we all know, testing should never be done in production. This is why all node operators must also participate in the public testnet.
+
+{% content-ref url="../../the-basics/joining-the-public-testnet.md" %}
+[joining-the-public-testnet.md](../../the-basics/joining-the-public-testnet.md)
+{% endcontent-ref %}
+
+### 7.4. Fire up another node :fire:&#x20;
 
 You've got a Witness node. Now you'll need a BOS node. And since you're in the node making mood, how about a SON too?
 
@@ -287,7 +295,7 @@ You've got a Witness node. Now you'll need a BOS node. And since you're in the n
 [Broken link](broken-reference)
 {% endcontent-ref %}
 
-### 7.4. Enable SSL to encrypt your node traffic
+### 7.5. Enable SSL to encrypt your node traffic
 
 If you have a node that is accessible from the internet (for example, an API or Seed node) it would be wise to enable SSL connections to your node.
 

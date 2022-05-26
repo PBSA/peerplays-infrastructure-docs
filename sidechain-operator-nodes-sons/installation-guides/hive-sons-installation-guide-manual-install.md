@@ -450,15 +450,7 @@ It would be wise to create a backup server that will allow you to make software 
 [backup-servers.md](../../the-basics/backup-servers.md)
 {% endcontent-ref %}
 
-### **7.3. Join the Testnet** <a href="#_wejo6e1mqge8" id="_wejo6e1mqge8"></a>
-
-Testing should never finish. We ask that if you’re a node operator to participate in the public testnet.
-
-{% content-ref url="../../the-basics/joining-the-public-testnet.md" %}
-[joining-the-public-testnet.md](../../the-basics/joining-the-public-testnet.md)
-{% endcontent-ref %}
-
-### **7.4. Configure more sidechains** <a href="#_r4d86stzosgv" id="_r4d86stzosgv"></a>
+### **7.3. Configure more sidechains** <a href="#_r4d86stzosgv" id="_r4d86stzosgv"></a>
 
 Why stop at Hive?
 
@@ -466,7 +458,7 @@ Why stop at Hive?
 [enabling-components.md](../enabling-components.md)
 {% endcontent-ref %}
 
-### **7.5. Fire up another node 🔥** <a href="#_mnb0odc8392" id="_mnb0odc8392"></a>
+### **7.4. Fire up another node 🔥** <a href="#_mnb0odc8392" id="_mnb0odc8392"></a>
 
 Since you’re not a SON, why not become a Witness as it’s relatively easy since you’ve set up a SON.
 
@@ -474,11 +466,7 @@ Since you’re not a SON, why not become a Witness as it’s relatively easy sin
 [Broken link](broken-reference)
 {% endcontent-ref %}
 
-{% hint style="warning" %}
-When you make any node, don't forget [Testnet](../../the-basics/joining-the-public-testnet.md)!
-{% endhint %}
-
-### **7.6. Enable SSL to encrypt your node traffic** <a href="#_dfvg4479cktc" id="_dfvg4479cktc"></a>
+### **7.5. Enable SSL to encrypt your node traffic** <a href="#_dfvg4479cktc" id="_dfvg4479cktc"></a>
 
 Consider enabling SSL connections to your node if your node is accessible from the internet (for example, an API node).
 

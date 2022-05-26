@@ -600,7 +600,15 @@ After that, it would be smart to create a backup server to enable you to make so
 [backup-servers.md](../../the-basics/backup-servers.md)
 {% endcontent-ref %}
 
-### 7.3. Configure more sidechains
+### 7.3. Join the Testnet
+
+As we all know, testing should never be done in production. This is why all node operators must also participate in the public testnet.
+
+{% content-ref url="../../the-basics/joining-the-public-testnet.md" %}
+[joining-the-public-testnet.md](../../the-basics/joining-the-public-testnet.md)
+{% endcontent-ref %}
+
+### 7.4. Configure more sidechains
 
 Why stop at Bitcoin?
 
@@ -608,7 +616,7 @@ Why stop at Bitcoin?
 [enabling-components.md](../enabling-components.md)
 {% endcontent-ref %}
 
-### 7.4. Fire up another node :fire:&#x20;
+### 7.5. Fire up another node :fire:&#x20;
 
 Now you have a SON, but have you thought about becoming a Witness? It will be a piece of cake for you since you've already set up a SON.
 
@@ -616,7 +624,11 @@ Now you have a SON, but have you thought about becoming a Witness? It will be a 
 [Broken link](broken-reference)
 {% endcontent-ref %}
 
-### 7.5. Enable SSL to encrypt your node traffic
+{% hint style="warning" %}
+When you make any node, don't forget [Testnet](../../the-basics/joining-the-public-testnet.md)!
+{% endhint %}
+
+### 7.6. Enable SSL to encrypt your node traffic
 
 If you have a node that is accessible from the internet (for example, an API or Seed node) it would be wise to enable SSL connections to your node.
 
