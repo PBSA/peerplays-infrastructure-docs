@@ -90,6 +90,7 @@ sudo ldconfig
 cd $HOME
 git clone https://gitlab.com/PBSA/peerplays.git
 cd peerplays
+git checkout 1.5.18 # --> replace with most recent tag
 git submodule update --init --recursive
 
 # If you want to build Mainnet node
