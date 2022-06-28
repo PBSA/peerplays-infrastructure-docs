@@ -2,7 +2,7 @@
 description: Setup a Witness Node by building from the latest source code
 ---
 
-# Manual Install (Ubuntu 18.04)
+# Manual Install (Ubuntu 20.04)
 
 This is an introduction for new Witnesses to get up to speed on the Peerplays blockchain. It is intended for Witnesses planning to join a live, already deployed, blockchain.
 
@@ -39,45 +39,20 @@ The memory requirements shown in the table above are adequate to operate the nod
 
 ### 1.2. Installing the required dependencies
 
-The following dependencies are necessary for a clean install of Ubuntu 18.04:
+The following dependencies are necessary for a clean install of Ubuntu 20.04:
 
 ```
 sudo apt-get update
 sudo apt-get install \
-    apt-utils autoconf bash build-essential ca-certificates clang-format \
-    dnsutils doxygen expect git graphviz libbz2-dev \
+    apt-utils autoconf bash build-essential ca-certificates clang-format cmake \
+    dnsutils doxygen expect git graphviz libboost-all-dev libbz2-dev \
     libcurl4-openssl-dev libncurses-dev libsnappy-dev \
     libssl-dev libtool libzip-dev locales lsb-release mc nano net-tools ntp \
     openssh-server pkg-config perl python3 python3-jinja2 sudo \
     systemd-coredump wget
 ```
 
-### 1.3. Build Boost 1.67.0
-
-Boost is a code library which is used for many basic tasks within a program. In this case, it's used to help create configuration files automatically. It's required by the Peerplays node software so we'll build it from its source code using the commands below.&#x20;
-
-```
-cd $HOME
-wget -c 'http://sourceforge.net/projects/boost/files/boost/1.67.0/boost_1_67_0.tar.bz2/download'\
-    -O boost_1_67_0.tar.bz2
-tar xjf boost_1_67_0.tar.bz2
-cd boost_1_67_0/
-./bootstrap.sh
-sudo ./b2 install
-```
-
-### 1.4. Install cmake
-
-Cmake is used to compile the remaining components. We need to install a newer version. So we'll install cmake manually as follows.
-
-```
-cd $HOME
-wget -c 'https://cmake.org/files/v3.23/cmake-3.23.1-linux-x86_64.sh' -O cmake-3.23.1-linux-x86_64.sh
-chmod 755 ./cmake-3.23.1-linux-x86_64.sh
-sudo ./cmake-3.23.1-linux-x86_64.sh --prefix=/usr/ --skip-license
-```
-
-### 1.5. Install libzmq and cppzmq
+### 1.3. Install libzmq and cppzmq
 
 These components are used for relaying messages between nodes. First we'll install libzmq.
 
@@ -115,7 +90,6 @@ sudo ldconfig
 cd $HOME
 git clone https://gitlab.com/PBSA/peerplays.git
 cd peerplays
-git checkout 1.5.18 # --> replace with most recent tag
 git submodule update --init --recursive
 
 # If you want to build Mainnet node

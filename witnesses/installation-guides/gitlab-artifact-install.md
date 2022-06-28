@@ -45,7 +45,7 @@ The following dependencies are necessary for a clean install of Ubuntu 18.04 LTS
 
 ```
 sudo apt-get update
-sudo apt-get -y  install libzmq3-dev wget zip unzip
+sudo apt-get -y install libzmq3-dev wget zip unzip
 ```
 
 ## 2. Download and extract the artifacts

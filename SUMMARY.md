@@ -27,7 +27,8 @@
 ## Witnesses
 
 * [Installation Guides](witnesses/installation-guides/README.md)
-  * [Manual Install](witnesses/installation-guides/manual-install.md)
+  * [Manual Install (Ubuntu 18.04)](witnesses/installation-guides/manual-install.md)
+  * [Manual Install (Ubuntu 20.04)](witnesses/installation-guides/manual-install-1.md)
   * [Docker Install](witnesses/installation-guides/docker-install.md)
   * [GitLab Artifact Install](witnesses/installation-guides/gitlab-artifact-install.md)
   * [Peerplays API nodes](witnesses/installation-guides/peerplays-api-nodes.md)
