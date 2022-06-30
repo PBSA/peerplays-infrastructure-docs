@@ -4,7 +4,7 @@ description: Setup a Witness Node using a pre-compiled GitLab artifact
 
 # GitLab Artifact Install
 
-This document assumes that you are running Ubuntu 18.04.
+This document assumes that you are running Ubuntu 18.04 or Ubuntu 20.04.
 
 The following steps outline the artifact installation of a Witness Node:
 
@@ -41,7 +41,7 @@ The artifacts from GitLab are already built for x86\_64 architecture. These will
 
 ### 1.2. Install the dependencies
 
-The following dependencies are necessary for a clean install of Ubuntu 18.04 LTS:
+The following dependencies are necessary for a clean install of Ubuntu 18.04 or Ubuntu 20.04:
 
 ```
 sudo apt-get update
@@ -50,13 +50,13 @@ sudo apt-get -y install libzmq3-dev wget zip unzip
 
 ## 2. Download and extract the artifacts
 
-Artifacts are pre-built binaries that are available to download from GitLab. You can see the available pipelines, sorted by release tags, on the GitLab [Peerplays project](https://gitlab.com/PBSA/peerplays/-/pipelines?scope=tags\&page=1) page. The link in the code below refers to release tag `1.5.16` which is the latest production release as of the writing of this document. Please make sure to replace the tag with the one you need. The test releases are available as well, `test-1.5.5` for example.
+Artifacts are pre-built binaries that are available to download from GitLab. You can see the available pipelines, sorted by release tags, on the GitLab [Peerplays project](https://gitlab.com/PBSA/peerplays/-/pipelines?scope=tags\&page=1) page. The link in the code below refers to release tag `1.5.18` which is the latest production release as of the writing of this document. Please make sure to replace the tag with the one you need. The test releases are available as well, `test-1.5.5` for example.
 
 ```
 cd /home/ubuntu
 mkdir artifacts
 cd artifacts
-sudo wget https://gitlab.com/PBSA/peerplays/-/jobs/artifacts/1.5.16/download?job=build -O artifacts.zip
+sudo wget https://gitlab.com/PBSA/peerplays/-/jobs/artifacts/1.5.18/download?job=build -O artifacts.zip
 unzip artifacts.zip
 ```
 
@@ -90,7 +90,9 @@ nano ~/witness_node_data_dir/config.ini
 
 p2p-endpoint = 0.0.0.0:9777
 rpc-endpoint = 127.0.0.1:8090
-seed-node = 3.20.153.96:9777
+seed-node = ca.peerplays.info
+seed-node = de.peerplays.xyz
+seed-node = pl.peerplays.org
 seed-nodes = []
 ```
 
