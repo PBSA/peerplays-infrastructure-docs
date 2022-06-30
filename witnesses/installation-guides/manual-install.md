@@ -161,10 +161,7 @@ nano $HOME/witness_node_data_dir/config.ini
 
 p2p-endpoint = 0.0.0.0:9777
 rpc-endpoint = 127.0.0.1:8090
-seed-node = ca.peerplays.info:9777
-seed-node = de.peerplays.xyz:9777
-seed-node = pl.peerplays.org:9777
-seed-nodes = []
+seed-node = 213.184.255.234:59500
 ```
 
 Save the changes and start the node back up.
