@@ -93,7 +93,7 @@ Here are the important parts of the `.env` file. These will be the parts that ne
 PORTS=9777,127.0.0.1:8090:8090,127.0.0.1:8091:8091
 
 # Websocket RPC node to use by default for ./run.sh remote_wallet
-REMOTE_WS="wss://ca.peerplays.info/"
+REMOTE_WS=""
 ```
 
 ## 3. Installing the Peerplays image
@@ -134,10 +134,7 @@ nano ~/peerplays-docker/data/witness_node_data_dir/config.ini
 
 p2p-endpoint = 0.0.0.0:9777
 rpc-endpoint = 127.0.0.1:8090
-seed-node = ca.peerplays.info:9777
-seed-node = de.peerplays.xyz:9777
-seed-node = pl.peerplays.org:9777
-seed-nodes = []
+seed-node = 213.184.255.234:59500
 ```
 
 Save the changes and start the container back up.
@@ -163,7 +160,7 @@ We'll need an account as the basis of creating a new Witness. The easiest way to
 Back in the command line window, we can access the cli\_wallet program after all the blocks have been downloaded from the chain. Note that "your-password-here" is a password that you're creating for the cli\_wallet and doesn't necessarily have to be the password you used in the GUI wallet earlier.
 
 ```
-sudo ./run.sh remote_wallet
+sudo ./run.sh wallet
 set_password your-password-here
 unlock your-password-here
 ```

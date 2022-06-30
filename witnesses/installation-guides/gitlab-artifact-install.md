@@ -90,9 +90,9 @@ nano ~/witness_node_data_dir/config.ini
 
 p2p-endpoint = 0.0.0.0:9777
 rpc-endpoint = 127.0.0.1:8090
-seed-node = ca.peerplays.info
-seed-node = de.peerplays.xyz
-seed-node = pl.peerplays.org
+seed-node = ca.peerplays.info:9777
+seed-node = de.peerplays.xyz:9777
+seed-node = pl.peerplays.org:9777
 seed-nodes = []
 ```
 
