@@ -88,7 +88,7 @@ sudo ldconfig
 
 ```
 cd $HOME
-git clone https://gitlab.com/PBSA/peerplays.git
+git clone https://github.com/peerplays-network/peerplays
 cd peerplays
 git checkout 1.5.18 # --> replace with most recent tag
 git submodule update --init --recursive
