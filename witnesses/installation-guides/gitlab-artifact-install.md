@@ -76,6 +76,7 @@ sudo cp $HOME/artifacts/build/programs/cli_wallet/cli_wallet /usr/local/bin/cli_
 Now we can run start the node with:
 
 ```
+cd $HOME
 witness_node
 ```
 
