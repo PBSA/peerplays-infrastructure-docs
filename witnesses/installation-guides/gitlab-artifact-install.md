@@ -53,10 +53,10 @@ sudo apt-get -y install libzmq3-dev wget zip unzip
 Artifacts are pre-built binaries that are available to download from GitLab. You can see the available pipelines, sorted by release tags, on the GitLab [Peerplays project](https://gitlab.com/PBSA/peerplays/-/pipelines?scope=tags\&page=1) page. The link in the code below refers to release tag `1.5.18` which is the latest production release as of the writing of this document. Please make sure to replace the tag with the one you need. The test releases are available as well, `test-1.5.5` for example.
 
 ```
-cd /home/ubuntu
+cd $HOME
 mkdir artifacts
 cd artifacts
-sudo wget https://gitlab.com/PBSA/peerplays/-/jobs/artifacts/1.5.18/download?job=build -O artifacts.zip
+sudo wget https://gitlab.com/PBSA/peerplays/-/jobs/artifacts/1.5.18/download?job=build-mainnet -O artifacts.zip
 unzip artifacts.zip
 ```
 
@@ -69,8 +69,8 @@ Double check the tag in the download link!
 Putting the `witness_node` and `cli_wallet` programs in the `/usr/local/bin` directory will allow us to call the program from any directory.
 
 ```
-sudo cp /home/ubuntu/artifacts/build/programs/witness_node/witness_node /usr/local/bin/witness_node
-sudo cp /home/ubuntu/artifacts/build/programs/cli_wallet/cli_wallet /usr/local/bin/cli_wallet
+sudo cp $HOME/artifacts/build/programs/witness_node/witness_node /usr/local/bin/witness_node
+sudo cp $HOME/artifacts/build/programs/cli_wallet/cli_wallet /usr/local/bin/cli_wallet
 ```
 
 Now we can run start the node with:
@@ -89,7 +89,7 @@ We need to set the endpoint and seed-node addresses so we can access the cli\_wa
 nano ~/witness_node_data_dir/config.ini
 
 p2p-endpoint = 0.0.0.0:9777
-rpc-endpoint = 127.0.0.1:8090
+rpc-endpoint = 0.0.0.0:8090
 seed-node = ca.peerplays.info:9777
 seed-node = de.peerplays.xyz:9777
 seed-node = pl.peerplays.org:9777
