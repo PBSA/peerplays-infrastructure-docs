@@ -171,14 +171,13 @@ in the Vim text editor we'll set the following:
 # /home/ubuntu/.bitcoin/bitcoin.conf
 
 # [core]
-# Only download and relay blocks - ignore unconfirmed transaction
-blocksonly=1
-# Run in the background as a daemon and accept commands.
-daemon=1
 # Set database cache size in megabytes; machines sync faster with a larger cache. Recommend setting as high as possible based upon machine's available RAM.
-dbcache=1024
-# Reduce storage requirements by only storing most recent N MiB of block. This mode is incompatible with -txindex and -rescan. WARNING: Reverting this setting requires re-downloading the entire blockchain. (default: 0 = disable pruning blocks, 1 = allow manual pruning via RPC, greater than 550 = automatically prune blocks to stay under target size in MiB).
-prune=10000
+dbcache=8192
+# Maintain a full transaction index, used by the getrawtransaction rpc call.
+txindex=1
+
+# A fee to fall back on.
+fallbackfee=0.0002
 
 # [network]
 # Bind to given address and always listen on it. (default: 0.0.0.0). Use [host]:port notation for IPv6. Append =onion to tag any incoming connections to that address and port as incoming Tor connections
@@ -192,39 +191,19 @@ server=1
 # Accept public REST requests.
 rest=1
 # Bind to given address to listen for JSON-RPC connections. This option is ignored unless -rpcallowip is also passed. Port is optional and overrides -rpcport. Use [host]:port notation for IPv6. This option can be specified multiple times. (default: 127.0.0.1 and ::1 i.e., localhost, or if -rpcallowip has been specified, 0.0.0.0 and :: i.e., all addresses)
-rpcbind=0.0.0.0
+rpcbind=127.0.0.1
 # Listen for JSON-RPC connections on this port
 rpcport=8332
 # Allow JSON-RPC connections from specified source. Valid for <ip> are a single IP (e.g. 1.2.3.4), a network/netmask (e.g. 1.2.3.4/255.255.255.0) or a network/CIDR (e.g. 1.2.3.4/24). This option can be specified multiple times.
-rpcallowip=0.0.0.0/32
+rpcallowip=0.0.0.0/0
 rpcuser=1
 rpcpassword=1
 
 # [zeromq]
 # Enable publishing of block hashes to <address>.
 zmqpubhashblock=tcp://0.0.0.0:11111
-# Enable publishing of transaction hashes to <address>.
-zmqpubhashtx=tcp://0.0.0.0:11111
-# Enable publishing of raw block hex to <address>.
-zmqpubrawblock=tcp://0.0.0.0:11111
-# Enable publishing of raw transaction hex to <address>.
-zmqpubrawtx=tcp://0.0.0.0:11111
-
-
-# [Sections]
-# Most options automatically apply to mainnet, testnet, and regtest networks.
-# If you want to confine an option to just one network, you should add it in the relevant section.
-# EXCEPTIONS: The options addnode, connect, port, bind, rpcport, rpcbind and wallet
-# only apply to mainnet unless they appear in the appropriate section below.
-
-# Options only for mainnet
-[main]
-
-# Options only for testnet
-[test]
-
-# Options only for regtest
-[regtest]
+# Set publish hash block outbound message high water mark.
+zmqpubhashblockhwm=5000
 ```
 
 Save and quit the Vim editor.
