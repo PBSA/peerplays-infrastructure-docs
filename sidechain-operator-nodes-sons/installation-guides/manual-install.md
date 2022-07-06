@@ -141,18 +141,18 @@ First we'll download and install one of the official Bitcoin Core binaries:
 
 ```
 cd ~
-wget https://bitcoincore.org/bin/bitcoin-core-0.21.1/bitcoin-0.21.1-x86_64-linux-gnu.tar.gz
+wget https://bitcoincore.org/bin/bitcoin-core-22.0/bitcoin-22.0-x86_64-linux-gnu.tar.gz
 # Or if you're using ARM architecture...
-# wget https://bitcoincore.org/bin/bitcoin-core-0.21.1/bitcoin-0.21.1-aarch64-linux-gnu.tar.gz
+# wget https://bitcoincore.org/bin/bitcoin-core-22.0/bitcoin-22.0-aarch64-linux-gnu.tar.gz
 
-tar xzf bitcoin-0.21.1-x86_64-linux-gnu.tar.gz
-sudo install -m 0755 -o root -g root -t /usr/local/bin bitcoin-0.21.1/bin/*
+tar xzf bitcoin-22.0-x86_64-linux-gnu.tar.gz
+sudo install -m 0755 -o root -g root -t /usr/local/bin bitcoin-22.0/bin/*
 ```
 
 {% hint style="warning" %}
 The official Bitcoin Core binaries can be found here: [https://bitcoincore.org/en/download/](https://bitcoincore.org/en/download/)
 
-The latest version is 0.21.1 as of July 2021. You may want to find and download the latest version of the binaries just like you would for the 0.21.1 version above.
+The latest supported version is 22.0 as of July 2022.
 {% endhint %}
 
 Then we make a config file to manage the settings of our new Bitcoin node.
@@ -600,15 +600,7 @@ After that, it would be smart to create a backup server to enable you to make so
 [backup-servers.md](../../the-basics/backup-servers.md)
 {% endcontent-ref %}
 
-### 7.3. Join the Testnet
-
-As we all know, testing should never be done in production. This is why all node operators must also participate in the public testnet.
-
-{% content-ref url="../../the-basics/joining-the-public-testnet.md" %}
-[joining-the-public-testnet.md](../../the-basics/joining-the-public-testnet.md)
-{% endcontent-ref %}
-
-### 7.4. Configure more sidechains
+### 7.3. Configure more sidechains
 
 Why stop at Bitcoin?
 
@@ -616,7 +608,7 @@ Why stop at Bitcoin?
 [enabling-components.md](../enabling-components.md)
 {% endcontent-ref %}
 
-### 7.5. Fire up another node :fire:&#x20;
+### 7.4. Fire up another node :fire:&#x20;
 
 Now you have a SON, but have you thought about becoming a Witness? It will be a piece of cake for you since you've already set up a SON.
 
@@ -624,11 +616,7 @@ Now you have a SON, but have you thought about becoming a Witness? It will be a 
 [Broken link](broken-reference)
 {% endcontent-ref %}
 
-{% hint style="warning" %}
-When you make any node, don't forget [Testnet](../../the-basics/joining-the-public-testnet.md)!
-{% endhint %}
-
-### 7.6. Enable SSL to encrypt your node traffic
+### 7.5. Enable SSL to encrypt your node traffic
 
 If you have a node that is accessible from the internet (for example, an API or Seed node) it would be wise to enable SSL connections to your node.
 
