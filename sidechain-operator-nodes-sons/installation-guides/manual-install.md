@@ -85,7 +85,7 @@ cd $HOME/src
 export BOOST_ROOT=$HOME/src/boost_1_67_0
 git clone https://github.com/peerplays-network/peerplays.git
 cd peerplays
-git checkout 1.5.16 # --> replace with most recent release's tag
+git checkout 1.5.18 # --> replace with most recent release's tag
 git submodule update --init --recursive
 git submodule sync --recursive
 cmake -DBOOST_ROOT="$BOOST_ROOT" -DCMAKE_BUILD_TYPE=Release
@@ -98,7 +98,7 @@ make -j$(nproc)
 ```
 
 {% hint style="warning" %}
-**Note**: "1.5.16" can be replaced with the most recent release tag. For example: `git checkout 1.5.16` where 1.5.16 is the latest production release tag as of December 2021. The list of releases is [located here](https://github.com/peerplays-network/peerplays/releases).
+**Note**: "1.5.18" can be replaced with the most recent release tag. For example: `git checkout 1.5.18` where 1.5.18 is the latest production release tag as of July 2022. The list of releases is [located here](https://github.com/peerplays-network/peerplays/releases).
 {% endhint %}
 
 ### 2.1. Start the node to generate the config.ini file
