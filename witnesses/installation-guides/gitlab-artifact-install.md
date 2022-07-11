@@ -37,7 +37,7 @@ For the GitLab artifact install, the requirements that we'll need for this guide
 
 | Node Type? | CPU     | Memory | Storage   | Bandwidth | OS           |
 | ---------- | ------- | ------ | --------- | --------- | ------------ |
-| Witness    | 4 Cores | 16GB   | 100GB SSD | 1Gbps     | Ubuntu 18.04 |
+| Witness    | 4 Cores | 16GB   | 100GB SSD | 1Gbps     | Ubuntu 20.04 |
 
 {% hint style="warning" %}
 The artifacts from GitLab are already built for x86\_64 architecture. These will not work with ARM based architecture.
