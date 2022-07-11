@@ -4,7 +4,11 @@ description: Setup a Witness Node using a pre-compiled GitLab artifact
 
 # GitLab Artifact Install
 
-This document assumes that you are running Ubuntu 18.04 or Ubuntu 20.04.
+This document assumes that you are running **Ubuntu 20.04**.
+
+{% hint style="warning" %}
+The Gitlab artifacts were built targeting Ubuntu 20.04 and will not work on Ubuntu 18.04. While Peerplays does support Ubuntu 18.04, you'll need to follow the [Manual Install guide for Ubuntu 18.04](manual-install.md) or use [Docker](docker-install.md) to use it on this version.
+{% endhint %}
 
 The following steps outline the artifact installation of a Witness Node:
 
@@ -41,7 +45,7 @@ The artifacts from GitLab are already built for x86\_64 architecture. These will
 
 ### 1.2. Install the dependencies
 
-The following dependencies are necessary for a clean install of Ubuntu 18.04 or Ubuntu 20.04:
+The following dependencies are necessary for a clean install of Ubuntu 20.04:
 
 ```
 sudo apt-get update
