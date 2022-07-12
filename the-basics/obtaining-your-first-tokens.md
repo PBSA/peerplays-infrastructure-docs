@@ -44,6 +44,8 @@ If you are a new user on the exchange, please create an account and ensure you h
 
 &#x20;4\. In the next step, mention the “**son-account**” account in the "to" field (the Peerplays side-chain account), input the number of HIVE or HBD to be transferred, finally mention **your Peerplays account name** in the memo section and click “**send**” to proceed further.
 
+![Figure 1. Sending to son-account with a memo of your Peerplays account name. Example: we're sending HIVE to "tutorial-witness".](../.gitbook/assets/Hive-account-transfer.png)
+
 &#x20;5\. Now confirm the details for fund transfer and click “**confirm**”.
 
 &#x20;6\. The funds will be reflected in market.peerplays.com account and it can be used to buy PPY token.
@@ -52,12 +54,22 @@ If you are a new user on the exchange, please create an account and ensure you h
 
 1. Login to [https://market.peerplays.com](https://market.peerplays.com) using your valid credentials.
 
+![Figure 2. Sign in or create a new account.](../.gitbook/assets/Peerplay-login.webp)
+
 &#x20; 2\. From the list of options available on left pane, select “**Exchange**” tab and choose either the “**PPY/HIVE**” or the "**PPY/HBD**" options to buy PPY Token.
+
+![Figure 3. Navigating to the exchange with the menu.](../.gitbook/assets/Exchange-Token.png)
 
 &#x20; 3\. Under “**ORDER BOOK**” section choose the category based on the price.
 
+![Figure 4. Using the order book to populate the order form.](<../.gitbook/assets/Exchange-Token-1 (1).png>)
+
 &#x20; 4\. Input the required number of PPY token (at least 15 to make a Witness node) and click on “**Buy PPY**”.
+
+![Figure 5. Buying PPY with HIVE.](../.gitbook/assets/Buy-ppy.png)
 
 &#x20; 5\. Review the order and proceed with “Buy PPY now” which prompts for password to unlock account for transfer.
 
 &#x20; 6\. After successful transfer, PPY tokens will be obtained in the account.
+
+![Figure 6. PPY in the assets list.](../.gitbook/assets/PPY-token.JPG)
