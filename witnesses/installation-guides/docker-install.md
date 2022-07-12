@@ -110,7 +110,7 @@ sudo ./run.sh install
 With at least 8GB of disk space available in your home folder, we'll start the node. This will create and/or start the Peerplays docker container.
 
 ```
-sudo ./run.sh start
+sudo ./run.sh replay
 ```
 
 Then we'll check the status of the container to see if all is well.
@@ -143,7 +143,7 @@ seed-nodes = []
 Save the changes and start the container back up.
 
 ```
-sudo ./run.sh start
+sudo ./run.sh replay
 ```
 
 ## 6. Create a Peerplays Account
