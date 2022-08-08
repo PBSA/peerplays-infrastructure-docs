@@ -40,8 +40,8 @@
 * [Installation Guides](sidechain-operator-nodes-sons/installation-guides/README.md)
   * [Manual Install](sidechain-operator-nodes-sons/installation-guides/manual-install.md)
   * [Docker Install](sidechain-operator-nodes-sons/installation-guides/docker-install.md)
+  * [SON Configuration](sidechain-operator-nodes-sons/installation-guides/son-configuration.md)
   * [Bitcoin-SONs Sanity Checks](sidechain-operator-nodes-sons/installation-guides/bitcoin-sons-sanity-checks.md)
-  * [HIVE SONs Installation Guide - Manual Install](sidechain-operator-nodes-sons/installation-guides/hive-sons-installation-guide-manual-install.md)
 * [Enabling Components](sidechain-operator-nodes-sons/enabling-components.md)
 
 ## Bookie Oracle Suite (BOS)

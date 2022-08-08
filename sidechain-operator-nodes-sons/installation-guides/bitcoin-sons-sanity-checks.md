@@ -1,3 +1,7 @@
+---
+description: CLI checks to ensure the successful installation of Bitcoin-SON node.
+---
+
 # Bitcoin-SONs Sanity Checks
 
 After installing a Bitcoin SON node, you might want to run some basic tests to ensure everything is running smoothly with your Bitcoin node. Here are a few bitcoin-cli commands that you can run to check your node's functionality.
@@ -8,7 +12,7 @@ You can use these commands to get an overview of the Bitcoin network, how your n
 
 List all commands, or get help for a specified command.
 
-```text
+```
 bitcoin-cli help "command"
 
 # For example...
@@ -21,7 +25,7 @@ The `"command"` in the above code block can be one of any bitcoin-cli commands l
 
 Returns an object containing various state info regarding blockchain processing.
 
-```text
+```
 bitcoin-cli getblockchaininfo
 ```
 
@@ -100,7 +104,7 @@ This command is useful to view the network backlog of transactions. Here's what 
 
 Returns an object containing various state info regarding P2P networking.
 
-```text
+```
 bitcoin-cli getnetworkinfo
 ```
 
@@ -152,7 +156,7 @@ Examp
 
 Returns an object containing various wallet state info.
 
-```text
+```
 bitcoin-cli getwalletinfo
 ```
 
@@ -191,7 +195,7 @@ Return information about the given bitcoin address.
 Some of the information will only be present if the address is in the active wallet.
 {% endhint %}
 
-```text
+```
 bitcoin-cli getaddressinfo "address"
 
 # For example...
@@ -243,4 +247,3 @@ This is how you can view the pubkey for your Bitcoin addresses. Much more than t
 ## 7. References
 
 {% embed url="https://developer.bitcoin.org/reference/rpc/index.html" %}
-
