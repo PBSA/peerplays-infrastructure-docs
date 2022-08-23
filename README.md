@@ -7,7 +7,7 @@ description: >-
 
 # Infrastructure Documentation
 
-What is the Use of Infrastructure Documents?
+What is the Use of Infrastructure Document?
 
 Infrastructure documents play an important role in illustrating about Peerplays nodes and the process of working on a node. There are various categories to describe about the concepts of Peerplays and they are listed below.&#x20;
 
