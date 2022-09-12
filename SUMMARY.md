@@ -115,6 +115,6 @@
 
 ***
 
-* [Docs Home](https://peerplays.tech)
-* [Community Docs](https://community.peerplays.tech)
-* [Developer Docs](https://devs.peerplays.tech)
+* [Peerplays Home](https://peerplays.com)
+* [Community Docs](https://community.peerplays.com)
+* [Developer Docs](https://devs.peerplays.com)
