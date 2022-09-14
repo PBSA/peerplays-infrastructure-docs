@@ -25,6 +25,7 @@
 * [Reverse Proxy for Enabling SSL](advanced-topics/reverse-proxy-for-enabling-ssl.md)
 * [Enabling Elasticsearch on a Node](advanced-topics/enabling-elasticsearch-on-a-node.md)
 * [Setting up the faucet](advanced-topics/setting-up-the-faucet.md)
+* [Configuring Witness Node as Delayed Node](advanced-topics/configuring-witness-node-as-delayed-node.md)
 
 ## Witnesses
 
