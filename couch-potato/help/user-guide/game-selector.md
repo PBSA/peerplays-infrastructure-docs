@@ -2,7 +2,7 @@
 
 The Game Selector is opened by clicking on the day cell of any calendar. The Game Selector is the engine behind all of the games that are created and then posted to the Bookie Oracle System and on to BookiePro.
 
-The Game Selector is opened when you click on any day cell on the [Calendar](https://app.gitbook.com/o/-Lpj4bCPw8iNnqCwrLCQ/s/-McxuwdOwK1wrj2xdejn/\~/changes/5oQ1TtSdEb6uAHn5BQZp/couch-potato/help/user-guide/dashboard/#calender).
+The Game Selector is opened when you click on any day cell on the [Calendar](dashboard/#calender).
 
 ![](../../../.gitbook/assets/a.png)
 

@@ -344,7 +344,7 @@ cli_wallet --server-rpc-endpoint=wss://api.eifos.org
 ```
 
 {% hint style="info" %}
-A good resource for server-rpc-endpoints is [https://beta.eifos.org/status](https://beta.eifos.org/status). They will be listed as API nodes and use the wss:// protocol.
+A good resource for server-rpc-endpoints is https://beta.eifos.org/status. They will be listed as API nodes and use the wss:// protocol.
 {% endhint %}
 
 ### 4.3. Using the cli\_wallet
@@ -583,8 +583,8 @@ After that, it would be smart to create a backup server to enable you to make so
 
 Why stop at Bitcoin?
 
-{% content-ref url="../enabling-components.md" %}
-[enabling-components.md](../enabling-components.md)
+{% content-ref url="broken-reference" %}
+[Broken link](broken-reference)
 {% endcontent-ref %}
 
 ### 7.4. Fire up another node :fire:&#x20;

@@ -700,8 +700,8 @@ After that, it would be smart to create a backup server to enable you to make so
 
 Why stop at Bitcoin?
 
-{% content-ref url="../enabling-components.md" %}
-[enabling-components.md](../enabling-components.md)
+{% content-ref url="broken-reference" %}
+[Broken link](broken-reference)
 {% endcontent-ref %}
 
 ### 8.4. Fire up another node :fire:&#x20;

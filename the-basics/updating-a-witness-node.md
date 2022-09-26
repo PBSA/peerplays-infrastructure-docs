@@ -40,11 +40,9 @@ Download the code from the provided tag / link.
 
 ### STEP 3 - Building the Witness Node
 
-Follow this guide to build the release from [Step 2](broken-reference).
+Follow this guide to build the release from [Step 2](https://infra.peerplays.com/the-basics/updating-a-witness-node#step-2-get-the-release).
 
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
-{% endcontent-ref %}
+{% embed url="https://infra.peerplays.com/witnesses/installation-guides" %}
 
 ### STEP 4 - Start the Witness Node
 

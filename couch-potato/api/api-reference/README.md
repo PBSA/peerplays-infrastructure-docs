@@ -10,12 +10,12 @@ POST /add_game/:create_message
 
 {% tabs %}
 {% tab title="Parameters" %}
-* **`create_message`**: Object of type [create](https://app.gitbook.com/o/-Lpj4bCPw8iNnqCwrLCQ/s/-McxuwdOwK1wrj2xdejn/\~/changes/5oQ1TtSdEb6uAHn5BQZp/couch-potato/api/api-reference/objects/#create)
+* **`create_message`**: Object of type [create](https://infra.peerplays.com/couch-potato/api/api-reference/objects#create)
 {% endtab %}
 
 {% tab title="Response" %}
 * Success&#x20;
-  * ``[Add Game Success Response](https://app.gitbook.com/o/-Lpj4bCPw8iNnqCwrLCQ/s/-McxuwdOwK1wrj2xdejn/\~/changes/5oQ1TtSdEb6uAHn5BQZp/couch-potato/api/api-reference/objects/#add-game-success-response)
+  * ``[Add Game Success Response](https://infra.peerplays.com/couch-potato/api/api-reference/objects#add-game-success-response)
 * Failure
   * `status`: 400: Bad Request
   * `subcode`:  One of **`Error Objects`**
@@ -24,9 +24,9 @@ POST /add_game/:create_message
 
 **`Error Objects`**
 
-* [BOS Errors](https://app.gitbook.com/o/-Lpj4bCPw8iNnqCwrLCQ/s/-McxuwdOwK1wrj2xdejn/\~/changes/5oQ1TtSdEb6uAHn5BQZp/couch-potato/api/api-reference/error-codes/#bos-errors)
-* [Incident Errors](https://app.gitbook.com/o/-Lpj4bCPw8iNnqCwrLCQ/s/-McxuwdOwK1wrj2xdejn/\~/changes/5oQ1TtSdEb6uAHn5BQZp/couch-potato/api/api-reference/error-codes/#incident-errors)
-* [Add Game Errors](https://app.gitbook.com/o/-Lpj4bCPw8iNnqCwrLCQ/s/-McxuwdOwK1wrj2xdejn/\~/changes/5oQ1TtSdEb6uAHn5BQZp/couch-potato/api/api-reference/error-codes/#add-game-errors)
+* [BOS Errors](https://infra.peerplays.com/couch-potato/api/api-reference/error-codes#bos-errors)
+* [Incident Errors](https://infra.peerplays.com/couch-potato/api/api-reference/error-codes#incident-errors)
+* [Add Game Errors](https://infra.peerplays.com/couch-potato/api/api-reference/error-codes#add-game-errors)
 {% endtab %}
 
 {% tab title="Example" %}
@@ -55,12 +55,12 @@ POST /start_game/:in_progress_message
 
 {% tabs %}
 {% tab title="Parameters" %}
-* **`in_progress_message`**: Object of type [in\_progress](https://app.gitbook.com/o/-Lpj4bCPw8iNnqCwrLCQ/s/-McxuwdOwK1wrj2xdejn/\~/changes/5oQ1TtSdEb6uAHn5BQZp/couch-potato/api/api-reference/objects/#in-progress)
+* **`in_progress_message`**: Object of type [in\_progress](https://infra.peerplays.com/couch-potato/api/api-reference/objects#in-progress)
 {% endtab %}
 
 {% tab title="Response" %}
 * Success&#x20;
-  * &#x20;[Start Game Success Response](https://app.gitbook.com/o/-Lpj4bCPw8iNnqCwrLCQ/s/-McxuwdOwK1wrj2xdejn/\~/changes/5oQ1TtSdEb6uAHn5BQZp/couch-potato/api/api-reference/objects/#start-game-success-response)
+  * &#x20;[Start Game Success Response](https://infra.peerplays.com/couch-potato/api/api-reference/objects#start-game-success-response)
 * Failure
   * `status`: 400: Bad Request
   * `subcode`:  One of **`Error Objects`**
@@ -69,9 +69,9 @@ POST /start_game/:in_progress_message
 
 **`Error Objects`**
 
-* [BOS Errors](https://app.gitbook.com/o/-Lpj4bCPw8iNnqCwrLCQ/s/-McxuwdOwK1wrj2xdejn/\~/changes/5oQ1TtSdEb6uAHn5BQZp/couch-potato/api/api-reference/error-codes/bos-errors)
-* [General Errors](https://app.gitbook.com/o/-Lpj4bCPw8iNnqCwrLCQ/s/-McxuwdOwK1wrj2xdejn/\~/changes/5oQ1TtSdEb6uAHn5BQZp/couch-potato/api/api-reference/error-codes/general-errors)
-* [Start Game Errors](https://app.gitbook.com/o/-Lpj4bCPw8iNnqCwrLCQ/s/-McxuwdOwK1wrj2xdejn/\~/changes/5oQ1TtSdEb6uAHn5BQZp/couch-potato/api/api-reference/error-codes/#start-game-errors)
+* [BOS Errors](https://infra.peerplays.com/couch-potato/api/api-reference/error-codes#bos-errors)
+* [General Errors](https://infra.peerplays.com/couch-potato/api/api-reference/error-codes#general-errors)
+* [Start Game Errors](https://infra.peerplays.com/couch-potato/api/api-reference/error-codes#add-score-errors)
 {% endtab %}
 
 {% tab title="Example" %}
@@ -102,12 +102,12 @@ POST /add_score/:result_message
 
 {% tabs %}
 {% tab title="Parameters" %}
-* **`result_message`**: Object of type [result](https://app.gitbook.com/o/-Lpj4bCPw8iNnqCwrLCQ/s/-McxuwdOwK1wrj2xdejn/\~/changes/5oQ1TtSdEb6uAHn5BQZp/couch-potato/api/api-reference/objects/#result)
+* **`result_message`**: Object of type [result](https://infra.peerplays.com/couch-potato/api/api-reference/objects#result)
 {% endtab %}
 
 {% tab title="Response" %}
 * Success&#x20;
-  * &#x20;[Add Score Success Response](https://app.gitbook.com/o/-Lpj4bCPw8iNnqCwrLCQ/s/-McxuwdOwK1wrj2xdejn/\~/changes/5oQ1TtSdEb6uAHn5BQZp/couch-potato/api/api-reference/objects/#add-score-success-response)
+  * &#x20;[Add Score Success Response](https://infra.peerplays.com/couch-potato/api/api-reference/objects#add-score-success-response)
 * Failure
   * `status`: 400: Bad Request
   * `subcode`:  One of **`Error Objects`**
@@ -116,9 +116,9 @@ POST /add_score/:result_message
 
 **`Error Objects`**
 
-* [BOS Errors](https://app.gitbook.com/o/-Lpj4bCPw8iNnqCwrLCQ/s/-McxuwdOwK1wrj2xdejn/\~/changes/5oQ1TtSdEb6uAHn5BQZp/couch-potato/api/api-reference/error-codes/#bos-errors)
-* [General Errors](https://app.gitbook.com/o/-Lpj4bCPw8iNnqCwrLCQ/s/-McxuwdOwK1wrj2xdejn/\~/changes/5oQ1TtSdEb6uAHn5BQZp/couch-potato/api/api-reference/error-codes/#general-errors)
-* [Add Score Errors](https://app.gitbook.com/o/-Lpj4bCPw8iNnqCwrLCQ/s/-McxuwdOwK1wrj2xdejn/\~/changes/5oQ1TtSdEb6uAHn5BQZp/couch-potato/api/api-reference/error-codes/#add-score-errors)
+* [BOS Errors](https://infra.peerplays.com/couch-potato/api/api-reference/error-codes#bos-errors)
+* [General Errors](https://infra.peerplays.com/couch-potato/api/api-reference/error-codes#general-errors)
+* [Add Score Errors](https://infra.peerplays.com/couch-potato/api/api-reference/error-codes#add-score-errors)
 {% endtab %}
 
 {% tab title="Example" %}
@@ -150,12 +150,12 @@ POST /finish_game/:finish_game_message
 
 {% tabs %}
 {% tab title="Parameters" %}
-* **`finish_game_message`**: Object of type [finish](https://app.gitbook.com/o/-Lpj4bCPw8iNnqCwrLCQ/s/-McxuwdOwK1wrj2xdejn/\~/changes/5oQ1TtSdEb6uAHn5BQZp/couch-potato/api/api-reference/objects/#finish)
+* **`finish_game_message`**: Object of type [finish](https://infra.peerplays.com/couch-potato/api/api-reference/objects#finish)
 {% endtab %}
 
 {% tab title="Response" %}
 * Success&#x20;
-  * &#x20;[Finish game success response](https://app.gitbook.com/o/-Lpj4bCPw8iNnqCwrLCQ/s/-McxuwdOwK1wrj2xdejn/\~/changes/5oQ1TtSdEb6uAHn5BQZp/couch-potato/api/api-reference/objects/#finish-game-success-response)
+  * &#x20;[Finish game success response](https://infra.peerplays.com/couch-potato/api/api-reference/objects#finish-game-success-response)
 * Failure
   * `status`: 400: Bad Request
   * `subcode`:  One of **`Error Objects`**
@@ -164,9 +164,9 @@ POST /finish_game/:finish_game_message
 
 **`Error Objects`**
 
-* [BOS Errors](https://app.gitbook.com/o/-Lpj4bCPw8iNnqCwrLCQ/s/-McxuwdOwK1wrj2xdejn/\~/changes/5oQ1TtSdEb6uAHn5BQZp/couch-potato/api/api-reference/error-codes/#bos-errors)
-* [General Errors](https://app.gitbook.com/o/-Lpj4bCPw8iNnqCwrLCQ/s/-McxuwdOwK1wrj2xdejn/\~/changes/5oQ1TtSdEb6uAHn5BQZp/couch-potato/api/api-reference/error-codes/#general-errors)
-* [Finish Game Errors](https://app.gitbook.com/o/-Lpj4bCPw8iNnqCwrLCQ/s/-McxuwdOwK1wrj2xdejn/\~/changes/5oQ1TtSdEb6uAHn5BQZp/couch-potato/api/api-reference/error-codes/#finish-game-errors)
+* [BOS Errors](https://infra.peerplays.com/couch-potato/api/api-reference/error-codes#bos-errors)
+* [General Errors](https://infra.peerplays.com/couch-potato/api/api-reference/error-codes#general-errors)
+* [Finish Game Errors](https://infra.peerplays.com/couch-potato/api/api-reference/error-codes#finish-game-errors)
 {% endtab %}
 
 {% tab title="Example" %}
@@ -197,12 +197,12 @@ POST /add_score/:cancel_game_message
 
 {% tabs %}
 {% tab title="Parameters" %}
-* **`cancel_game_message`**: Object of type [canceled](https://app.gitbook.com/o/-Lpj4bCPw8iNnqCwrLCQ/s/-McxuwdOwK1wrj2xdejn/\~/changes/5oQ1TtSdEb6uAHn5BQZp/couch-potato/api/api-reference/objects/#canceled)
+* **`cancel_game_message`**: Object of type [canceled](https://infra.peerplays.com/couch-potato/api/api-reference/objects#canceled)
 {% endtab %}
 
 {% tab title="Response" %}
 * Success&#x20;
-  * [Cancel game success response](https://app.gitbook.com/o/-Lpj4bCPw8iNnqCwrLCQ/s/-McxuwdOwK1wrj2xdejn/\~/changes/5oQ1TtSdEb6uAHn5BQZp/couch-potato/api/api-reference/objects/#cancel-game-success-response)
+  * [Cancel game success response](https://infra.peerplays.com/couch-potato/api/api-reference/objects#cancel-game-success-response)
 * Failure
   * `status`: 400: Bad Request
   * `subcode`:  One of **`Error Objects`**
@@ -211,9 +211,9 @@ POST /add_score/:cancel_game_message
 
 **`Error Objects`**
 
-* [BOS Errors](https://app.gitbook.com/o/-Lpj4bCPw8iNnqCwrLCQ/s/-McxuwdOwK1wrj2xdejn/\~/changes/5oQ1TtSdEb6uAHn5BQZp/couch-potato/api/api-reference/error-codes/#bos-errors)
-* [General Errors](https://app.gitbook.com/o/-Lpj4bCPw8iNnqCwrLCQ/s/-McxuwdOwK1wrj2xdejn/\~/changes/5oQ1TtSdEb6uAHn5BQZp/couch-potato/api/api-reference/error-codes/#general-errors)
-* [Cancel Game Errors](https://app.gitbook.com/o/-Lpj4bCPw8iNnqCwrLCQ/s/-McxuwdOwK1wrj2xdejn/\~/changes/5oQ1TtSdEb6uAHn5BQZp/couch-potato/api/api-reference/error-codes/#cancel-game-errors)
+* [BOS Errors](https://infra.peerplays.com/couch-potato/api/api-reference/error-codes#bos-errors)
+* [General Errors](https://infra.peerplays.com/couch-potato/api/api-reference/error-codes#general-errors)
+* [Cancel Game Errors](https://infra.peerplays.com/couch-potato/api/api-reference/error-codes#cancel-game-errors)
 {% endtab %}
 
 {% tab title="Example" %}
@@ -252,7 +252,7 @@ DELETE /delete_event/:date/:league
   * `title:` League Deleted
   * `message:`\[league]
 * Failure - 400
-  * [Error 430](https://app.gitbook.com/o/-Lpj4bCPw8iNnqCwrLCQ/s/-McxuwdOwK1wrj2xdejn/\~/changes/5oQ1TtSdEb6uAHn5BQZp/couch-potato/api/api-reference/error-codes/#430)
+  * [Error 430](https://infra.peerplays.com/couch-potato/api/api-reference/error-codes#430)
 {% endtab %}
 
 {% tab title="Example" %}
@@ -284,7 +284,7 @@ DELETE /delete_game/:game_id
   * `title:` League Deleted
   * `message:`\[league]
 * Failure - 400
-  * [Error 431](https://app.gitbook.com/o/-Lpj4bCPw8iNnqCwrLCQ/s/-McxuwdOwK1wrj2xdejn/\~/changes/5oQ1TtSdEb6uAHn5BQZp/couch-potato/api/api-reference/error-codes/#431)
+  * [Error 431](https://infra.peerplays.com/couch-potato/api/api-reference/error-codes#431)
 {% endtab %}
 
 {% tab title="Example" %}
@@ -316,7 +316,7 @@ GET /get_all_data_by_date_range/:start_date/:end_date
 * Success - 200
   * List of all games between `start_date` and `end_date`
 * Failure - 400
-  * ``[Error 432](https://app.gitbook.com/o/-Lpj4bCPw8iNnqCwrLCQ/s/-McxuwdOwK1wrj2xdejn/\~/changes/5oQ1TtSdEb6uAHn5BQZp/couch-potato/api/api-reference/error-codes/#432)
+  * ``[Error 432](https://infra.peerplays.com/couch-potato/api/api-reference/error-codes#432)
 {% endtab %}
 
 {% tab title="Example" %}
@@ -341,7 +341,7 @@ GET /get_all_games/
 * Success - 200
   * List of all games
 * Failure - 400
-  * [Error 433](https://app.gitbook.com/o/-Lpj4bCPw8iNnqCwrLCQ/s/-McxuwdOwK1wrj2xdejn/\~/changes/5oQ1TtSdEb6uAHn5BQZp/couch-potato/api/api-reference/error-codes/#433)
+  * [Error 433](https://infra.peerplays.com/couch-potato/api/api-reference/error-codes#433)
 {% endtab %}
 
 {% tab title="Example" %}
@@ -364,7 +364,7 @@ GET /get_all_sports/
 * Success - 200&#x20;
   * List of all sports
 * Failure - 400
-  * [Error 434](https://app.gitbook.com/o/-Lpj4bCPw8iNnqCwrLCQ/s/-McxuwdOwK1wrj2xdejn/\~/changes/5oQ1TtSdEb6uAHn5BQZp/couch-potato/api/api-reference/error-codes/#434)
+  * [Error 434](https://infra.peerplays.com/couch-potato/api/api-reference/error-codes#434)
 {% endtab %}
 
 {% tab title="Example" %}
@@ -393,7 +393,7 @@ GET /get_games_by_league_and_date/:league/:start_date/:end_date
 * Success - 200
   * List of all games for `league` between `start` and `end`
 * Failure - 400
-  * [Error 435](https://app.gitbook.com/o/-Lpj4bCPw8iNnqCwrLCQ/s/-McxuwdOwK1wrj2xdejn/\~/changes/5oQ1TtSdEb6uAHn5BQZp/couch-potato/api/api-reference/error-codes/#435)
+  * [Error 435](https://infra.peerplays.com/couch-potato/api/api-reference/error-codes#435)
 {% endtab %}
 
 {% tab title="Example" %}
@@ -423,7 +423,7 @@ GET /get_games_by_league/:league
 * Success - 200
   * List of all games for `league`
 * Failure - 400
-  * [Error 436](https://app.gitbook.com/o/-Lpj4bCPw8iNnqCwrLCQ/s/-McxuwdOwK1wrj2xdejn/\~/changes/5oQ1TtSdEb6uAHn5BQZp/couch-potato/api/api-reference/error-codes/#436)
+  * [Error 436](https://infra.peerplays.com/couch-potato/api/api-reference/error-codes#436)
 {% endtab %}
 
 {% tab title="Example" %}
@@ -451,7 +451,7 @@ GET /get_leagues_by_sport/:sport
 * Success - 200
   * List of all leagues for `sport`
 * Failure - 400
-  * [Error 437](https://app.gitbook.com/o/-Lpj4bCPw8iNnqCwrLCQ/s/-McxuwdOwK1wrj2xdejn/\~/changes/5oQ1TtSdEb6uAHn5BQZp/couch-potato/api/api-reference/error-codes/#437)
+  * [Error 437](https://infra.peerplays.com/couch-potato/api/api-reference/error-codes#437)
 {% endtab %}
 
 {% tab title="Example" %}
@@ -475,7 +475,7 @@ GET /get_sports_and_leagues/
 * Success - 200
   * List of all sports
 * Failure
-  * [Error 438](https://app.gitbook.com/o/-Lpj4bCPw8iNnqCwrLCQ/s/-McxuwdOwK1wrj2xdejn/\~/changes/5oQ1TtSdEb6uAHn5BQZp/couch-potato/api/api-reference/error-codes/#438)
+  * [Error 438](https://infra.peerplays.com/couch-potato/api/api-reference/error-codes#438)
 {% endtab %}
 
 {% tab title="Example" %}
@@ -502,7 +502,7 @@ GET /get_teams_by_league/:league
 * Success - 200
   * List of all teams for the `league`
 * Failure - 400
-  * [Error 439](https://app.gitbook.com/o/-Lpj4bCPw8iNnqCwrLCQ/s/-McxuwdOwK1wrj2xdejn/\~/changes/5oQ1TtSdEb6uAHn5BQZp/couch-potato/api/api-reference/error-codes/#439)
+  * [Error 439](https://infra.peerplays.com/couch-potato/api/api-reference/error-codes#439)
 {% endtab %}
 
 {% tab title="Example" %}
@@ -530,7 +530,7 @@ GET /get_league_data_by_name/:leaguename
 * Success - 200
   * All fields for the selected league
 * Failure - 400
-  * [Error 446](https://app.gitbook.com/o/-Lpj4bCPw8iNnqCwrLCQ/s/-McxuwdOwK1wrj2xdejn/\~/changes/5oQ1TtSdEb6uAHn5BQZp/couch-potato/api/api-reference/error-codes/#446)
+  * [Error 446](https://infra.peerplays.com/couch-potato/api/api-reference/error-codes#446)
 {% endtab %}
 {% endtabs %}
 
@@ -552,7 +552,7 @@ GET /last_event_id_by_date_and_league/:date/:league
 * Success - 200
   * The last event id for `league` on `date`
 * Failure - 400
-  * [Error 440](https://app.gitbook.com/o/-Lpj4bCPw8iNnqCwrLCQ/s/-McxuwdOwK1wrj2xdejn/\~/changes/5oQ1TtSdEb6uAHn5BQZp/couch-potato/api/api-reference/error-codes/#440)
+  * [Error 440](https://infra.peerplays.com/couch-potato/api/api-reference/error-codes#440)
 {% endtab %}
 
 {% tab title="Example" %}
@@ -578,7 +578,7 @@ GET /last_event_id/
 * Success - 200
   * The last `event_id` for all leagues
 * Failure - 400
-  * [Error 441](https://app.gitbook.com/o/-Lpj4bCPw8iNnqCwrLCQ/s/-McxuwdOwK1wrj2xdejn/\~/changes/5oQ1TtSdEb6uAHn5BQZp/couch-potato/api/api-reference/error-codes/#441)
+  * [Error 441](https://infra.peerplays.com/couch-potato/api/api-reference/error-codes#441)
 {% endtab %}
 
 {% tab title="Example" %}
@@ -606,7 +606,7 @@ GET /last_game_id_by_date_and_league/:date/:league
 * Success - 200
   * The last game id for `league` on `date`
 * Failure - 400
-  * [Error 442](https://app.gitbook.com/o/-Lpj4bCPw8iNnqCwrLCQ/s/-McxuwdOwK1wrj2xdejn/\~/changes/5oQ1TtSdEb6uAHn5BQZp/couch-potato/api/api-reference/error-codes/#442)
+  * [Error 442](https://infra.peerplays.com/couch-potato/api/api-reference/error-codes#442)
 {% endtab %}
 
 {% tab title="Example" %}
@@ -632,7 +632,7 @@ GET /last_game_id
 * Success - 200
   * The last game id for all sports.
 * Failure - 400
-  * [Error 443](https://app.gitbook.com/o/-Lpj4bCPw8iNnqCwrLCQ/s/-McxuwdOwK1wrj2xdejn/\~/changes/5oQ1TtSdEb6uAHn5BQZp/couch-potato/api/api-reference/error-codes/#443)
+  * [Error 443](https://infra.peerplays.com/couch-potato/api/api-reference/error-codes#443)
 {% endtab %}
 
 {% tab title="Example" %}
@@ -655,7 +655,7 @@ GET /last_game
 * Success - 200
   * All game records sorted descending.
 * Failure - 400
-  * [Error 444](https://app.gitbook.com/o/-Lpj4bCPw8iNnqCwrLCQ/s/-McxuwdOwK1wrj2xdejn/\~/changes/5oQ1TtSdEb6uAHn5BQZp/couch-potato/api/api-reference/error-codes/#444)
+  * [Error 444](https://infra.peerplays.com/couch-potato/api/api-reference/error-codes#444)
 {% endtab %}
 
 {% tab title="Example" %}
@@ -686,7 +686,7 @@ GET /run_replay/:sport/:leagues/:start/:end
   * `title`: Replay completed
   * `message`: \[sport]: { \[league]: total, \[league]: total, ... }
 * Failure - 400
-  * [Error 445](https://app.gitbook.com/o/-Lpj4bCPw8iNnqCwrLCQ/s/-McxuwdOwK1wrj2xdejn/\~/changes/5oQ1TtSdEb6uAHn5BQZp/couch-potato/api/api-reference/error-codes/#445)
+  * [Error 445](https://infra.peerplays.com/couch-potato/api/api-reference/error-codes#445)
 {% endtab %}
 
 {% tab title="Example" %}

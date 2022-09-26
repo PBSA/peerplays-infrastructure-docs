@@ -237,7 +237,7 @@ ssh -f -N -L 8080:127.0.0.1:8001 yourusername@1.2.3.4
 
 \-L : Port mapping (8080 port on your machine, 127.0.0.1:8001 - proxy to where MINT runs)
 
-Now you can open mint in your browser using [http://localhost:8080](http://localhost:8080/) address.
+Now you can open mint in your browser using http://localhost:8080 address.
 
 After starting MINT use your favourite desktop browser to access it and you'll be asked to enter your Witness key that will be stored encrypted in the local Peerplays wallet.
 

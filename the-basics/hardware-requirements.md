@@ -55,8 +55,8 @@ A Witness node on Testnet requires a baseline of: 4 CPU cores, 8GB RAM, and 50GB
 
 As of June 2021, the Peerplays chain requires about 20GB of storage space (on Testnet). The 50GB storage requirement is set high to account for increased chain usage over time, though not as much as Mainnet.
 
-* Plus [other considerations](https://infra.peerplays.tech/the-basics/hardware-requirements#4.-other-considerations).
-* See [notes](https://infra.peerplays.tech/the-basics/hardware-requirements#5.-glossary) about Full Nodes, SON Nodes, and Bitcoin node types.
+* Plus [other considerations](hardware-requirements.md#4.-other-considerations).
+* See [notes](https://infra.peerplays.com/the-basics/hardware-requirements#5.-glossary) about Full Nodes, SON Nodes, and Bitcoin node types.
 
 ## 3. SON Sidechain Node Requirements
 

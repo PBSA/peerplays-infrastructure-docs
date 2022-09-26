@@ -14,8 +14,8 @@
   * [CLI Commands for SONs](the-basics/using-the-cli-wallet/cli-commands-for-sons.md)
 * [Auto-Starting a Node](the-basics/auto-starting-a-node.md)
 * [Backup Servers](the-basics/backup-servers.md)
-* [Updating a Witness Node](the-basics/updating-a-witness-node.md)
 * [Obtaining Your First Tokens](the-basics/obtaining-your-first-tokens.md)
+* [Updating a Witness Node](the-basics/updating-a-witness-node.md)
 
 ## Advanced Topics
 
@@ -43,7 +43,6 @@
   * [Docker Install](sidechain-operator-nodes-sons/installation-guides/docker-install.md)
   * [SON Configuration](sidechain-operator-nodes-sons/installation-guides/son-configuration.md)
   * [Bitcoin-SONs Sanity Checks](sidechain-operator-nodes-sons/installation-guides/bitcoin-sons-sanity-checks.md)
-* [Enabling Components](sidechain-operator-nodes-sons/enabling-components.md)
 
 ## Bookie Oracle Suite (BOS)
 
@@ -66,10 +65,8 @@
 ## DATA PROXIES
 
 * [Introduction to Data Proxies](data-proxies/introduction-to-data-proxies.md)
-* [How Data Proxies Work](data-proxies/how-data-proxies-work/README.md)
-  * [Incident Schema](data-proxies/how-data-proxies-work/incident-schema.md)
+* [How Data Proxies Work](data-proxies/how-data-proxies-work.md)
 * [Data Proxy Set Up](data-proxies/data-proxy-set-up.md)
-* [Creating Your Own Data Proxy](data-proxies/creating-your-own-data-proxy.md)
 
 ## COUCH POTATO
 

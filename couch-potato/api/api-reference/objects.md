@@ -4,11 +4,11 @@
 
 The following objects are used to pass data to, or objects from response messages, the five API endpoints:
 
-* ``[`add_game`](https://app.gitbook.com/o/-Lpj4bCPw8iNnqCwrLCQ/s/-McxuwdOwK1wrj2xdejn/\~/changes/5oQ1TtSdEb6uAHn5BQZp/couch-potato/api/api-reference/#add-game)``
-* ``[`start_game`](https://app.gitbook.com/o/-Lpj4bCPw8iNnqCwrLCQ/s/-McxuwdOwK1wrj2xdejn/\~/changes/5oQ1TtSdEb6uAHn5BQZp/couch-potato/api/api-reference/#start-game)``
-* ``[`add_Score`](https://app.gitbook.com/o/-Lpj4bCPw8iNnqCwrLCQ/s/-McxuwdOwK1wrj2xdejn/\~/changes/5oQ1TtSdEb6uAHn5BQZp/couch-potato/api/api-reference/#add-score)``
-* ``[`finish_Game`](https://app.gitbook.com/o/-Lpj4bCPw8iNnqCwrLCQ/s/-McxuwdOwK1wrj2xdejn/\~/changes/5oQ1TtSdEb6uAHn5BQZp/couch-potato/api/api-reference/#finish-game)``
-* ``[`cancel_Game`](https://app.gitbook.com/o/-Lpj4bCPw8iNnqCwrLCQ/s/-McxuwdOwK1wrj2xdejn/\~/changes/5oQ1TtSdEb6uAHn5BQZp/couch-potato/api/api-reference/#cancel-game)``
+* ``[`add_game`](https://infra.peerplays.com/couch-potato/api/api-reference#add-game)``
+* ``[`start_game`](https://infra.peerplays.com/couch-potato/api/api-reference#start-game)``
+* ``[`add_Score`](https://infra.peerplays.com/couch-potato/api/api-reference#add-score)``
+* ``[`finish_Game`](https://infra.peerplays.com/couch-potato/api/api-reference#finish-game)``
+* ``[`cancel_Game`](https://infra.peerplays.com/couch-potato/api/api-reference#cancel-game)``
 
 ### create <a href="#create" id="create"></a>
 
@@ -174,7 +174,7 @@ Parameters for new BOS incident message to cancel a game and add to Couch Potato
 
 ### Add Game Success Response  <a href="#add-game-success-response" id="add-game-success-response"></a>
 
-Object attributes for a 200 response from an [add\_game](https://app.gitbook.com/o/-Lpj4bCPw8iNnqCwrLCQ/s/-McxuwdOwK1wrj2xdejn/\~/changes/5oQ1TtSdEb6uAHn5BQZp/couch-potato/api/api-reference/#add-game) call.
+Object attributes for a 200 response from an [add\_game](https://infra.peerplays.com/couch-potato/api/api-reference#add-game) call.
 
 {% tabs %}
 {% tab title="Attributes" %}
@@ -198,7 +198,7 @@ Object attributes for a 200 response from an [add\_game](https://app.gitbook.com
 
 ### Start Game Success Response  <a href="#start-game-success-response" id="start-game-success-response"></a>
 
-Object attributes for a 200 response from an [start\_game](https://app.gitbook.com/o/-Lpj4bCPw8iNnqCwrLCQ/s/-McxuwdOwK1wrj2xdejn/\~/changes/5oQ1TtSdEb6uAHn5BQZp/couch-potato/api/api-reference/#start-game) call.
+Object attributes for a 200 response from an [start\_game](https://infra.peerplays.com/couch-potato/api/api-reference#start-game) call.
 
 {% tabs %}
 {% tab title="Attributes" %}
@@ -222,7 +222,7 @@ Object attributes for a 200 response from an [start\_game](https://app.gitbook.c
 
 ### Add Score Success Response  <a href="#add-score-success-response" id="add-score-success-response"></a>
 
-Object attributes for a 200 response from an [add\_score](https://app.gitbook.com/o/-Lpj4bCPw8iNnqCwrLCQ/s/-McxuwdOwK1wrj2xdejn/\~/changes/5oQ1TtSdEb6uAHn5BQZp/couch-potato/api/api-reference/#add-score) call.
+Object attributes for a 200 response from an [add\_score](https://infra.peerplays.com/couch-potato/api/api-reference#add-score) call.
 
 {% tabs %}
 {% tab title="Attributes" %}
@@ -246,7 +246,7 @@ Object attributes for a 200 response from an [add\_score](https://app.gitbook.co
 
 ### Finish Game Success Response  <a href="#finish-game-success-response" id="finish-game-success-response"></a>
 
-Object attributes for a 200 response from an [finish\_game](https://app.gitbook.com/o/-Lpj4bCPw8iNnqCwrLCQ/s/-McxuwdOwK1wrj2xdejn/\~/changes/5oQ1TtSdEb6uAHn5BQZp/couch-potato/api/api-reference/#finish-game) call.
+Object attributes for a 200 response from an [finish\_game](https://infra.peerplays.com/couch-potato/api/api-reference#finish-game) call.
 
 {% tabs %}
 {% tab title="Attributes" %}
@@ -270,7 +270,7 @@ Object attributes for a 200 response from an [finish\_game](https://app.gitbook.
 
 ### Cancel Game Success Response  <a href="#cancel-game-success-response" id="cancel-game-success-response"></a>
 
-Object attributes for a 200 response from an [cancel\_game](https://app.gitbook.com/o/-Lpj4bCPw8iNnqCwrLCQ/s/-McxuwdOwK1wrj2xdejn/\~/changes/5oQ1TtSdEb6uAHn5BQZp/couch-potato/api/api-reference/#cancel-game) call.
+Object attributes for a 200 response from an [cancel\_game](https://infra.peerplays.com/couch-potato/api/api-reference#cancel-game) call.
 
 {% tabs %}
 {% tab title="Attributes" %}
